@@ -17,4 +17,4 @@
 
 # importing published lib in consumer application
 * npm login as handakina
-* npm i ecommerce-opensouce-storybook --save-dev
+* npm i ecommerce-opensouce-storybook --legacy-peer-deps

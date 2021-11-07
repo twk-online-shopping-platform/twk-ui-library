@@ -1,0 +1,30 @@
+{
+  "name": "ecommerce-opensouce-storybook",
+  "version": "1.0.0",
+  "description": "common shared ui components lib for opensouce project",
+  "main": "index.js",
+  "repository": "git@github.com:Ecommerce-opensouce-project/storybook.git",
+  "author": "handakina <46838034+handakina@users.noreply.github.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/react": "^6.3.12",
+    "@types/react": "^17.0.34",
+    "babel-loader": "^8.2.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "typescript": "^4.4.4"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "dependencies": {},
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  }
+}

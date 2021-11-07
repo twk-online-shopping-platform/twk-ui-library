@@ -2,20 +2,29 @@
   "name": "ecommerce-opensouce-storybook",
   "version": "1.0.0",
   "description": "common shared ui components lib for opensouce project",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
   "repository": "git@github.com:Ecommerce-opensouce-project/storybook.git",
   "author": "handakina <46838034+handakina@users.noreply.github.com>",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.16.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
     "@storybook/addon-actions": "^6.3.12",
     "@storybook/addon-essentials": "^6.3.12",
     "@storybook/addon-links": "^6.3.12",
     "@storybook/react": "^6.3.12",
     "@types/react": "^17.0.34",
     "babel-loader": "^8.2.3",
+    "postcss": "^8.3.11",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "rollup": "^2.59.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.1",
+    "rollup-plugin-typescript2": "^0.30.0",
     "typescript": "^4.4.4"
   },
   "peerDependencies": {
@@ -25,6 +34,8 @@
   "dependencies": {},
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
-  }
+    "build-storybook": "build-storybook",
+    "build": "rollup -c"
+  },
+  "files": ["/lib"]
 }

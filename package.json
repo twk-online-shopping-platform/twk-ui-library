@@ -1,6 +1,6 @@
 {
   "name": "ecommerce-opensouce-storybook",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "common shared ui components lib for opensouce project",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",

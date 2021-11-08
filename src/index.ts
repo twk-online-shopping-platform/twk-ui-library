@@ -1,2 +1,2 @@
-import * as Button from "./stories/Button";
+import * as Button from "./component/button/Button"
 export { Button };

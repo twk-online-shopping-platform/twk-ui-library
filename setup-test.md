@@ -1,5 +1,4 @@
 ## add  Puppeteer + jest + enzyme to react project
-* yarn add --dev enzyme  @wojtekmaj/enzyme-adapter-react-17 enzyme-to-json @types/enzyme // install enzyme 
 * yarn add --dev jest ts-jest  @types/jest //install jest
 * yarn add --dev @types/react-test-renderer @testing-library/react
 * package.json

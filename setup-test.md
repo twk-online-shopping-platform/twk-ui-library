@@ -1,6 +1,8 @@
 ## add  Puppeteer + jest + enzyme to react project
 * yarn add --dev jest ts-jest  @types/jest //install jest
 * yarn add --dev @types/react-test-renderer @testing-library/react
+* yarn add --dev @testing-library/jest-dom // to get toHaveTextContent and other jest matchers
+  * add import '@testing-library/jest-dom/extend-expect'; to every test component
 * package.json
     ```
     "scripts": {

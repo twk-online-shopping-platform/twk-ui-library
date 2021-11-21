@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Auth Webapp entry should render Button 1`] = `
+<button
+  class="storybook-button storybook-button--medium"
+  type="button"
+>
+  Click Me
+</button>
+`;
+
+exports[`Test Auth Webapp entry test againest snapshot 1`] = `
+<DocumentFragment>
+  <button
+    class="storybook-button storybook-button--medium"
+    type="button"
+  >
+    Click Me
+  </button>
+</DocumentFragment>
+`;

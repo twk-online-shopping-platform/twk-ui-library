@@ -4,23 +4,23 @@ import { Button } from './Button';
 import { ReactElement, ReactNode } from 'react';
 import '@testing-library/jest-dom/extend-expect';
 
-let component: ReactElement = <Button label='Click Me'/>;
 const labelText: string = 'Click Me';
 describe('Test Auth Webapp entry', function () {
-    it('should render Button', ()=>{
+    it('should display Button with default value', ()=>{
+        const component: ReactElement = <Button label='Click Me'/>;
         render(component);
         expect(screen.getByText(labelText, {exact: true})).toMatchSnapshot();
         expect(screen.getByRole('button')).toHaveTextContent(labelText);
     })
+    
+    it('should display Button with text color and background color', ()=>{
+        const component: ReactElement = <Button label='Click Me2' txtColor='red' bgColor='white'/>;
+        render(component);
+        expect(screen.getByText('Click Me2')).toBeInTheDocument();
+        expect(screen.getByText('Click Me2')).toHaveClass('open-proj-btn-white');
+        expect(screen.getByText('Click Me2')).toHaveClass('open-proj-txt-red');
+
+    })
    
-    test('test againest snapshot', () => {
-        let testComponent!: RenderResult;
-        let firstRender!: DocumentFragment;
-        act(() =>{
-            testComponent = render(component);  
-            firstRender = testComponent.asFragment();
-            fireEvent.click(testComponent.getByText(labelText))
-        })
-        expect(firstRender).toMatchSnapshot();
-    });
+
 });

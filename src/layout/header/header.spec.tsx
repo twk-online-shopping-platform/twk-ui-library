@@ -7,6 +7,8 @@ import { ReactNode, ReactElement } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Autocomplete from '@mui/material/Autocomplete';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
 
 
 
@@ -22,7 +24,8 @@ describe('Test header',()=>{
     it('should display main bar', ()=>{
         const testComponent = TestRenderer.create(headerJsx);
         const testComponentInstance = testComponent.root;
-        expect(testComponentInstance.findByType(AppBar)).toBeTruthy();
+        expect(testComponentInstance.findByType(AppBar).props.position).toBe('fixed');
+        expect(testComponentInstance.findByType(Toolbar)).toBeTruthy();
     })
 
     it('should display search bar', ()=>{
@@ -34,33 +37,37 @@ describe('Test header',()=>{
         const testComponent = TestRenderer.create(headerJsx);
         const testComponentInstance = testComponent.root;
         expect(testComponentInstance.findByType(Autocomplete).props.options[0].label).toBe('The Godfather');
+        expect(testComponentInstance.findByType(Button).props.variant).toBe('contained');
+        expect(testComponentInstance.findByType(Button).props.children).toEqual('Search');
+    
     })
 
     it('should display brand log', ()=>{
-        const { getByRole } = render(headerJsx);
-        expect(getByRole('brand-logo-lbl')).toBeTruthy();
+        const testComponent = TestRenderer.create(headerJsx);
+        const testComponentInstance = testComponent.root;
+        expect(testComponentInstance.findByProps({"size":"large","edge":"start","color":"inherit","aria-label":"menu"}).props.children).toEqual(' logo ');
     })
 
-    it('should display user account drop down for logged in user', ()=>{
-        const { getByRole } = render(headerJsx);
-        expect(getByRole('user-account-dpd')).toBeTruthy();
-    })
+    // it('should display user account drop down for logged in user', ()=>{
+    //     const { getByRole } = render(headerJsx);
+    //     expect(getByRole('user-account-dpd')).toBeTruthy();
+    // })
 
-    it('should display logged out button for logged in user', ()=>{
-        const { getByRole } = render(headerJsx);
-        expect(getByRole('user-account-dpd')).toBeTruthy();
-    })
+    // it('should display logged out button for logged in user', ()=>{
+    //     const { getByRole } = render(headerJsx);
+    //     expect(getByRole('user-account-dpd')).toBeTruthy();
+    // })
 
-    it('should display log in button for logged out user', ()=>{
+    // it('should display log in button for logged out user', ()=>{
 
-    })
+    // })
 
-    it('should display header with primary style', ()=>{
+    // it('should display header with primary style', ()=>{
 
-    })
+    // })
 
-    it('should display header with secondary style', ()=>{
+    // it('should display header with secondary style', ()=>{
 
-    })
+    // })
     
 })

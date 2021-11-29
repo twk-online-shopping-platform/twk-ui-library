@@ -28,6 +28,7 @@
     "postcss": "^8.3.11",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-test-renderer": "^17.0.2",
     "rollup": "^2.59.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.1",
@@ -44,9 +45,16 @@
     "build-storybook": "build-storybook",
     "build": "rollup -c",
     "test": "jest --env=jsdom",
+    "test-report": "jest --env=jsdom --coverage",
     "update-jest": "jest --updateSnapshot  --env=jsdom"
   },
   "files": [
     "/lib"
-  ]
+  ],
+  "dependencies": {
+    "@emotion/react": "^11.6.0",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.2.0",
+    "@mui/material": "^5.2.1"
+  }
 }

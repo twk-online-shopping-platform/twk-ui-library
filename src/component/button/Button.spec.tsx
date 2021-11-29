@@ -19,7 +19,6 @@ describe('Test Auth Webapp entry', function () {
         expect(screen.getByText('Click Me2')).toBeInTheDocument();
         expect(screen.getByText('Click Me2')).toHaveClass('open-proj-btn-white');
         expect(screen.getByText('Click Me2')).toHaveClass('open-proj-txt-red');
-
     })
    
 

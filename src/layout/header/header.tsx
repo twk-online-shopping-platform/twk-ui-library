@@ -27,9 +27,9 @@ export const Header = (props: HeaderProps) => {
                     role="header-search-fld"
                     sx={{ width: 300 }}
                     renderInput={() => {
-                        return (<TextField id="standard-basic" label="Standard" variant="standard" />)
+                        return (<TextField fullWidth label="fullWidth" id="fullWidth" />)
                     }} />
-                <Button variant='contained'>Search</Button>
+                <Button variant='outlined'>Search</Button>
             </Toolbar>
         </AppBar>
     </div>);

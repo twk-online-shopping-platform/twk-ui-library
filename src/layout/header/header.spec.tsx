@@ -37,7 +37,7 @@ describe('Test header',()=>{
         const testComponent = TestRenderer.create(headerJsx);
         const testComponentInstance = testComponent.root;
         expect(testComponentInstance.findByType(Autocomplete).props.options[0].label).toBe('The Godfather');
-        expect(testComponentInstance.findByType(Button).props.variant).toBe('contained');
+        expect(testComponentInstance.findByType(Button).props.variant).toBe('outlined');
         expect(testComponentInstance.findByType(Button).props.children).toEqual('Search');
     
     })

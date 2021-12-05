@@ -1,6 +1,5 @@
 import * as React from 'react';
-import * as renderer from 'react-test-renderer';
-import TestRenderer from 'react-test-renderer';
+import TestRenderer, { ReactTestInstance, ReactTestRenderer } from 'react-test-renderer';
 import { render, screen } from '@testing-library/react';
 import { Header } from './header';
 import { ReactNode, ReactElement } from 'react';
@@ -9,6 +8,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Autocomplete from '@mui/material/Autocomplete';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
 
 
@@ -16,7 +17,7 @@ describe('Test header',()=>{
     const headerJsx: ReactElement = <Header/>;
 
     it('should display header with default style', ()=>{
-        const headerComponent: any = renderer.create(headerJsx).toJSON();
+        const headerComponent: any = TestRenderer.create(headerJsx).toJSON();
         expect(headerComponent).toBeDefined();
         expect(headerComponent).toMatchSnapshot();
     })
@@ -34,7 +35,7 @@ describe('Test header',()=>{
             { label: 'Pulp Fiction', id: 2 },
           ];
         const headerJsx: ReactElement = <Header searchAutoComplateList= { ...options }/>;
-        const testComponent = TestRenderer.create(headerJsx);
+        const testComponent: ReactTestRenderer = TestRenderer.create(headerJsx);
         const testComponentInstance = testComponent.root;
         expect(testComponentInstance.findByType(Autocomplete).props.options[0].label).toBe('The Godfather');
         expect(testComponentInstance.findByType(Button).props.variant).toBe('outlined');
@@ -43,12 +44,34 @@ describe('Test header',()=>{
     })
 
     it('should display brand log', ()=>{
-        const testComponent = TestRenderer.create(headerJsx);
+        const testComponent: ReactTestRenderer = TestRenderer.create(headerJsx);
         const testComponentInstance = testComponent.root;
         expect(testComponentInstance.findByProps({"size":"large","edge":"start","color":"inherit","aria-label":"menu"}).props.children).toEqual(' logo ');
     })
 
-    // it('should display user account drop down for logged in user', ()=>{
+    const subMenueTestFun: Function = ()=>{
+
+    }
+
+    it('should display menu with two menu-item',()=>{
+        const menues:{ 'id': number , 'title': string, 'handler': Function }[] = [
+            {id:1,title:'sub1',handler:subMenueTestFun},
+            {id:2,title:'sub2',handler:subMenueTestFun},
+        ];
+        const headerJsx: ReactElement = <Header menuItems={menues}/>;
+        const testComponent = TestRenderer.create(headerJsx);
+        const testComponentInstance: ReactTestInstance = testComponent.root;
+        const testMenuInstance = testComponentInstance.findByType(Menu);
+        const testMenuItemInstance: ReactTestInstance[] = testComponentInstance.findAllByType(MenuItem);
+        expect(testMenuItemInstance.length).toBe(2);
+    })
+  
+
+    // it('should display log in button for logged out user', ()=>{
+        
+    // })
+
+      // it('should display user account drop down for logged in user', ()=>{
     //     const { getByRole } = render(headerJsx);
     //     expect(getByRole('user-account-dpd')).toBeTruthy();
     // })
@@ -56,10 +79,6 @@ describe('Test header',()=>{
     // it('should display logged out button for logged in user', ()=>{
     //     const { getByRole } = render(headerJsx);
     //     expect(getByRole('user-account-dpd')).toBeTruthy();
-    // })
-
-    // it('should display log in button for logged out user', ()=>{
-
     // })
 
     // it('should display header with primary style', ()=>{

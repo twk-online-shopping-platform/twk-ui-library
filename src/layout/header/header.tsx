@@ -9,31 +9,84 @@ import IconButton from '@mui/material/IconButton';
 import Box from '@mui/material/Box'
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { ReactElement } from 'react';
+import { MouseEventHandler, ReactElement, ReactNode } from 'react';
+import { NumbersRounded } from '@mui/icons-material';
 
-interface HeaderProps {
+export interface HeaderProps {
     searchAutoComplateList?: { label: string; id: number; }[],
-    menuItems?: { 'id': number , 'title': string, 'handler': Function }[]
+    menus?: MenuItemProps[]
+}
+export interface MenuItemProps {
+    menuDetail: { 'id': number, 'title': string, 'handler': MouseEventHandler, 'menuItems'?: MenuItemProps[] }
 }
 
-function MenuItemComponentList(props: HeaderProps){
-    const menuItemComponent: Array<ReactElement> = [];
-    if (props.menuItems && props.menuItems.length > 0) {
-        props.menuItems.map((item) => <MenuItem key={item.id}>{item.title}</MenuItem>)
-    }
-    console.log('nums', menuItemComponent);
-    return (<div>
-        {menuItemComponent}
-    </div>);
-}
-
-export const Header = (props: HeaderProps) => {
+export function MenuItemComponentList(props: MenuItemProps): ReactElement | null {
     const [anchorEl,] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
-    const menuList = props.menuItems? <MenuItemComponentList menuItems={props.menuItems} /> : null;
 
+    if (props.menuDetail.menuItems && props.menuDetail.menuItems.length > 0) {
+        let menuItemComponent: Array<ReactElement> = [];
+        menuItemComponent = props.menuDetail.menuItems.map((item) => {
+            // if (item.menuDetail.menuItems && item.menuDetail.menuItems.length > 0) {
+            //     return (
+            //         <div>
+            //             <MenuComponent key={item.menuDetail.id} handler={item.menuDetail.handler} title={item.menuDetail.title} />
+            //             <MenuItemComponentList key={item.menuDetail.id} menuDetail={item.menuDetail} />
+            //         </div>
+            //     );
+            // } else {
+            return <MenuItem onClick={item.menuDetail.handler} key={item.menuDetail.id}>{item.menuDetail.title}</MenuItem>;
+            // }
+        });
+        console.log('nums', props.menuDetail.title + " : " + menuItemComponent.length);
+        console.log('nums', menuItemComponent[1].props);
+        return (
+            <Menu data-testid="basic-menu"
+                open={open}>
+                  <MenuItem>test</MenuItem>;
+            </Menu>
+        );
+    } else {
+        return null;
+    }
+}
 
-    return ( <div data-testid='app-header'>
+export function MenuComponent(props: { 'id': number , 'title': string, 'handler': MouseEventHandler }) {
+    return (
+        <Button
+            data-testid={"menu-lbl-"+props.id}
+            aria-haspopup="true"
+            onClick={props.handler}
+        > {props.title}
+        </Button>
+    );
+}
+
+export function MenuComponents(props: HeaderProps): ReactElement | null {
+    let menuListComponent: Array<ReactElement> = [];
+
+    if (props.menus && props.menus.length > 0) {
+        menuListComponent = props.menus.map((item) => {
+            return (
+                <div>
+                    <MenuComponent id={item.menuDetail.id} key={item.menuDetail.id} handler={item.menuDetail.handler} title={item.menuDetail.title} />
+                    <MenuItemComponentList key={item.menuDetail.id} menuDetail={item.menuDetail} />
+                </div>
+            );
+        });
+        return (
+            <div>
+                {menuListComponent}
+            </div>
+        );
+    } else {
+        return null;
+    }
+}
+export const Header = (props: HeaderProps) => {
+   
+
+    return (<div data-testid='app-header'>
         <Box>
             <AppBar position='fixed'>
                 <Toolbar>
@@ -51,15 +104,8 @@ export const Header = (props: HeaderProps) => {
                         renderInput={() => {
                             return (<TextField fullWidth label="fullWidth" id="fullWidth" />)
                         }} />
-                    <Button variant='outlined'>Search</Button>
-                    {props.menuItems && props.menuItems.length > 0 &&
-                        <Menu
-                            id="basic-menu"
-                            anchorEl={anchorEl}
-                            open={open}>
-                            {menuList}
-                        </Menu>
-                    }
+                    <Button data-testid='search-btn' variant='outlined'>Search</Button>
+                    <MenuComponents menus={props.menus} />
                 </Toolbar>
             </AppBar>
         </Box>

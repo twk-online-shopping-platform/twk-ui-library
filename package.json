@@ -46,7 +46,7 @@
     "build": "rollup -c",
     "test": "jest --env=jsdom",
     "test-report": "jest --env=jsdom --coverage",
-    "update-jest": "jest --updateSnapshot  --env=jsdom"
+    "update-test": "jest --updateSnapshot  --env=jsdom"
   },
   "files": [
     "/lib"

@@ -88,6 +88,7 @@ exports[`Test header should display header with default style 1`] = `
         </div>
         <button
           className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root  css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+          data-testid="search-btn"
           disabled={false}
           onBlur={[Function]}
           onContextMenu={[Function]}

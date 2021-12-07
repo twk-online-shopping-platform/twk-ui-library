@@ -60,6 +60,7 @@ describe('Test header', () => {
         const testComponent = TestRenderer.create(headerJsx);
         const testComponentInstance: ReactTestInstance = testComponent.root;
         const testMenuInstance = testComponentInstance.findByType(MenuComponents);
+        expect(testMenuInstance).toBeTruthy();
         const testMenuInstances: ReactTestInstance[] = testComponentInstance.findAllByType(MenuLableComponent);
         expect(testMenuInstances.length).toBe(2);
     })

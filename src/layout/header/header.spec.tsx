@@ -15,8 +15,13 @@ import { MenuLableComponent, MenuComponents, MenuItemProps } from './menu-util';
 
 
 describe('Test header', () => {
-    const subMenueTestFun: MouseEventHandler = () => { }
-    const headerJsx: ReactElement = <Header />;
+    const options = [
+        { label: 'The Godfather', id: 1 },
+        { label: 'Pulp Fiction', id: 2 },
+    ];
+    const headerJsx: ReactElement = <Header searchAutoComplateList={...options} />;
+    const testComponent: ReactTestRenderer = TestRenderer.create(headerJsx);
+    const testComponentInstance = testComponent.root;
 
     it('should display header with default style', () => {
         const headerComponent: TestRenderer.ReactTestRendererJSON | TestRenderer.ReactTestRendererJSON[] | null = TestRenderer.create(headerJsx).toJSON();
@@ -25,20 +30,12 @@ describe('Test header', () => {
     })
 
     it('should display main bar', () => {
-        const testComponent = TestRenderer.create(headerJsx);
-        const testComponentInstance = testComponent.root;
         expect(testComponentInstance.findByType(AppBar).props.position).toBe('fixed');
         expect(testComponentInstance.findByType(Toolbar)).toBeTruthy();
     })
 
     it('should display search bar', () => {
-        const options = [
-            { label: 'The Godfather', id: 1 },
-            { label: 'Pulp Fiction', id: 2 },
-        ];
-        const headerJsx: ReactElement = <Header searchAutoComplateList={...options} />;
-        const testComponent: ReactTestRenderer = TestRenderer.create(headerJsx);
-        const testComponentInstance = testComponent.root;
+
         expect(testComponentInstance.findByType(Autocomplete).props.options[0].label).toBe('The Godfather');
         expect(testComponentInstance.findByType(Button).props.variant).toBe('outlined');
         expect(testComponentInstance.findByType(Button).props.children).toEqual('Search');
@@ -46,10 +43,36 @@ describe('Test header', () => {
     })
 
     it('should display brand log', () => {
-        const testComponent: ReactTestRenderer = TestRenderer.create(headerJsx);
-        const testComponentInstance = testComponent.root;
         expect(testComponentInstance.findByProps({ "size": "large", "edge": "start", "color": "inherit", "aria-label": "menu" }).props.children).toEqual(' logo ');
     })
+
+
+    // it('should display log in button for logged out user', ()=>{
+
+    // })
+
+    // it('should display user account drop down for logged in user', ()=>{
+    //     const { getByRole } = render(headerJsx);
+    //     expect(getByRole('user-account-dpd')).toBeTruthy();
+    // })
+
+    // it('should display logged out button for logged in user', ()=>{
+    //     const { getByRole } = render(headerJsx);
+    //     expect(getByRole('user-account-dpd')).toBeTruthy();
+    // })
+
+    // it('should display header with primary style', ()=>{
+
+    // })
+
+    // it('should display header with secondary style', ()=>{
+
+    // })
+
+})
+
+describe('Test header Menu ', () => {
+    const subMenueTestFun: MouseEventHandler = () => { }
 
     it('should display menu with 2 menu', () => {
         const menues: MenuItemProps[] = [
@@ -90,28 +113,4 @@ describe('Test header', () => {
         fireEvent.click(menu2SubItem);
         expect(menue2ClickFun).toHaveBeenCalledTimes(1);
     })
-
-
-    // it('should display log in button for logged out user', ()=>{
-
-    // })
-
-    // it('should display user account drop down for logged in user', ()=>{
-    //     const { getByRole } = render(headerJsx);
-    //     expect(getByRole('user-account-dpd')).toBeTruthy();
-    // })
-
-    // it('should display logged out button for logged in user', ()=>{
-    //     const { getByRole } = render(headerJsx);
-    //     expect(getByRole('user-account-dpd')).toBeTruthy();
-    // })
-
-    // it('should display header with primary style', ()=>{
-
-    // })
-
-    // it('should display header with secondary style', ()=>{
-
-    // })
-
 })

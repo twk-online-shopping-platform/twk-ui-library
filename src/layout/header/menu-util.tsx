@@ -31,8 +31,7 @@ export function MenuItemComponentList(props: MenuProps): React.ReactElement | nu
     }
 }
 
-
-export function MenuLableComponent(props: { 'id': number, 'title': string, 'handleClick': MouseEventHandler }) {
+export function MenuLableComponent(props: { 'id': number | string, 'title': string, 'handleClick': MouseEventHandler }) {
     return (
         <Button
             data-testid={"menu-lbl-" + props.id}
@@ -60,7 +59,7 @@ export function MenuWrapper(props: MenuItemProps) {
     return (
         <div>
             <MenuLableComponent id={props.menuDetail.id} key={props.menuDetail.id} handleClick={handleClick} title={props.menuDetail.title} />
-            <MenuItemComponentList key={props.menuDetail.id} menuDetail={menuDetail} handleClose={handleClose} />
+            <MenuItemComponentList key={'menu-comp-key-'+props.menuDetail.id} menuDetail={menuDetail} handleClose={handleClose} />
         </div>
     );
 }
@@ -70,7 +69,7 @@ export function MenuComponents(props: HeaderProps): React.ReactElement | null {
 
     if (props.menus && props.menus.length > 0) {
         menuListComponent = props.menus.map((item) => {
-            return <MenuWrapper menuDetail={item.menuDetail} />
+            return <MenuWrapper key={'menu-'+item.menuDetail.id} menuDetail={item.menuDetail} />
         });
         return (
             <div data-testid='menu-components'>

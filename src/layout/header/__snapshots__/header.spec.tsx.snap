@@ -33,6 +33,9 @@ exports[`Test header should display header with default style 1`] = `
           type="button"
         >
            logo 
+          <span
+            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
         </button>
         <div
           aria-expanded={false}
@@ -106,6 +109,9 @@ exports[`Test header should display header with default style 1`] = `
           type="button"
         >
           Search
+          <span
+            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
         </button>
       </div>
     </header>

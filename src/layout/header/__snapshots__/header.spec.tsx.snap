@@ -41,10 +41,11 @@ exports[`Test header should display header with default style 1`] = `
           aria-expanded={false}
           aria-owns={null}
           className="MuiAutocomplete-root MuiAutocomplete-hasPopupIcon css-viou3o-MuiAutocomplete-root"
+          data-testid="header-search-fld"
           onClick={[Function]}
           onKeyDown={[Function]}
           onMouseDown={[Function]}
-          role="header-search-fld"
+          role="combobox"
         >
           <div
             className="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
@@ -109,6 +110,30 @@ exports[`Test header should display header with default style 1`] = `
           type="button"
         >
           Search
+          <span
+            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+        <button
+          className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root  css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+          data-testid="login-btn"
+          disabled={false}
+          onBlur={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Login
           <span
             className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
           />

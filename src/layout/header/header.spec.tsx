@@ -11,6 +11,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import '@testing-library/jest-dom/extend-expect';
 import { MenuLableComponent, MenuComponents, MenuItemProps } from './menu-util';
+import { AuthProps } from './auth-controller';
 
 
 
@@ -34,22 +35,42 @@ describe('Test header', () => {
         expect(testComponentInstance.findByType(Toolbar)).toBeTruthy();
     })
 
-    it('should display search bar', () => {
-
-        expect(testComponentInstance.findByType(Autocomplete).props.options[0].label).toBe('The Godfather');
-        expect(testComponentInstance.findByType(Button).props.variant).toBe('outlined');
-        expect(testComponentInstance.findByType(Button).props.children).toEqual('Search');
-
-    })
 
     it('should display brand log', () => {
         expect(testComponentInstance.findByProps({ "size": "large", "edge": "start", "color": "inherit", "aria-label": "menu" }).props.children).toEqual(' logo ');
     })
 
+})
 
-    // it('should display log in button for logged out user', ()=>{
+describe('Test user authentication controller', () => {
+    const headerJsx: ReactElement = <Header />;
 
-    // })
+    it('should display search bar', () => {
+        render(headerJsx);
+        expect(screen.getByTestId('header-search-fld')).toBeTruthy();
+        expect(screen.getByTestId('search-btn')).toBeTruthy();
+        expect(screen.getByTestId('search-btn')).toHaveTextContent('Search');
+
+    })
+
+    it('should display login button', () => {
+        render(headerJsx);
+        expect(screen.getByTestId('login-btn')).toBeTruthy();
+        expect(screen.getByTestId('login-btn')).toHaveTextContent('Login');
+    })
+
+    it('should display logout button', () => {
+        const testData: AuthProps = {
+            userData: {
+                id: '12313test12f3',
+                name: 'kina'
+            }
+        };
+        const headerJsx: ReactElement = <Header userData={testData.userData} />;
+        render(headerJsx);
+        expect(screen.getByTestId('logout-btn')).toBeTruthy();
+        expect(screen.getByTestId('logout-btn')).toHaveTextContent('Logout');
+    })
 
     // it('should display user account drop down for logged in user', ()=>{
     //     const { getByRole } = render(headerJsx);
@@ -60,15 +81,6 @@ describe('Test header', () => {
     //     const { getByRole } = render(headerJsx);
     //     expect(getByRole('user-account-dpd')).toBeTruthy();
     // })
-
-    // it('should display header with primary style', ()=>{
-
-    // })
-
-    // it('should display header with secondary style', ()=>{
-
-    // })
-
 })
 
 describe('Test header Menu ', () => {

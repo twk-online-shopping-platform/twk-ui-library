@@ -11,10 +11,12 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { MouseEventHandler, ReactElement, ReactNode } from 'react';
 import { MenuComponents, MenuItemProps } from './menu-util'
+import { AuthController, AuthProps, UserProps } from './auth-controller';
 
 export interface HeaderProps {
     searchAutoComplateList?: { label: string; id: number; }[],
-    menus?: MenuItemProps[]
+    menus?: MenuItemProps[],
+    userData?: UserProps
 }
 
 export const Header = (props: HeaderProps) => {
@@ -32,13 +34,14 @@ export const Header = (props: HeaderProps) => {
                     <Autocomplete
                         options={props.searchAutoComplateList == null ? [] : props.searchAutoComplateList}
                         disablePortal
-                        role="header-search-fld"
+                        data-testid="header-search-fld"
                         sx={{ width: 300 }}
                         renderInput={() => {
                             return (<TextField fullWidth label="fullWidth" id="fullWidth" />)
                         }} />
                     <Button data-testid='search-btn' variant='outlined'>Search</Button>
                     <MenuComponents menus={props.menus} />
+                    { props.userData != undefined ? <AuthController userData={props.userData} /> : <AuthController /> }
                 </Toolbar>
             </AppBar>
         </Box>

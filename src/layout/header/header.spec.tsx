@@ -42,7 +42,7 @@ describe('Test header', () => {
 
 })
 
-describe('Test user authentication controller', () => {
+describe('Test User Authentication Controller', () => {
     const headerJsx: ReactElement = <Header />;
 
     it('should display search bar', () => {
@@ -59,7 +59,7 @@ describe('Test user authentication controller', () => {
         expect(screen.getByTestId('login-btn')).toHaveTextContent('Login');
     })
 
-    it('should display logout button', () => {
+    it('should display user account drop down for logged in user', ()=>{
         const testData: AuthProps = {
             userData: {
                 id: '12313test12f3',
@@ -68,19 +68,15 @@ describe('Test user authentication controller', () => {
         };
         const headerJsx: ReactElement = <Header userData={testData.userData} />;
         render(headerJsx);
+        const accountBtn:HTMLElement = screen.getByTestId('user-account-btn');
+        expect(accountBtn).toBeTruthy();
+        fireEvent.click(accountBtn);
+        expect(screen.getByTestId('user-account-dpd')).toBeTruthy();
+        expect(screen.getByTestId('user-account-avt')).toBeTruthy();
         expect(screen.getByTestId('logout-btn')).toBeTruthy();
-        expect(screen.getByTestId('logout-btn')).toHaveTextContent('Logout');
+
+
     })
-
-    // it('should display user account drop down for logged in user', ()=>{
-    //     const { getByRole } = render(headerJsx);
-    //     expect(getByRole('user-account-dpd')).toBeTruthy();
-    // })
-
-    // it('should display logged out button for logged in user', ()=>{
-    //     const { getByRole } = render(headerJsx);
-    //     expect(getByRole('user-account-dpd')).toBeTruthy();
-    // })
 })
 
 describe('Test header Menu ', () => {

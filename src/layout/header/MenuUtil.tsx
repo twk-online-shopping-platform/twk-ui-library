@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { MenuItem, Menu, Button } from '@mui/material';
 import { MouseEventHandler } from 'react';
-import { HeaderProps } from './header';
+import { HeaderProps } from './Header';
 
 export interface MenuItemProps {
     menuDetail: { 'id': number, 'title': string, 'open'?: boolean, 'handler': MouseEventHandler, 'menuItems'?: MenuItemProps[] }

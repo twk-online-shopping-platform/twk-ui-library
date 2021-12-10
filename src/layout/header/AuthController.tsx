@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button } from '@mui/material';
-import { UserInfoDropDown } from './user-dropdown';
+import { UserInfoDropDown } from './UserDropdown';
 
 export interface AuthProps{
     'userData'?: UserProps

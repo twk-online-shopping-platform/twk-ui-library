@@ -1,14 +1,13 @@
 import * as React from 'react';
 import TestRenderer, { ReactTestInstance, ReactTestRenderer } from 'react-test-renderer';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { Header } from './header';
+import Header from './Header';
 import { ReactElement, MouseEventHandler } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import '@testing-library/jest-dom/extend-expect';
-import { MenuLableComponent, MenuComponents, MenuItemProps } from './menu-util';
-import { AuthProps } from './auth-controller';
-
+import { MenuLableComponent, MenuComponents, MenuItemProps } from './MenuUtil';
+import { AuthProps } from './AuthController';
 
 
 describe('Test header', () => {
@@ -38,7 +37,7 @@ describe('Test header', () => {
 
 })
 
-describe('Test User Authentication Controller', () => {
+describe('Test User Authentication Controller and Search Field', () => {
     const headerJsx: ReactElement = <Header />;
 
     it('should display search bar', () => {

@@ -1,5 +1,5 @@
-import * as React from 'react';
-import './header.css';
+import React from 'react';
+import './Header.css';
 import AppBar from '@mui/material/AppBar';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
@@ -7,11 +7,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Box from '@mui/material/Box'
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import { MouseEventHandler, ReactElement, ReactNode } from 'react';
-import { MenuComponents, MenuItemProps } from './menu-util'
-import { AuthController, AuthProps, UserProps } from './auth-controller';
+import { MenuComponents, MenuItemProps } from './MenuUtil'
+import { AuthController, UserProps } from './AuthController';
 
 export interface HeaderProps {
     searchAutoComplateList?: { label: string; id: number; }[],
@@ -19,7 +16,7 @@ export interface HeaderProps {
     userData?: UserProps
 }
 
-export const Header = (props: HeaderProps) => {
+const Header = (props: HeaderProps) => {
 
     return (<div data-testid='app-header'>
         <Box>
@@ -47,3 +44,5 @@ export const Header = (props: HeaderProps) => {
         </Box>
     </div>);
 }
+
+export default Header;

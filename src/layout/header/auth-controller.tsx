@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button } from '@mui/material';
-import { HeaderProps } from './header';
+import { UserInfoDropDown } from './user-dropdown';
 
 export interface AuthProps{
     'userData'?: UserProps
@@ -11,7 +11,7 @@ export interface UserProps{
 export const AuthController = (props: AuthProps ) => {
     if(props.userData){
         return(
-            <Button data-testid='logout-btn' variant='outlined'>Logout</Button>
+            <UserInfoDropDown/>
         );
     }else{
         return(

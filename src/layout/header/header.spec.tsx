@@ -70,8 +70,6 @@ describe('Test User Authentication Controller', () => {
         expect(screen.getByTestId('user-account-dpd')).toBeTruthy();
         expect(screen.getByTestId('user-account-avt')).toBeTruthy();
         expect(screen.getByTestId('logout-btn')).toBeTruthy();
-
-
     })
 })
 

@@ -8,6 +8,7 @@ import Toolbar from '@mui/material/Toolbar';
 import '@testing-library/jest-dom/extend-expect';
 import { MenuLableComponent, MenuComponents, MenuItemProps } from './MenuUtil';
 import { AuthProps } from './AuthController';
+import userEvent from '@testing-library/user-event';
 
 
 describe('Test header', () => {
@@ -38,23 +39,31 @@ describe('Test header', () => {
 })
 
 describe('Test User Authentication Controller and Search Field', () => {
-    const headerJsx: ReactElement = <Header />;
 
     it('should display search bar', () => {
+        const searchFieldChangeHanlder = jest.fn();
+        const headerJsx: ReactElement = <Header searchFieldHandler={searchFieldChangeHanlder} />;
         render(headerJsx);
-        expect(screen.getByTestId('header-search-fld')).toBeTruthy();
+        const searchField: HTMLInputElement = screen.getByTestId('header-search-fld')
+        expect(searchField).toBeTruthy();
+        expect(searchField).toHaveValue('');
+        const testText: string = 'search test value';
+        fireEvent.change(searchField, {target: {value: testText}});
+        expect(searchFieldChangeHanlder).toHaveBeenCalledTimes(1);
+        expect(searchField).toHaveValue(testText);
         expect(screen.getByTestId('search-btn')).toBeTruthy();
         expect(screen.getByTestId('search-btn')).toHaveTextContent('Search');
 
     })
 
     it('should display login button', () => {
+        const headerJsx: ReactElement = <Header />;
         render(headerJsx);
         expect(screen.getByTestId('login-btn')).toBeTruthy();
         expect(screen.getByTestId('login-btn')).toHaveTextContent('Login');
     })
 
-    it('should display user account drop down for logged in user', ()=>{
+    it('should display user account drop down for logged in user', () => {
         const testData: AuthProps = {
             userData: {
                 id: '12313test12f3',
@@ -63,7 +72,7 @@ describe('Test User Authentication Controller and Search Field', () => {
         };
         const headerJsx: ReactElement = <Header userData={testData.userData} />;
         render(headerJsx);
-        const accountBtn:HTMLElement = screen.getByTestId('user-account-btn');
+        const accountBtn: HTMLElement = screen.getByTestId('user-account-btn');
         expect(accountBtn).toBeTruthy();
         fireEvent.click(accountBtn);
         expect(screen.getByTestId('user-account-dpd')).toBeTruthy();

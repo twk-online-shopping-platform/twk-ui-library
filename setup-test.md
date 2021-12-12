@@ -2,6 +2,7 @@
 * https://github.com/testing-library/jest-dom
 * yarn add --dev jest ts-jest  @types/jest //install jest
 * yarn add --dev @types/react-test-renderer @testing-library/react react-test-renderer
+* yarn add --dev @testing-library/user-event @testing-library/dom
 * yarn add --dev @testing-library/jest-dom // to get toHaveTextContent and other jest matchers
   * add import '@testing-library/jest-dom/extend-expect'; to every test component
 * package.json

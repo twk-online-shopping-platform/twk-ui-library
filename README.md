@@ -25,4 +25,4 @@ To use the font Icon component, you must first add the Material icons font. Here
 <link
   rel="stylesheet"
   href="https://fonts.googleapis.com/icon?family=Material+Icons"
-/
+/>

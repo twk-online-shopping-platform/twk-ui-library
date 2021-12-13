@@ -27,8 +27,8 @@ export const UserInfoDropDown = (props: any) => {
     const open = Boolean(anchorEl);
     const id = open ? 'auth-popover' : undefined;
     return (<div>
-        <Button data-testid='user-account-btn' aria-describedby={id} variant="contained" onClick={handleClick}>
-            <Avatar data-testid='user-account-avt' >H</Avatar> Handakina
+        <Button data-testid='user-account-btn' aria-describedby={id} variant="outlined" onClick={handleClick}>
+            <Avatar data-testid='user-account-avt' >HF</Avatar>
         </Button>
         <Popover
             data-testid='user-account-dpd'
@@ -38,7 +38,7 @@ export const UserInfoDropDown = (props: any) => {
             onClose={handleClose}
             anchorOrigin={{
                 vertical: 'bottom',
-                horizontal: 'left',
+                horizontal: 'right',
             }}>
             <List sx={style} component="nav" aria-label="mailbox folders">
                 <ListItem button>

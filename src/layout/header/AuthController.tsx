@@ -15,7 +15,7 @@ export const AuthController = (props: AuthProps ) => {
         );
     }else{
         return(
-            <Button data-testid='login-btn' variant='outlined'>Login</Button>
+            <Button data-testid='login-btn' variant='contained'>Login</Button>
         );
     }
 }

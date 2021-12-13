@@ -40,19 +40,24 @@ describe('Test header', () => {
 
 describe('Test User Authentication Controller and Search Field', () => {
 
+
     it('should display search bar', () => {
         const searchFieldChangeHanlder = jest.fn();
-        const headerJsx: ReactElement = <Header searchFieldHandler={searchFieldChangeHanlder} />;
+        const searchClickHanlder = jest.fn();
+        const headerJsx: ReactElement = <Header search={{ searchFieldHandler: searchFieldChangeHanlder, submitHanlder: searchClickHanlder }} />;
         render(headerJsx);
-        const searchField: HTMLInputElement = screen.getByTestId('header-search-fld')
+        const searchField: HTMLInputElement = screen.getByPlaceholderText('search')
         expect(searchField).toBeTruthy();
         expect(searchField).toHaveValue('');
         const testText: string = 'search test value';
-        fireEvent.change(searchField, {target: {value: testText}});
+        fireEvent.change(searchField, { target: { value: testText } });
         expect(searchFieldChangeHanlder).toHaveBeenCalledTimes(1);
         expect(searchField).toHaveValue(testText);
-        expect(screen.getByTestId('search-btn')).toBeTruthy();
-        expect(screen.getByTestId('search-btn')).toHaveTextContent('Search');
+        const searchBtn: HTMLElement = screen.getByTestId('search-btn');
+        expect(searchBtn).toBeTruthy();
+        expect(searchBtn).toHaveTextContent('Search');
+        fireEvent.click(searchBtn);
+        expect(searchClickHanlder).toBeCalledTimes(1);
 
     })
 

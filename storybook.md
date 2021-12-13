@@ -1,26 +1,46 @@
 
+# storybook setup guid
+* https://blog.harveydelaney.com/creating-your-own-react-component-library/    
+* yarn add --dev @storybook/addon-postcss
+* yarn add --dev babel-preset-react-app
+* yarn add --dev storybook-addon-material-ui
+* yarn add --dev @material-ui/core
+* /.storybook/main.js
+  ```
+  module.exports = {
+  const path = require("path");
 
-https://blog.harveydelaney.com/creating-your-own-react-component-library/    
+  module.exports = {
+    stories: ["../src/**/*.stories.tsx"],
+    // Add any Storybook addons you want here: https://storybook.js.org/addons/
+    addons: [
+      'storybook-addon-material-ui'
+    ],
+    webpackFinal: async (config) => {
+      config.module.rules.push({
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
+        include: path.resolve(__dirname, "../")
+      });
 
-yarn add --dev @storybook/addon-postcss
+      config.module.rules.push({
+        test: /\.(ts|tsx)$/,
+        loader: require.resolve("babel-loader"),
+        options: {
+          presets: [["react-app", { flow: false, typescript: true }]]
+        }
+      });
+      config.resolve.extensions.push(".ts", ".tsx");
 
-yarn add --dev babel-preset-react-app
+      return config;
+    }
+  };
+  ```
+* //.storybook/preview.js
+  ```
+  import { muiTheme } from 'storybook-addon-material-ui'
 
-yarn add --dev storybook-addon-material-ui
-
-yarn add --dev @material-ui/core
-
-/.storybook/main.js
-module.exports = {
-  stories: ['../stories/**/*.stories.(js|mdx)'],
-  addons: [
-    'storybook-addon-material-ui'
-  ],
-};
-
-//.storybook/preview.js
-import { muiTheme } from 'storybook-addon-material-ui'
-
-export const decorators = [
-	muiTheme()
-];
+  export const decorators = [
+    muiTheme()
+  ];
+  ```

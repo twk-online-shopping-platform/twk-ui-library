@@ -1,17 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Test header should display header with default style 1`] = `
-<div
+<header
+  className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-ovxhhr-MuiPaper-root-MuiAppBar-root"
   data-testid="app-header"
 >
   <div
-    className="MuiBox-root css-0"
+    className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-1t29gy6-MuiToolbar-root"
   >
-    <header
-      className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-11b3ww9-MuiPaper-root-MuiAppBar-root"
+    <div
+      className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-[object Object] css-1dahn2m-MuiGrid-root"
     >
       <div
-        className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-1t29gy6-MuiToolbar-root"
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-md-2 css-1qm2d6f-MuiGrid-root"
       >
         <button
           aria-label="menu"
@@ -37,81 +38,72 @@ exports[`Test header should display header with default style 1`] = `
             className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
           />
         </button>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-md-3 css-lkmqfc-MuiGrid-root"
+      >
         <div
-          className="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"
+          className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-undefined css-11lq3yg-MuiGrid-root"
         >
-          <label
-            className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-required css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
-            data-shrink={false}
-          >
-            search
-            <span
-              aria-hidden={true}
-              className="MuiInputLabel-asterisk MuiFormLabel-asterisk css-wgai2y-MuiFormLabel-asterisk"
-            >
-               
-              *
-            </span>
-          </label>
           <div
-            className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-md26zr-MuiInputBase-root-MuiOutlinedInput-root"
-            onClick={[Function]}
+            className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
           >
-            <input
-              aria-invalid={false}
-              autoFocus={false}
-              className="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputTypeSearch css-1g24dm6-MuiInputBase-input-MuiOutlinedInput-input"
-              data-testid="header-search-fld"
-              disabled={false}
-              onAnimationStart={[Function]}
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              required={true}
-              type="search"
-              value=""
-            />
-            <fieldset
-              aria-hidden={true}
-              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+            <div
+              className="MuiInput-root"
+              onClick={[Function]}
             >
-              <legend
-                className="css-173wfxe"
-              >
-                <span>
-                  search
-                   *
-                </span>
-              </legend>
-            </fieldset>
+              <input
+                className="MuiInput-input css-1fqwrpr"
+                disabled={false}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                placeholder="search"
+                required={true}
+                type="search"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+          >
+            <button
+              className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-sghohy-MuiButtonBase-root-MuiButton-root"
+              data-testid="search-btn"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Search
+              <span
+                className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
           </div>
         </div>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-md-6 css-tn5ix5-MuiGrid-root"
+      />
+      <div
+        className="MuiGrid-root MuiGrid-item MuiGrid-grid-md-1 css-ndm3qg-MuiGrid-root"
+      >
         <button
           className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-sghohy-MuiButtonBase-root-MuiButton-root"
-          data-testid="search-btn"
-          disabled={false}
-          onBlur={[Function]}
-          onContextMenu={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          Search
-          <span
-            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-          />
-        </button>
-        <button
-          className="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root  css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
           data-testid="login-btn"
           disabled={false}
           onBlur={[Function]}
@@ -135,7 +127,7 @@ exports[`Test header should display header with default style 1`] = `
           />
         </button>
       </div>
-    </header>
+    </div>
   </div>
-</div>
+</header>
 `;

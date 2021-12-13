@@ -36,4 +36,4 @@ storiesOf('HeaderStory', module)
   .addDecorator(muiTheme())
   .add('MainHeader', () => (<Header search={{ searchFieldHandler: searchFeildChangeHanlder, submitHanlder: searchClickHanlder }}/>))
   .add('MainHeaderWithMenu', () => (<Header menus={menus} search={{ searchFieldHandler: searchFeildChangeHanlder, submitHanlder: searchClickHanlder }} />))
-  .add('MainHeaderWithUser', () => (<Header menus={menus} search={{ searchFieldHandler: searchFeildChangeHanlder, submitHanlder: searchClickHanlder }} />));
+  .add('MainHeaderWithUser', () => (<Header menus={menus} userData={testData.userData} search={{ searchFieldHandler: searchFeildChangeHanlder, submitHanlder: searchClickHanlder }} />));

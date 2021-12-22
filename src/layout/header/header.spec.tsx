@@ -103,6 +103,7 @@ describe('Test header Menu ', () => {
         expect(testMenuInstances.length).toBe(2);
     })
 
+    //To-Do fix this test
     it('should display menu with 1 menu without menu-item 1 menu with 3 menu-item', () => {
         const menue2ClickFun: MouseEventHandler = jest.fn();
 
@@ -125,7 +126,8 @@ describe('Test header Menu ', () => {
         fireEvent.click(menu2Button);
         const menu2SubItem: HTMLElement = getByTestId('menu-item-2-2');
         expect(menu2SubItem).toBeTruthy();
-        fireEvent.click(menu2SubItem);
+        expect(menu2SubItem).toBeVisible();
+        userEvent.click(menu2SubItem);
         expect(menue2ClickFun).toHaveBeenCalledTimes(1);
     })
 })

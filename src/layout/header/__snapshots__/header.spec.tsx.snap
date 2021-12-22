@@ -2,7 +2,7 @@
 
 exports[`Test header should display header with default style 1`] = `
 <header
-  className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-ovxhhr-MuiPaper-root-MuiAppBar-root"
+  className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-1i26jc6-MuiPaper-root-MuiAppBar-root"
   data-testid="app-header"
 >
   <div
@@ -69,7 +69,7 @@ exports[`Test header should display header with default style 1`] = `
             className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
           >
             <button
-              className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-sghohy-MuiButtonBase-root-MuiButton-root"
+              className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-1wg93iq-MuiButtonBase-root-MuiButton-root"
               data-testid="search-btn"
               disabled={false}
               onBlur={[Function]}
@@ -103,7 +103,7 @@ exports[`Test header should display header with default style 1`] = `
         className="MuiGrid-root MuiGrid-item MuiGrid-grid-md-1 css-ndm3qg-MuiGrid-root"
       >
         <button
-          className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-sghohy-MuiButtonBase-root-MuiButton-root"
+          className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root  css-1wg93iq-MuiButtonBase-root-MuiButton-root"
           data-testid="login-btn"
           disabled={false}
           onBlur={[Function]}

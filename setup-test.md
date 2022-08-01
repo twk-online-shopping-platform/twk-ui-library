@@ -1,4 +1,4 @@
-## add  Puppeteer + jest + enzyme to react project
+## add Puppeteer + jest + enzyme to react project
 * https://github.com/testing-library/jest-dom
 * yarn add --dev jest ts-jest  @types/jest //install jest
 * yarn add --dev @types/react-test-renderer @testing-library/react react-test-renderer

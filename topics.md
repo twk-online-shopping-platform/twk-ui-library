@@ -8,3 +8,20 @@ https://medium.com/wesionary-team/react-testing-library-vs-enzyme-afd29db380ac
     - Puppeteer -> integration testing
     - React
     - materail ui
+
+*** 
+## Aug 1 2022
+### Topics
+- how to setup rollup
+- how to setup typescript
+- how to setup storybook
+- how to setup jest and enzyme 
+- creating login component 
+### Asignment
+- fix header component based on your design
+***
+## next topics
+- creating signup, container/body and footer compoents(with test included)
+- setting up pipleline for aws infrastracture
+- setting up terraform for s3 and cloud front for storybook deployment
+- 

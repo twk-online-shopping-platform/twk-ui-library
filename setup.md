@@ -1,15 +1,19 @@
 # setting up storybook
+## Links
+- https://storybook.js.org/tutorials/intro-to-storybook/react/en/get-started/
+- https://rollupjs.org/guide/en/
+- https://www.typescriptlang.org/docs/handbook/react.html
 ## steps setting storybook with rollup
-* yarn init
-* yarn add --dev react react-dom @types/react typescript
-* package.json
+* run: yarn init
+* run: yarn add --dev react react-dom @types/react typescript
+* add the following to package.json
   ```
     "peerDependencies": {
         "react": "^16.8.0",
         "react-dom": "^16.8.0"
     },
   ```
-* touch tsconfig.json
+* create file called tsconfig.json 
   ```
     {
         "compilerOptions": {
@@ -36,7 +40,7 @@
         "jsx": "react"
         },
         "include": [
-        "src"
+          "src"
         ],
         "exclude": [
             "node_modules",
@@ -44,9 +48,9 @@
         ]
     }
   ```
-* npx sb init
-* mkdir scr
-* cd .storybook/main.js
+* run: npx sb init
+* run: mkdir scr
+* run: cd .storybook/main.js
   ```
   "stories": [
     "../src/stories/**/*.stories.mdx",
@@ -54,7 +58,6 @@
   ],
   ```
 * yarn storybook
-  
 
   
 # setting up rollup

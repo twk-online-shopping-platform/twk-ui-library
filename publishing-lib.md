@@ -5,6 +5,7 @@
         "/lib"
     ]
   ```
+* yarn build
 * create account https://www.npmjs.com/
 * npm login
 * npm publish

@@ -10,12 +10,19 @@ https://medium.com/wesionary-team/react-testing-library-vs-enzyme-afd29db380ac
     - materail ui
 
 *** 
-## Aug 1 2022
+## Aug 2 2022
 ### Topics
-- how to setup rollup
 - how to setup typescript
 - how to setup storybook
-- how to setup jest and enzyme 
+- nodejs structure
+- how to setup rollup
+### Asignment
+- test it in your local
+
+## Aug 4 2022
+### Topics
+- build and publish lib
+- how to setup jest and enzyme
 - creating login component 
 ### Asignment
 - fix header component based on your design

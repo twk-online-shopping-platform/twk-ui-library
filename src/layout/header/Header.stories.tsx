@@ -9,7 +9,9 @@ import { blue, common, yellow } from '@mui/material/colors';
 const subMenueTestFun = () => { }
 const menue2ClickFun = () => {
   console.log('clicked');
+  alert('clicked');
 }
+
 const submenu: MenuItemProps[] = [
   { menuDetail: { id: 1, title: 'sub-menu 2-1', handler: subMenueTestFun } },
   { menuDetail: { id: 2, title: 'sub-menu 2-2', handler: menue2ClickFun } },
@@ -40,9 +42,6 @@ const testData: AuthProps = {
     name: 'kina'
   }
 };
-
-
-
 
 storiesOf('HeaderStory', module)
   .addDecorator(muiTheme())

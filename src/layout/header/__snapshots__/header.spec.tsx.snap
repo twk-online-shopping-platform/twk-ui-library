@@ -97,9 +97,6 @@ exports[`Test header should display header with default style 1`] = `
         </div>
       </div>
       <div
-        className="MuiGrid-root MuiGrid-item MuiGrid-grid-md-6 css-tn5ix5-MuiGrid-root"
-      />
-      <div
         className="MuiGrid-root MuiGrid-item MuiGrid-grid-md-1 css-ndm3qg-MuiGrid-root"
       >
         <button
@@ -128,6 +125,13 @@ exports[`Test header should display header with default style 1`] = `
         </button>
       </div>
     </div>
+  </div>
+  <div
+    className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-1t29gy6-MuiToolbar-root"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-md-6 css-tn5ix5-MuiGrid-root"
+    />
   </div>
 </header>
 `;

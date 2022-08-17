@@ -29,7 +29,8 @@ describe('Test header', () => {
 
     it('should display main bar', () => {
         expect(testComponentInstance.findByType(AppBar).props.position).toBe('fixed');
-        expect(testComponentInstance.findByType(Toolbar)).toBeTruthy();
+        expect(testComponentInstance.findAllByType(Toolbar)).toHaveLength(1);
+        expect(testComponentInstance.children
     })
 
 

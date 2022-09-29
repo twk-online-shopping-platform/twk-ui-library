@@ -1,0 +1,11 @@
+{
+  "name": "twk-scss",
+  "version": "1.0.0",
+  "description": "css library file for twk project",
+  "main": "index.js",
+  "author": "kina",
+  "license": "MIT",
+  "dependencies": {
+    "normalize-scss": "^7.0.1"
+  }
+}

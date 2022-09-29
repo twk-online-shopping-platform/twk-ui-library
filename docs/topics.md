@@ -59,4 +59,10 @@ https://medium.com/wesionary-team/react-testing-library-vs-enzyme-afd29db380ac
 - creating signup, container/body and footer compoents(with test included)
 - setting up pipleline for aws infrastracture
 - setting up terraform for s3 and cloud front for storybook deployment
-- Minimizing bundle size
+  <<<<<<< HEAD:docs/topics.md
+- # Minimizing bundle size
+- ***
+
+      https://dev.to/docker/top-200-kubernetes-tools-for-devops-engineer-like-you-3h7e
+
+  > > > > > > > fc27da5bf9598dd8e3bc4b82dce98844293daa64:topics.md

@@ -1,0 +1,206 @@
+/*=============================================
+    #Variables
+=============================================*/
+
+/**
+ * TABLE OF CONTENTS
+ * 
+ * COLORS
+ * 
+ * 
+ * TYPOGRAPHY
+ * Font families..................The fonts used in the design system.
+ * Font weights...................Font weights
+ * Sizes..........................Font sizing for body text, paragraphs, inputs
+ * Heading sizes..................Font sizing for page headings
+ *
+ * BREAKPOINTS
+ * Breakpoints....................Global responsive breakpoints definitions.
+ *
+ * SPACING
+ * Spacing........................Global fixed set of spacing variables
+ */
+
+/*=============================================
+=                  Colors                     =
+=============================================*/
+
+$gray: (
+  "900": #14142b,
+  "800": #4e4b66,
+  "800": #4e4b66,
+  "700": #6e7191,
+  "600": #a0a3bd,
+  "500": #d9dbe9,
+  "400": #eff0f6,
+  "300": #fcfcfc,
+);
+
+$blue: (
+  "600": #155cba,
+  "500": #1a73e8,
+  "400": #488fed,
+  "300": #76abf1,
+  "200": #a3c7f6,
+  "100": #d1e3fa,
+);
+
+$turquoise: (
+  "600": #37aab9,
+  "500": #45d4e8,
+  "400": #6addec,
+  "300": #8fe5f1,
+  "200": #b4eef6,
+  "100": #daf6fa,
+);
+
+$red: (
+  "600": #c8565e,
+  "500": #fa6c76,
+  "400": #fb8991,
+  "300": #fca7ad,
+  "200": #fdc4c8,
+  "100": #fee2e4,
+);
+
+$green: (
+  "600": #2ea38d,
+  "500": #39ccb0,
+  "400": #61d6c0,
+  "300": #88e0d0,
+  "200": #b0ebdf,
+  "100": #d7f5ef,
+);
+
+$yellow: (
+  "600": #cca036,
+  "500": #ffc844,
+  "400": #ffd369,
+  "300": #ffde8f,
+  "200": #ffe9b4,
+  "100": #fff4da,
+);
+
+$orange: (
+  "800": #66321b,
+  "700": #994a29,
+  "600": #cc6336,
+  "500": #ff7c44,
+  "400": #ff9669,
+  "300": #ffb08f,
+  "200": #ffcbb4,
+  "100": #ffe5da,
+);
+
+$violet: (
+  "800": #420a5d,
+  "700": #64108b,
+  "600": #8515ba,
+  "500": #a61ae8,
+  "400": #b848ed,
+  "300": #ca76f1,
+  "200": #dba3f6,
+  "100": #edd1fa,
+);
+
+/*=====  End of Colors  ======*/
+
+/*=============================================
+=                Typography                   =
+=============================================*/
+
+/**
+ *
+ * 1) The playfair font. We'll use this for headings mostly.
+ *     https://fonts.google.com/specimen/Playfair+Display
+ *
+ * 2) The raleway font. We'll use this for the body text.
+ *     https://fonts.google.com/specimen/Raleway
+ */
+
+/* Font families */
+
+$playfair: "Playfair Display", serif; /* 1 */
+$raleway: "Raleway", "HelveticaNeue", "Helvetica", sans-serif; /* 2 */
+
+/* Font sizes */
+$fs-xs: 0.75rem; // 12px
+$fs-sm: 0.875rem; // 14px
+$fs-base: 1rem; // 16px
+$fs-lg: 1.125rem; // 18px
+$fs-xl: 1.5rem; // 24px
+
+$fs: (
+  xs: 0.75rem,
+  sm: 0.875rem,
+  base: 1rem,
+  lg: 1.125rem,
+  xl: 1.5rem,
+);
+
+/* Heading font sizes */
+$h-1: 1.375rem; // 22px
+$h-2: 1.375rem; // 22px
+$h-3: 1rem; // 16px
+$h-4: 1.125rem; // 18px
+$h-5: 0.75rem; // 12px
+$h-6: 0.75rem; // 12px
+
+/* Font weights */
+
+$fw-light: 300;
+$fw-normal: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-extrabold: 800;
+$fw-black: 900;
+
+/*=====  End of Typography  ======*/
+
+/*=============================================
+=            Breakpoints                      =
+=============================================*/
+
+$breakpoints: (
+  md: 48rem,
+  // 768px
+  lg: 64rem,
+  // 1024px
+  xl: 80rem,
+  // 1280px
+);
+
+/*=====  End of Breakpoints  ======*/
+
+/*=============================================
+=            Spacing                          =
+=============================================*/
+
+$spacing: (
+  none: 0rem,
+  xxxs: 0.25rem,
+  // 4px
+  xxs: 0.5rem,
+  // 8px
+  xs: 0.75rem,
+  // 12px
+  sm: 1rem,
+  // 16px
+  md: 1.5rem,
+  // 24px
+  lg: 2rem,
+  // 32px
+  xl: 3rem,
+  // 48px
+  xxl: 4.5rem,
+  // 72px
+  xxxl: 6rem,
+  // 96px
+) !default;
+
+$shadows: (
+  base: 0px 4px 11px rgba(157, 157, 157, 0.21),
+);
+
+/*=====  End of Spacing  ======*/

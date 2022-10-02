@@ -1,0 +1,14 @@
+@mixin box-size($width, $height) {
+  @if $height != 0 {
+    height: map-get($spacing, $height);
+  }
+  @if $height == 0 {
+    height: auto;
+  }
+  @if $width != 0 {
+    width: map-get($spacing, $width);
+  }
+  @if $width == 0 {
+    width: auto;
+  }
+}

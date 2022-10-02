@@ -1,0 +1,39 @@
+/*=============================================
+=            Icon Description            =
+=============================================*/
+
+/**
+ *
+ * icn = icon
+ *
+ */
+
+/*----------  Icon  ----------*/
+
+/*=============================================
+=            Foundation            =
+=============================================*/
+
+@import "../foundation/all";
+
+/*=====  End of Foundation  ======*/
+
+.icn {
+  @include box-size("xs", "xs");
+
+  &-lg {
+    @include box-size("md", "md");
+  }
+  &-sm {
+    @include box-size("lg", "lg");
+  }
+
+  &-primary {
+    @extend .icn;
+    color: $icn-primary-color;
+  }
+  &-secondary {
+    @extend .icn;
+    color: $icn-secondary-color;
+  }
+}

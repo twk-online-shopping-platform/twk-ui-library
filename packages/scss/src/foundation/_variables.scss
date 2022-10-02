@@ -24,16 +24,19 @@
 /*=============================================
 =                  Colors                     =
 =============================================*/
+$white: (
+  "white": #ffffff,
+);
 
 $gray: (
   "900": #14142b,
-  "800": #4e4b66,
   "800": #4e4b66,
   "700": #6e7191,
   "600": #a0a3bd,
   "500": #d9dbe9,
   "400": #eff0f6,
   "300": #fcfcfc,
+  "100": #ffffff,
 );
 
 $blue: (
@@ -122,6 +125,7 @@ $violet: (
 
 $playfair: "Playfair Display", serif; /* 1 */
 $raleway: "Raleway", "HelveticaNeue", "Helvetica", sans-serif; /* 2 */
+$montserrat: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
 
 /* Font sizes */
 $fs-xs: 0.75rem; // 12px
@@ -201,6 +205,14 @@ $spacing: (
 
 $shadows: (
   base: 0px 4px 11px rgba(157, 157, 157, 0.21),
+);
+
+/*----------  border  ----------*/
+$b-style: (
+  "n": "none",
+  "s": "solid",
+  "ds": "dashed",
+  "dt": "dotted",
 );
 
 /*=====  End of Spacing  ======*/

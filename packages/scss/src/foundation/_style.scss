@@ -1,0 +1,5 @@
+$b-primary-style: --var(--twk-b-primary-style, map-get($b-style, "s")) !default;
+$b-secondary-style: --var(
+  --twk-b-secondary-style,
+  map-get($b-style, "s")
+) !default;

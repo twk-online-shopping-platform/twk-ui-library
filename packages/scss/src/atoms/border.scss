@@ -1,0 +1,47 @@
+/*=============================================
+=            Border            =
+=============================================*/
+
+/**
+ *
+ * b = border
+ *
+ */
+
+/*=============================================
+=            Foundation            =
+=============================================*/
+
+@import "../foundation/all";
+
+/*=====  End of Foundation  ======*/
+
+.b {
+  border-radius: $b-radius;
+  border-width: $b-width;
+  &-primary {
+    @extend .b;
+    border-color: $b-primary-color;
+    border-style: $b-primary-style;
+    &:hover {
+      background-color: $b-primary-color-hover;
+    }
+    &:focus {
+      background-color: $b-primary-color-hover;
+    }
+    &:active {
+      background-color: $b-primary-color-active;
+    }
+    &:disabled {
+      background-color: $b-primary-color-disabled;
+    }
+  }
+
+  &-secondary {
+    @extend .b;
+    border-color: $b-secondary-color;
+    border-style: $b-secondary-style;
+  }
+}
+
+/*=====  End of Border  ======*/

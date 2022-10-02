@@ -1,0 +1,33 @@
+/*=============================================
+=            Form            =
+=============================================*/
+
+/**
+ *
+ * fm-tf = form text field
+ * fm-lb = form label
+ * fm-ta = form text area
+ *
+ */
+
+/*=============================================
+=            Import foundation            =
+=============================================*/
+
+@import "../foundation/all";
+
+/*=====  End of Import foundation  ======*/
+
+.fm-tx {
+  display: flex;
+  &-lg {
+    @extend .fm-tx;
+    @include box-size(0, "md");
+  }
+  &-sm {
+    @extend .fm-tx;
+    @include box-size(0, "xxs");
+  }
+}
+
+/*=====  End of Form  ======*/

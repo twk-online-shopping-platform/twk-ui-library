@@ -1,0 +1,86 @@
+/*=============================================
+=            Colors            =
+=============================================*/
+
+/*=============================================
+=            Button Colors            =
+=============================================*/
+
+/*----------  Primary  ----------*/
+
+$btn-primary-color: var(
+  --twk-btn-primary-bg,
+  map-get($white, "white")
+) !default;
+$btn-primary-bg: var(--twk-btn-primary-bg, map-get($blue, "500")) !default;
+$btn-primary-bg-hover: var(
+  --twk-btn-primary-bg-hover,
+  map-get($blue, "600")
+) !default;
+$btn-primary-bg-focus: var(
+  --twk-btn-primary-bg-hover,
+  map-get($blue, "500")
+) !default;
+$btn-primary-bg-active: var(
+  --twk-btn-primary-bg-hover,
+  map-get($blue, "600")
+) !default;
+$btn-primary-bg-disabled: var(
+  --twk-btn-primary-bg-disabled,
+  map-get($blue, "300")
+);
+
+/*----------  Secondary  ----------*/
+$btn-secondary-color: var(--twk-btn-success, map-get($blue, "500")) !default;
+$btn-secondary-bg: var(--twk-btn-success, map-get($white, "white")) !default;
+$btn-secondary-color-hover: var(
+  --twk-btn-success,
+  map-get($blue, "600")
+) !default;
+
+/*=====  End of Button Colors  ======*/
+
+/*=============================================
+=            Icon Color            =
+=============================================*/
+
+$icn-primary-color: var(
+  --twk-icon-primary-color,
+  map-get($white, "white")
+) !default;
+$icn-secondary-color: var(
+  --twk-icon-secondary-color,
+  map-get($blue, "500")
+) !default;
+
+/*=====  End of Icon Color  ======*/
+
+/*=============================================
+=            Border Color            =
+=============================================*/
+
+$b-secondary-color: var(
+  --twk-b-secondary-color,
+  map-get($white, "white")
+) !default;
+
+$b-primary-color: var(--twk-b-primary-color, map-get($blue, "500")) !default;
+
+$b-primary-color-hover: var(
+  --twk-b-primary-color,
+  map-get($blue, "600")
+) !default;
+
+$b-primary-color-focus: var(
+  --twk-b-primary-color,
+  map-get($blue, "300")
+) !default;
+$b-primary-color-active: var(
+  --twk-b-primary-color,
+  map-get($blue, "400")
+) !default;
+$b-primary-color-disabled: var(
+  --twk-b-primary-color,
+  map-get($blue, "300")
+) !default;
+/*=====  End of Border Color  ======*/

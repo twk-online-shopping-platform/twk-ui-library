@@ -1,3 +1,7 @@
+/*=============================================
+=            Box Size Mixin           =
+=============================================*/
+
 @mixin box-size($width, $height) {
   @if $height != 0 {
     height: map-get($spacing, $height);
@@ -12,3 +16,51 @@
     width: auto;
   }
 }
+
+/*=====  End of Box Size Mixin  ======*/
+
+/*=============================================
+=            Padding            =
+=============================================*/
+
+@mixin btn-padding-size($leftright, $upbottom) {
+  @if $leftright != 0 {
+    padding-left: map-get($btn-padding-size-h, $leftright);
+    padding-right: map-get($btn-padding-size-h, $leftright);
+  }
+  @if $leftright == 0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  @if $upbottom!= 0 {
+    padding-top: map-get($btn-padding-size-v, $leftright);
+    padding-bottom: map-get($btn-padding-size-v, $leftright);
+  }
+  @if $upbottom == 0 {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+/*=====  End of Padding  ======*/
+
+/*=============================================
+=            Box Shadowing Mixin            =
+=============================================*/
+@mixin box-dlb-shadow-size(
+  $hof1,
+  $vof1,
+  $blr1,
+  $color1,
+  $hof2,
+  $vof2,
+  $blr2,
+  $color2
+) {
+  box-shadow: $hof1 $vof1 $blr1 $color1, $hof2 $vof2 $blr2 $color2;
+}
+@mixin box-shadow-size($hof, $vof, $blr, $color) {
+  box-shadow: $hof $vof $blr $color;
+}
+
+/*=====  End of Box Shadowing Mixin  ======*/

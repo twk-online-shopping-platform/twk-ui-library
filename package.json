@@ -1,9 +1,15 @@
 {
-  "name": "root",
+  "name": "twk-ui-lib",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/normalize-scss",
+      "**/@fortawesome/fontawesome-free"
+    ]
+  },
   "devDependencies": {
     "lerna": "^5.5.4"
   },
@@ -11,6 +17,8 @@
     "test": "yarn lerna run test",
     "graph": "nx graph",
     "build:storybook": "yarn build && yarn lerna run build-storybook",
-    "storybook": "yarn lerna run storybook"
+    "storybook": "yarn lerna run storybook",
+    "sass-compile": "yarn lerna run sass-prod",
+    "sass-css": "yarn lerna run sass-dev"
   }
 }

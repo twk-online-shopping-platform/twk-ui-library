@@ -1,0 +1,1 @@
+{"name":"twk-ui-lib","dependencies":{"@twk-ui-lib/react":{"version":"1.0.0"},"@twk-ui-lib/scss":{"version":"1.0.0","dependencies":{"normalize-scss":{"version":"7.0.1"}}}}}

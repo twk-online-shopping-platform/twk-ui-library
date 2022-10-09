@@ -1,0 +1,10 @@
+/*=============================================
+=            Border Spacing            =
+=============================================*/
+
+$b-radius: var(--twk-b-radius, map-get($spacing, "xxs")) !default;
+$b-width: var(--twk-b-width, map-get($b-widths, "normal")) !default;
+$b-width-thin: var(--twk-b-width, map-get($b-widths, "thin")) !default;
+$b-width-thick: var(--twk-b-width, map-get($b-widths, "thick")) !default;
+
+/*=====  End of Border Spacing  ======*/

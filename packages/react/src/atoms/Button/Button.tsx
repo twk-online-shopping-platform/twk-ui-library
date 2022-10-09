@@ -1,14 +1,9 @@
 import React from "react";
 import ButtonConstants from "./ButtonConstants";
 import ButtonType from "./Type";
-import "./Button.css";
 
-const Button: React.FC<ButtonType> = ({
-  color = "blue",
-  label = "button",
-  clickHandler,
-}) => {
-  const buttonClass = `twk-button twk-button-color-${color}`;
+const Button: React.FC<ButtonType> = ({ label = "button", clickHandler }) => {
+  const buttonClass = "btn-primary btn-sm b-rd-primary b-rd-rt";
   return (
     <button
       className={buttonClass}
@@ -17,7 +12,7 @@ const Button: React.FC<ButtonType> = ({
       }}
       data-testid={ButtonConstants.ButtonTestId.toString()}
     >
-      <span className="twk-text">{label}</span>
+      <span className="btn-fw-s ft-family btn-md-font">{label}</span>
     </button>
   );
 };

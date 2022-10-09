@@ -16,11 +16,11 @@
 
 /*=====  End of Foundation  ======*/
 
-.b {
+.b-rd {
   border-radius: $b-radius;
   border-width: $b-width;
   &-primary {
-    @extend .b;
+    @extend .b-rd;
     border-color: $b-primary-color;
     border-style: $b-primary-style;
     &:hover {
@@ -37,11 +37,38 @@
     }
   }
 
+  &-thick {
+    border-width: $b-width-thick;
+  }
+  &-thin {
+    border-width: $b-width-thin;
+  }
   &-secondary {
-    @extend .b;
+    @extend .b-rd;
     border-color: $b-secondary-color;
     border-style: $b-secondary-style;
   }
+  &-gray {
+    @extend .b-rd;
+    border-color: $b-gray-color;
+    &:hover {
+      border-color: $b-gray-color-hover;
+    }
+    &:focus {
+      outline: $b-gray-color;
+    }
+  }
+}
+
+.b-rd-lt {
+  @extend .b-rd;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.b-rd-rt {
+  @extend .b-rd;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 /*=====  End of Border  ======*/

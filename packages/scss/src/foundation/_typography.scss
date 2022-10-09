@@ -1,1 +1,67 @@
-$btn-font-family: $montserrat;
+/*=============================================
+=           Typography            =
+=============================================*/
+
+/**
+ *
+ * dft = display font
+ * fw = font weight
+ *
+ */
+
+/*----------  Font Family  ----------*/
+
+$font-family: var(--twk-font-family, $montserrat) !default;
+
+/*----------  Font weight  ----------*/
+
+$fw-n: var(--twk-font-weight-normal, $fw-normal) !default;
+$fw-m: var(--twk-font-weight-medium, $fw-medium) !default;
+$fw-s: var(--twk-font-weight-semi-bold, $fw-semibold) !default;
+$fw-b: var(--twk-font-weight-bold, $fw-bold) !default;
+
+/*----------  Display Font Size  ----------*/
+
+$dft-sm-size: var(
+  --twk-dis-ft-sm-size,
+  map-get($display-font-size, "sm")
+) !default;
+$dft-md-size: var(
+  --twk-dis-ft-md-size,
+  map-get($display-font-size, "md")
+) !default;
+$dft-lg-size: var(
+  --twk-dis-ft-lg-size,
+  map-get($display-font-size, "lg")
+) !default;
+
+/*----------  Button Font Size  ----------*/
+
+$bft-sm-size: var(--twk-btn-ft-sm-size, map-get($btn-font-size, "sm")) !default;
+$bft-md-size: var(--twk-btn-ft-md-size, map-get($btn-font-size, "md")) !default;
+$bft-lg-size: var(--twk-btn-ft-lg-size, map-get($btn-font-size, "lg")) !default;
+
+/*----------  Text Font Size  ----------*/
+
+$txtFt-xxs-size: var(
+  --twk-txt-ft-xxs-size,
+  map-get($text-font-size, "xxs")
+) !default;
+
+$txtFt-xs-size: var(
+  --twk-txt-ft-xs-size,
+  map-get($text-font-size, "xs")
+) !default;
+$txtFt-sm-size: var(
+  --twk-txt-ft-sm-size,
+  map-get($text-font-size, "sm")
+) !default;
+$txtFt-md-size: var(
+  --twk-txt-ft-md-size,
+  map-get($text-font-size, "md")
+) !default;
+$txtFt-lg-size: var(
+  --twk-txt-ft-lg-size,
+  map-get($text-font-size, "lg")
+) !default;
+/*=====  End Typography  ======*/

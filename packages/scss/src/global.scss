@@ -9,6 +9,9 @@
  *
  */
 
+/*----------  Base  ----------*/
+@import "./base/reset";
+
 /*----------  Foundation  ----------*/
 @import "./foundation/all.scss";
 
@@ -18,3 +21,7 @@
 
 @import "./atoms/button.scss";
 @import "./atoms/icon.scss";
+@import "./atoms/border.scss";
+@import "./atoms/shadow.scss";
+@import "./atoms/typography.scss";
+@import "./atoms/field.scss";

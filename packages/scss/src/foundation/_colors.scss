@@ -9,7 +9,7 @@
 /*----------  Primary  ----------*/
 
 $btn-primary-color: var(
-  --twk-btn-primary-bg,
+  --twk-btn-primary-color,
   map-get($white, "white")
 ) !default;
 $btn-primary-bg: var(--twk-btn-primary-bg, map-get($blue, "500")) !default;
@@ -67,20 +67,70 @@ $b-secondary-color: var(
 $b-primary-color: var(--twk-b-primary-color, map-get($blue, "500")) !default;
 
 $b-primary-color-hover: var(
-  --twk-b-primary-color,
+  --twk-b-primary-color-hover,
   map-get($blue, "600")
 ) !default;
 
 $b-primary-color-focus: var(
-  --twk-b-primary-color,
+  --twk-b-primary-color-focus,
   map-get($blue, "300")
 ) !default;
 $b-primary-color-active: var(
-  --twk-b-primary-color,
+  --twk-b-primary-color-active,
   map-get($blue, "400")
 ) !default;
 $b-primary-color-disabled: var(
-  --twk-b-primary-color,
+  --twk-b-primary-color-disabled,
   map-get($blue, "300")
 ) !default;
+
+$b-gray-color: var(--twk-b-gray-color, map-get($gray, "500")) !default;
+$b-gray-color-hover: var(
+  --twk-b-gray-color-hover,
+  map-get($gray, "600")
+) !default;
+
 /*=====  End of Border Color  ======*/
+
+/*=============================================
+=            Shadow Color            =
+=============================================*/
+
+$box-shd-md-color: var(--twk-shd-md-color, $shd-color-1) !default;
+$box-shd-sm-color: var(--twk-shd-sm-color, $shd-color-1) !default;
+$box-shd-lg-color: var(--twk-shd-sm-color, $shd-color-1) !default;
+$box-dbl-shd-sm-color1: var(--twk-dbl-shd-sm-color1, $shd-color-2) !default;
+$box-dbl-shd-sm-color2: var(--twk-dlb-shd-sm-color2, $shd-color-3) !default;
+$box-dbl-shd-md-color1: var(--twk-dlb-shd-md-color1, $shd-color-4) !default;
+$box-dbl-shd-md-color2: var(--twk-dlb-shd-md-color2, $shd-color-3) !default;
+$box-dbl-shd-lg-color1: var(--twk-dlb-shd-lg-color1, $shd-color-4) !default;
+$box-dbl-shd-lg-color2: var(--twk-dlb-shd-lg-color2, $shd-color-3) !default;
+
+/*=====  End of Shadow Color  ======*/
+
+/*=============================================
+=            Field Color            =
+=============================================*/
+$fld-color: var(--twk-large-field-color, map-get($gray, "800")) !default;
+$fld-bg-olor: var(--twk-field-bg-color, map-get($gray, "300")) !default;
+$fld-colo-bg-hover: var(
+  --twk-field-bg-color-hover,
+  map-get($white, "white")
+) !default;
+
+$fld-type-color: var(--twk-field-type-color, map-get($gray, "900")) !default;
+$fld-type-lbl-color: var(
+  --twk-field-type-label-color,
+  map-get($gray, "800")
+) !default;
+/*=====  End of Field Color  ======*/
+
+/*=============================================
+=            Font            =
+=============================================*/
+
+$font-color: var(--twk-font-color, map-get($gray, "900")) !default;
+
+/*----------  Display Font  ----------*/
+
+/*=====  End of Font  ======*/

@@ -1,0 +1,50 @@
+@import "../foundation/all";
+
+.base-fld-font-style {
+  color: $fld-color;
+  font-family: $font-family;
+  font-weight: $fw-n;
+}
+
+.input-grp {
+  .fld-lg {
+    padding: $fld-padding-lg-h-size $fld-padding-side-size;
+    background-color: $fld-bg-olor;
+    @extend .base-fld-font-style;
+    &:hover {
+      background-color: $fld-colo-bg-hover;
+    }
+    &:focus {
+      background-color: $fld-colo-bg-hover;
+      padding: $fld-padding-lg-type-up-size $fld-padding-side-size
+        $fld-padding-lg-type-bottom-size;
+      color: $fld-type-color;
+    }
+  }
+  .fld-lg:focus + label {
+    display: inline-block;
+    position: absolute;
+    top: $lbl-focus-position-top;
+    left: $lbl-focus-position-left;
+    pointer-events: none;
+    font-size: $txtFt-xxs-size;
+  }
+  .fld-lg + label {
+    @extend .base-fld-font-style;
+  }
+  .fld-sm + label,
+  .fld-lg + label {
+    display: none;
+  }
+
+  .fld-sm {
+    color: $fld-color;
+    background-color: $fld-bg-olor;
+    font-family: $font-family;
+    font-weight: $fw-n;
+    &:hover {
+      background-color: $fld-colo-bg-hover;
+    }
+    padding: $fld-padding-sm-h-size $fld-padding-side-size;
+  }
+}

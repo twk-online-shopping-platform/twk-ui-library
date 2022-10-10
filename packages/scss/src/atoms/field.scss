@@ -7,6 +7,7 @@
 }
 
 .input-grp {
+  display: inline-block;
   position: relative;
   .fld-lg {
     padding: $fld-padding-lg-h-size $fld-padding-side-size;
@@ -22,41 +23,6 @@
       color: $fld-type-color;
     }
   }
-  .fld-lg:focus + label {
-    display: inline-block;
-    position: absolute;
-    top: $lbl-focus-position-top;
-    left: $lbl-focus-position-left;
-    pointer-events: none;
-    font-size: $txtFt-xs-size;
-  }
-  .fld-lg + label {
-    @extend .base-fld-font-style;
-  }
-  .fld-sm + label,
-  .fld-lg + label {
-    display: none;
-  }
-  .icn ~ .fld-sm,
-  .icn ~ .fld-lg {
-    padding-left: $fld-padding-left-icon-size;
-  }
-  .icn {
-    position: absolute;
-    left: 2rem;
-    top: 1.25rem;
-  }
-  .icn-sm-input-field {
-    @extend .icn;
-    top: 1rem;
-  }
-
-  .icn-lg-input-field + .fld-lg:focus + label {
-    left: $lbl-focus-icon-position-left;
-  }
-  &:focus-within .icn-lg-input-field {
-    top: 2rem;
-  }
 
   .fld-sm {
     color: $fld-color;
@@ -67,5 +33,46 @@
       background-color: $fld-colo-bg-hover;
     }
     padding: $fld-padding-sm-h-size $fld-padding-side-size;
+  }
+
+  .fld-lg:focus + label {
+    display: inline-block;
+    position: absolute;
+    top: $lbl-focus-position-top;
+    left: $lbl-focus-position-left;
+    pointer-events: none;
+    font-size: $txtFt-xs-size;
+  }
+
+  /*----------  Input Default Position for label and Icon  ----------*/
+
+  .fld-sm + label,
+  .fld-lg + label {
+    display: none;
+    @extend .base-fld-font-style;
+  }
+  .icn-lf ~ .fld-sm,
+  .icn-lf ~ .fld-lg {
+    padding-left: $fld-padding-left-icon-size;
+  }
+  .icn-lf {
+    position: absolute;
+    left: 1.5rem;
+  }
+  .icn-rt {
+    position: absolute;
+    right: 1rem;
+  }
+  .icn-sm-input-field {
+    top: $icn-small-input-position-top;
+  }
+  .icn-lg-input-field {
+    top: $icn-large-input-position-top;
+  }
+
+  /*----------  Set Position while TextField focused  ----------*/
+
+  .icn-lg-input-field + .fld-lg:focus + label {
+    left: $lbl-focus-icon-position-left;
   }
 }

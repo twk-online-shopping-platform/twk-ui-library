@@ -29,13 +29,6 @@
     @include box-size(0, 0);
   }
 
-  &-sm-input-field {
-    @include box-size(0, 0);
-  }
-  &-lg-input-field {
-    @include box-size(0, 0);
-  }
-
   &-primary {
     @extend .icn;
     color: $icn-primary-color;

@@ -32,9 +32,26 @@ $lbl-focus-position-top: var(
 ) !default;
 $lbl-focus-position-left: var(
   --twk-label-focus-position-top,
-  map-get($spacing, "xl")
+  map-get($spacing, "md")
 ) !default;
 $lbl-focus-icon-position-left: var(
   --twk-label-focus-icon-position-left,
   map-get($spacing, "xxxl")
+) !default;
+
+/*----------  Input Icon  ----------*/
+
+$icn-small-input-position-top: var(
+  --twk-icon-small-input-position-top,
+  map-get($spacing, "xs")
+) !default;
+
+$icn-large-input-position-top: var(
+  --twk-icon-large-input-position-top,
+  map-get($spacing, "lm")
+) !default;
+
+$icn-large-input-focus-position-top: var(
+  --twk-icon-large-input-focus-position-top,
+  map-get($spacing, "lg")
 ) !default;

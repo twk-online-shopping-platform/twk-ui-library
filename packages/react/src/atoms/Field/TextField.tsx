@@ -7,13 +7,13 @@ const TextField = ({
   placeholder,
   typeEventHandler,
 }: TextFiedType) => {
-  const inputClassName = "fld-sm b-rd-lt b-rd-gray txt-xs-font";
+  const inputClassName = "fld-lg b-rd b-rd-gray txt-xs-font";
   const labelClassName = "lbl";
   const groupClassName = "input-grp";
   const fieldId = useId();
   return (
     <div className={groupClassName}>
-      <i className="icn icn-sm-input-field fa-solid fa-magnifying-glass "></i>
+      <i className="icn-lf icn-lg-input-field fa-solid fa-magnifying-glass "></i>
       <input
         id={fieldId}
         className={inputClassName}
@@ -31,6 +31,7 @@ const TextField = ({
       <label className={labelClassName} htmlFor={fieldId}>
         {placeholder}
       </label>
+      <i className="icn-rt icn-lg-input-field fa-solid fa-xmark"></i>
     </div>
   );
 };

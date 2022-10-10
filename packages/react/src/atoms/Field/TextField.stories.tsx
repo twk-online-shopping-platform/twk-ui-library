@@ -8,6 +8,6 @@ export default {
   title: "Atoms/TextField",
   component: TextField,
 } as Meta;
-const Template: Story = (args) => <TextField type="text" placeholder="Name" />;
+const Template: Story = (args) => <TextField {...args} />;
 
 export const Primary = Template.bind({});

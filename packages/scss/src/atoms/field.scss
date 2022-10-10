@@ -7,6 +7,7 @@
 }
 
 .input-grp {
+  position: relative;
   .fld-lg {
     padding: $fld-padding-lg-h-size $fld-padding-side-size;
     background-color: $fld-bg-olor;
@@ -27,7 +28,7 @@
     top: $lbl-focus-position-top;
     left: $lbl-focus-position-left;
     pointer-events: none;
-    font-size: $txtFt-xxs-size;
+    font-size: $txtFt-xs-size;
   }
   .fld-lg + label {
     @extend .base-fld-font-style;
@@ -35,6 +36,26 @@
   .fld-sm + label,
   .fld-lg + label {
     display: none;
+  }
+  .icn ~ .fld-sm,
+  .icn ~ .fld-lg {
+    padding-left: $fld-padding-left-icon-size;
+  }
+  .icn {
+    position: absolute;
+    left: 2rem;
+    top: 1.25rem;
+  }
+  .icn-sm-input-field {
+    @extend .icn;
+    top: 1rem;
+  }
+
+  .icn-lg-input-field + .fld-lg:focus + label {
+    left: $lbl-focus-icon-position-left;
+  }
+  &:focus-within .icn-lg-input-field {
+    top: 2rem;
   }
 
   .fld-sm {

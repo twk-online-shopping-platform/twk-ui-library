@@ -13,7 +13,7 @@ const TextField = ({
   const fieldId = useId();
   return (
     <div className={groupClassName}>
-      <i className="fa-solid fa-magnifying-glass"></i>
+      <i className="icn icn-sm-input-field fa-solid fa-magnifying-glass "></i>
       <input
         id={fieldId}
         className={inputClassName}

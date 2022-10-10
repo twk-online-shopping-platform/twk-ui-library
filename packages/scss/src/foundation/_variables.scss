@@ -115,10 +115,14 @@ $spacing: (
   xs: 0.75rem,
   sm: 1rem,
   md: 1.5rem,
+  lm: 1.25rem,
   lg: 2rem,
+  xml: 2.25rem,
   xl: 2.5rem,
   xxl: 3rem,
   xxxl: 3.5rem,
+  xxxxl: 4rem,
+  xxxxxl: 4.5rem,
 ) !default;
 
 $btn-padding-size-v: (
@@ -258,8 +262,9 @@ $box-dbl-shd1-lg-shadow-size: (
 /*----------  Field Padding  ----------*/
 
 $fld-padding-size-left-right: 1.5rem;
-
 $fld-padding-size-lg-up-bottom: 1.25rem;
 $fld-padding-size-lg-type-up: 2rem;
 $fld-padding-size-lg-type-bottom: 0.688rem;
 $fld-padding-size-sm-up-bottom: 0.688rem;
+
+$fld-padding-size-left-extra-padding-for-icon: 3.563rem;

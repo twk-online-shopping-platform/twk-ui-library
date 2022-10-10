@@ -19,13 +19,21 @@
 /*=====  End of Foundation  ======*/
 
 .icn {
-  @include box-size("xs", "xs");
+  color: $fld-type-color;
+  @include box-size(0, 0);
 
   &-lg {
-    @include box-size("md", "md");
+    @include box-size(0, 0);
   }
   &-sm {
-    @include box-size("lg", "lg");
+    @include box-size(0, 0);
+  }
+
+  &-sm-input-field {
+    @include box-size(0, 0);
+  }
+  &-lg-input-field {
+    @include box-size(0, 0);
   }
 
   &-primary {

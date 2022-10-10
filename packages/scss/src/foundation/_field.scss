@@ -19,13 +19,22 @@ $fld-padding-sm-h-size: var(
   $fld-padding-size-sm-up-bottom
 ) !default;
 
+$fld-padding-left-icon-size: var(
+  --twk-padding-left,
+  $fld-padding-size-left-extra-padding-for-icon
+) !default;
+
 /*----------  Input Lable  ----------*/
 
 $lbl-focus-position-top: var(
   --twk-label-focus-position-top,
-  map-get($spacing, "lg")
+  map-get($spacing, "sm")
 ) !default;
 $lbl-focus-position-left: var(
   --twk-label-focus-position-top,
   map-get($spacing, "xl")
+) !default;
+$lbl-focus-icon-position-left: var(
+  --twk-label-focus-icon-position-left,
+  map-get($spacing, "xxxl")
 ) !default;

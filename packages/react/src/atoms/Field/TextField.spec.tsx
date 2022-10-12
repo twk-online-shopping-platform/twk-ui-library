@@ -17,7 +17,7 @@ describe("Test TextField Component", () => {
 
   it("should be accept user input", async () => {
     const testTxt = "Test Input";
-    render(<TextField type={""} />);
+    render(<TextField />);
     const renderedField = await screen.findByTestId(
       FieldConstants.TextFieldTestId.toString()
     );
@@ -30,7 +30,7 @@ describe("Test TextField Component", () => {
   it("should be accept user input event handler", async () => {
     const testTxt = "Test Input";
     const mockFun: jest.Mock = jest.fn();
-    render(<TextField type={"text"} typeEventHandler={mockFun} />);
+    render(<TextField type="text" typeEventHandler={mockFun} />);
     const renderedField = await screen.findByTestId(
       FieldConstants.TextFieldTestId.toString()
     );

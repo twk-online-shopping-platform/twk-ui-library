@@ -7,4 +7,15 @@ $b-width: var(--twk-b-width, map-get($b-widths, "normal")) !default;
 $b-width-thin: var(--twk-b-width, map-get($b-widths, "thin")) !default;
 $b-width-thick: var(--twk-b-width, map-get($b-widths, "thick")) !default;
 
+/**
+ *
+ * b = border
+ *
+ */
+
+$b-none-style: var(--twk-b-solid-style, map-get($b-style, "n")) !default;
+$b-dashed-style: var(--twk-b-solid-style, map-get($b-style, "ds")) !default;
+$b-solid-style: var(--twk-b-solid-style, map-get($b-style, "s")) !default;
+$b-dotted-style: var(--twk-b-secondary-style, map-get($b-style, "dt")) !default;
+
 /*=====  End of Border Spacing  ======*/

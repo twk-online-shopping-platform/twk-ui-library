@@ -16,24 +16,26 @@
 
 /*=====  End of Foundation  ======*/
 
-.b-rd {
+.b-rd-basic {
   border-radius: $b-radius;
   border-width: $b-width;
-  &-primary {
-    @extend .b-rd;
+}
+
+.b-rd {
+  &-blue {
+    @extend .b-rd-basic;
     border-color: $b-primary-color;
-    border-style: $b-primary-style;
     &:hover {
-      background-color: $b-primary-color-hover;
+      border-color: $b-primary-color-hover;
     }
     &:focus {
-      background-color: $b-primary-color-hover;
+      border-color: $b-primary-color-focus;
     }
     &:active {
-      background-color: $b-primary-color-active;
+      border-color: $b-primary-color-active;
     }
     &:disabled {
-      background-color: $b-primary-color-disabled;
+      border-color: $b-primary-color-disabled;
     }
   }
 
@@ -43,13 +45,9 @@
   &-thin {
     border-width: $b-width-thin;
   }
-  &-secondary {
-    @extend .b-rd;
-    border-color: $b-secondary-color;
-    border-style: $b-secondary-style;
-  }
+
   &-gray {
-    @extend .b-rd;
+    @extend .b-rd-basic;
     border-color: $b-gray-color;
     &:hover {
       border-color: $b-gray-color-hover;

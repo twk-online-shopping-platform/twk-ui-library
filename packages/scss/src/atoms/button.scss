@@ -18,12 +18,15 @@
  *
  */
 
-.btn {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.btn-basic {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  display: inline-block;
+}
 
+.btn {
   &-lg {
     @include btn-padding-size("lg", "lg");
   }
@@ -33,14 +36,14 @@
   }
 
   &-primary {
-    @extend .btn;
+    @extend .btn-basic;
     background-color: $btn-primary-bg;
     color: $btn-primary-color;
     &:hover {
       background-color: $btn-primary-bg-hover;
     }
     &:focus {
-      background-color: $btn-primary-bg-hover;
+      background-color: $b-primary-color-focus;
     }
     &:active {
       background-color: $btn-primary-bg-active;
@@ -50,8 +53,20 @@
     }
   }
   &-secondary {
-    @extend .btn;
+    @extend .btn-basic;
     background-color: $btn-secondary-bg;
     color: $btn-secondary-color;
+    &:hover {
+      color: $btn-primary-bg-hover;
+    }
+    &:focus {
+      color: $b-primary-color-focus;
+    }
+    &:active {
+      color: $btn-primary-bg-active;
+    }
+    &:disabled {
+      color: $btn-primary-bg-disabled;
+    }
   }
 }

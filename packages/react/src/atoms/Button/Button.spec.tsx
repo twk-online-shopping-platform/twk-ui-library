@@ -17,7 +17,6 @@ describe("Test Button Component", () => {
     const testLabel = "test-button";
     const buttonProps: ButtonType = {
       label: testLabel,
-      color: "red",
     };
     render(<Button {...buttonProps} />);
 

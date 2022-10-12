@@ -12,10 +12,30 @@ const Button: React.FC<ButtonType> = ({
   variant = ButtonVariant.PRIMARY,
   size = ButtonSize.SMALL,
   radius = ButtondRadius.BOTH,
+  leftIcon,
+  rightIcon,
 }) => {
-  const leftIconClassName: string = `icn-lf icn-${size}-input-field `;
-  const rightIconClassName: string = `icn-rt icn-${size}-input-field `;
+  let leftIconClassName: string | undefined = `icn-lf icn-${size}-input-field `;
+  let rightIconClassName:
+    | string
+    | undefined = `icn-rt icn-${size}-input-field `;
   const buttonClass = `btn-${variant} btn-${size} b-rd-${radius} b-rd-blue b-rd-thick`;
+  if (typeof leftIcon === "string") {
+    leftIconClassName = leftIconClassName.concat(leftIcon);
+  } else if (typeof leftIcon == "boolean" && leftIcon) {
+    leftIconClassName = leftIconClassName.concat(
+      "fa-sharp fa-solid fa-angle-left"
+    );
+  } else {
+    leftIconClassName = undefined;
+  }
+  if (typeof rightIcon === "string") {
+    rightIconClassName = rightIconClassName.concat(rightIcon);
+  } else if (typeof rightIcon === "boolean" && rightIcon) {
+    rightIconClassName = rightIconClassName.concat("fa-solid fa-angle-right");
+  } else {
+    rightIconClassName = undefined;
+  }
   return (
     <button
       title="Button"
@@ -25,15 +45,14 @@ const Button: React.FC<ButtonType> = ({
       }}
       data-testid={ButtonConstants.ButtonTestId.toString()}
     >
-      <Icon
-        cssValue={leftIconClassName.concat("fa-sharp fa-solid fa-angle-left")}
-      />
+      {leftIconClassName ? <Icon cssValue={leftIconClassName} /> : null}
+
       <Typography
         text={label}
         variant={TypographyVariant.BUTTON}
         weight={TypographyWeight.SEMI_BOLD}
       />
-      <Icon cssValue={rightIconClassName.concat("fa-solid fa-angle-right")} />
+      {rightIconClassName ? <Icon cssValue={rightIconClassName} /> : null}
     </button>
   );
 };

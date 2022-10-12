@@ -20,8 +20,8 @@ interface ButtonType {
   variant?: ButtonVariant;
   size?: ButtonSize;
   radius?: ButtondRadius;
-  leftIcon?: string;
-  rightIcon?: string;
+  leftIcon?: string | boolean;
+  rightIcon?: string | boolean;
 }
 export type { ButtonType };
 

@@ -23,18 +23,18 @@
 =            Padding            =
 =============================================*/
 
-@mixin btn-padding-size($leftright, $upbottom) {
+@mixin padding-size($leftright, $upbottom, $padding-h-size, $padding-v-size) {
   @if $leftright != 0 {
-    padding-left: map-get($btn-padding-size-h, $leftright);
-    padding-right: map-get($btn-padding-size-h, $leftright);
+    padding-left: map-get($padding-h-size, $leftright);
+    padding-right: map-get($padding-h-size, $leftright);
   }
   @if $leftright == 0 {
     padding-left: 0;
     padding-right: 0;
   }
   @if $upbottom!= 0 {
-    padding-top: map-get($btn-padding-size-v, $leftright);
-    padding-bottom: map-get($btn-padding-size-v, $leftright);
+    padding-top: map-get($padding-v-size, $leftright);
+    padding-bottom: map-get($padding-v-size, $leftright);
   }
   @if $upbottom == 0 {
     padding-top: 0;
@@ -42,6 +42,23 @@
   }
 }
 
+@mixin btn-padding-size($leftright, $upbottom) {
+  @include padding-size(
+    $leftright,
+    $upbottom,
+    $btn-padding-size-h,
+    $btn-padding-size-v
+  );
+}
+
+@mixin menuitem-padding-size($leftright, $upbottom) {
+  @include padding-size(
+    $leftright,
+    $upbottom,
+    $mni-padding-size-h,
+    $mni-padding-size-v
+  );
+}
 /*=====  End of Padding  ======*/
 
 /*=============================================
@@ -64,3 +81,41 @@
 }
 
 /*=====  End of Box Shadowing Mixin  ======*/
+
+/*=============================================
+=            Layout            =
+=============================================*/
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+/*=====  End of Layout  ======*/
+
+/*=============================================
+=            Menu Position            =
+=============================================*/
+
+@mixin menu-position($position) {
+  @if $position == "left" {
+    top: var(--twk-top-menu-position, map-get($menu-position-left, "top"));
+    left: var(--twk-left-menu-position, map-get($menu-position-left, "left"));
+  }
+  @if $position == "right" {
+    top: var(--twk-top-menu-position, map-get($menu-position-right, "top"));
+    right: var(
+      --twk-right-menu-position,
+      map-get($menu-position-right, "right")
+    );
+  }
+  @if $position == "under" {
+    top: var(--twk-top-menu-position, map-get($menu-position-under, "top"));
+    left: var(--twk-left-menu-position, map-get($menu-position-under, "left"));
+  }
+}
+
+/*=====  End of Menu Position  ======*/

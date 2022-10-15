@@ -1,6 +1,9 @@
 enum IconSize {
+  X_SMALL = "xs",
   SMALL = "sm",
+  MDIUM = "md",
   LARGE = "lg",
+  X_LARGE = "xl",
 }
 
 interface IconType {

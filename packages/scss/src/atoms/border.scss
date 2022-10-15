@@ -5,6 +5,9 @@
 /**
  *
  * b = border
+ * rd = round
+ * nr = no radius
+ * cr = circle
  *
  */
 
@@ -16,14 +19,11 @@
 
 /*=====  End of Foundation  ======*/
 
-.b-rd-basic {
+.b-rd {
   border-radius: $b-radius;
   border-width: $b-width;
-}
-
-.b-rd {
   &-blue {
-    @extend .b-rd-basic;
+    @extend .b-rd;
     border-color: $b-primary-color;
     &:hover {
       border-color: $b-primary-color-hover;
@@ -38,7 +38,6 @@
       border-color: $b-primary-color-disabled;
     }
   }
-
   &-thick {
     border-width: $b-width-thick;
   }
@@ -47,7 +46,7 @@
   }
 
   &-gray {
-    @extend .b-rd-basic;
+    @extend .b-rd;
     border-color: $b-gray-color;
     &:hover {
       border-color: $b-gray-color-hover;
@@ -56,17 +55,43 @@
       outline: $b-gray-color;
     }
   }
+  &-lt {
+    @extend .b-rd;
+    border-top-right-radius: $b-sharp-rt;
+    border-bottom-right-radius: $b-sharp-rb;
+  }
+  &-rt {
+    @extend .b-rd;
+    border-top-left-radius: $b-sharp-lt;
+    border-bottom-left-radius: $b-sharp-lb;
+  }
+  &-sm {
+    border-radius: $b-sm-radius;
+  }
+  &-lg {
+    border-radius: $b-lg-radius;
+  }
 }
 
-.b-rd-lt {
+.b-nr {
   @extend .b-rd;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+  border-radius: $b-sharp-r;
+  &-blue {
+    border-color: $b-primary-color;
+  }
 }
-.b-rd-rt {
-  @extend .b-rd;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+
+.b-cr {
+  border-radius: $b-circle-radius;
+}
+
+.b-style {
+  &-d {
+    border-style: dashed;
+  }
+  &-s {
+    border-style: solid;
+  }
 }
 
 /*=====  End of Border  ======*/

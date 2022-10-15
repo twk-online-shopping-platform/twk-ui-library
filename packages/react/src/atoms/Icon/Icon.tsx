@@ -6,7 +6,7 @@ const Icon = ({
   cssValue = "fa-solid fa-magnifying-glass",
   size = IconSize.SMALL,
 }: IconType) => {
-  const iconClassName = `${cssValue}`;
+  const iconClassName = `${cssValue} icn-${size}`;
   return <i data-testid={IconTestId} className={iconClassName}></i>;
 };
 

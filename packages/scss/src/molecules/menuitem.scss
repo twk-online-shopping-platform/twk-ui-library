@@ -1,0 +1,46 @@
+/*=============================================
+=            MenuItem            =
+=============================================*/
+
+/*----------  Foundation  ----------*/
+@import "../foundation/all";
+
+/**
+ *
+ * mni = menuitem
+ * c = container
+ * p = panel
+ */
+
+.mni {
+  @include flex-row;
+}
+.mni-c {
+  display: inline-block;
+  position: relative;
+  @include menuitem-padding-size("none", "none");
+}
+.mni-p {
+  min-width: 10rem;
+  min-height: 10rem;
+  position: absolute;
+  display: none;
+  z-index: 10;
+  &-under {
+    @include menu-position("under");
+  }
+  &-left {
+    @include menu-position("left");
+  }
+  &-right {
+    @include menu-position("right");
+  }
+  &-on {
+    display: inline-block;
+  }
+  &-off {
+    display: none;
+  }
+}
+
+/*=====  End of MenuItem  ======*/

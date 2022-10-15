@@ -1,3 +1,5 @@
+import { KeyboardEventHandler, MouseEventHandler } from "react";
+
 enum TypographyVariant {
   DISPLAY = "dis",
   TEXT = "txt",
@@ -19,12 +21,18 @@ enum TypographySize {
   MEDIUM = "md",
   LARGE = "lg",
 }
+interface TypographyEventHandler {
+  clickHandler?: MouseEventHandler;
+  mouseHandler?: MouseEventHandler;
+  keyboardHandler?: KeyboardEventHandler;
+}
 
 interface TypographyType {
   text?: string;
   variant?: TypographyVariant;
   weight?: TypographyWeight;
   size?: TypographySize;
+  handler?: TypographyEventHandler | undefined;
 }
 export { TypographyWeight, TypographyVariant, TypographySize };
-export type { TypographyType };
+export type { TypographyType, TypographyEventHandler };

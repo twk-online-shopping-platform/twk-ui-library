@@ -20,13 +20,20 @@
 
 .icn {
   color: $fld-type-color;
-  @include box-size(0, 0);
-
+  &-xl {
+    font-size: $icon-xl-size;
+  }
   &-lg {
-    @include box-size(0, 0);
+    font-size: $icon-lg-size;
+  }
+  &-md {
+    font-size: $icon-md-size;
   }
   &-sm {
-    @include box-size(0, 0);
+    font-size: $icon-sm-size;
+  }
+  &-xs {
+    font-size: $icon-xs-size;
   }
 
   &-primary {

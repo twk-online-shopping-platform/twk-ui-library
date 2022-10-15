@@ -137,6 +137,18 @@ $btn-padding-size-h: (
   lg: 3rem,
 );
 
+$mni-padding-size-v: (
+  none: 0rem,
+  sm: 0.625rem,
+  lg: 1.063rem,
+);
+
+$mni-padding-size-h: (
+  none: 0rem,
+  sm: 2rem,
+  lg: 3rem,
+);
+
 /*----------  border  ----------*/
 $b-style: (
   n: "none",
@@ -150,6 +162,8 @@ $b-widths: (
   thick: 0.125rem,
   thickes: 0.188rem,
 );
+$b-no-radius: 0rem;
+$b-circle-radius: 50%;
 
 /*=====  End of Spacing  ======*/
 
@@ -167,7 +181,7 @@ $heading-font-size: (
   xxl: 3rem,
   xl: 2.5rem,
   lg: 2rem,
-  md: 1.75,
+  md: 1.75rem,
   sm: 1.5rem,
   xs: 1.125rem,
 );
@@ -185,8 +199,15 @@ $btn-font-size: (
 );
 $link-font-size: 0.875rem;
 $small-font-size: (
-  md: 0.75rem,
+  lg: 0.75rem,
   sm: 0.625rem,
+);
+$icon-font-size: (
+  xl: 7.5rem,
+  lg: 4rem,
+  md: 2rem,
+  sm: 1.5rem,
+  xs: 1.125rem,
 );
 /* Font families */
 
@@ -267,3 +288,22 @@ $fld-padding-size-lg-type-up: 2rem;
 $fld-padding-size-lg-type-bottom: 0.688rem;
 $fld-padding-size-sm-up-bottom: 0.688rem;
 $fld-padding-size-left-extra-padding-for-icon: 3.563rem;
+
+/*=============================================
+=            Menu            =
+=============================================*/
+
+$menu-position-left: (
+  left: 105%,
+  top: 0rem,
+);
+$menu-position-under: (
+  top: 105%,
+  left: 0rem,
+);
+$menu-position-right: (
+  right: 105%,
+  top: 0rem,
+);
+
+/*=====  End of Menu  ======*/

@@ -64,4 +64,39 @@ $txtFt-lg-size: var(
   --twk-txt-ft-lg-size,
   map-get($text-font-size, "lg")
 ) !default;
+
+/*----------  Small Text  ----------*/
+
+$small-sm-size: var(
+  --twk-small-ft-sm-size,
+  map-get($small-font-size, "sm")
+) !default;
+$small-lg-size: var(
+  --twk-small-ft-lg-size,
+  map-get($small-font-size, "lg")
+) !default;
+
+/*----------  Icon Font Size  ----------*/
+
+$icon-xs-size: var(
+  --twk-icon-ft-xs-size,
+  map-get($icon-font-size, "xs")
+) !default;
+$icon-sm-size: var(
+  --twk-icon-ft-sm-size,
+  map-get($icon-font-size, "sm")
+) !default;
+$icon-md-size: var(
+  --twk-icon-ft-md-size,
+  map-get($icon-font-size, "md")
+) !default;
+$icon-lg-size: var(
+  --twk-icon-ft-lg-size,
+  map-get($icon-font-size, "lg")
+) !default;
+$icon-xl-size: var(
+  --twk-icon-ft-xl-size,
+  map-get($icon-font-size, "xl")
+) !default;
+
 /*=====  End Typography  ======*/

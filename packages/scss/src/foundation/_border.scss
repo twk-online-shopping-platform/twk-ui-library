@@ -3,6 +3,8 @@
 =============================================*/
 
 $b-radius: var(--twk-b-radius, map-get($spacing, "xxs")) !default;
+$b-sm-radius: var(--twk-b-sm-radius, map-get($spacing, "xxxs")) !default;
+$b-lg-radius: var(--twk-b-lg-radius, map-get($spacing, "sm")) !default;
 $b-width: var(--twk-b-width, map-get($b-widths, "normal")) !default;
 $b-width-thin: var(--twk-b-width, map-get($b-widths, "thin")) !default;
 $b-width-thick: var(--twk-b-width, map-get($b-widths, "thick")) !default;
@@ -17,5 +19,13 @@ $b-none-style: var(--twk-b-solid-style, map-get($b-style, "n")) !default;
 $b-dashed-style: var(--twk-b-solid-style, map-get($b-style, "ds")) !default;
 $b-solid-style: var(--twk-b-solid-style, map-get($b-style, "s")) !default;
 $b-dotted-style: var(--twk-b-secondary-style, map-get($b-style, "dt")) !default;
+
+$b-sharp-lt: var(--twk-sharp-border-left-top-radius, $b-no-radius);
+$b-sharp-lb: var(--twk-sharp-border-left-bottom-radius, $b-no-radius);
+$b-sharp-rt: var(--twk-sharp-border-right-top-radius, $b-no-radius);
+$b-sharp-rb: var(--twk-sharp-border-right-bottom-radius, $b-no-radius);
+$b-sharp-r: var(--twk-shart-border-radius, $b-no-radius);
+
+$b-circle-r: var(--twk-circle-border-radius, $b-circle-radius);
 
 /*=====  End of Border Spacing  ======*/

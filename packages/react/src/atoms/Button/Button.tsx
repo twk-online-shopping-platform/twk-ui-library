@@ -2,11 +2,11 @@ import React from "react";
 import { TypographyVariant, TypographyWeight } from "../Typography/Type";
 import { ButtondRadius, ButtonVariant } from "./Type";
 import Typography from "../Typography/Typography";
-import ButtonConstants from "./ButtonConstants";
+import { ButtonTestId } from "./ButtonConstants";
 import { ButtonType, ButtonSize } from "./Type";
 import Icon from "../Icon/Icon";
 
-const Button: React.FC<ButtonType> = ({
+const Button = ({
   label = "button",
   clickHandler,
   variant = ButtonVariant.PRIMARY,
@@ -14,7 +14,7 @@ const Button: React.FC<ButtonType> = ({
   radius = ButtondRadius.BOTH,
   leftIcon,
   rightIcon,
-}) => {
+}: ButtonType) => {
   let leftIconClassName: string | undefined = `icn-lf icn-${size}-input-field `;
   let rightIconClassName:
     | string
@@ -43,7 +43,7 @@ const Button: React.FC<ButtonType> = ({
       onClick={() => {
         if (clickHandler) clickHandler();
       }}
-      data-testid={ButtonConstants.ButtonTestId.toString()}
+      data-testid={ButtonTestId}
     >
       {leftIconClassName ? <Icon cssValue={leftIconClassName} /> : null}
 

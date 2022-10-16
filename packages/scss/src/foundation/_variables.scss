@@ -149,6 +149,30 @@ $mni-padding-size-h: (
   lg: 3rem,
 );
 
+$mnu-padding-size-v: (
+  none: 0rem,
+  sm: 1.25rem,
+  lg: 2rem,
+);
+
+$mnu-padding-size-h: (
+  none: 0rem,
+  sm: 1.25rem,
+  lg: 2rem,
+);
+
+$ntf-padding-size-v: (
+  none: 0rem,
+  sm: 0.063rem,
+  lg: 0.125rem,
+);
+
+$ntf-padding-size-h: (
+  none: 0rem,
+  sm: 0.25rem,
+  lg: 0.5rem,
+);
+
 /*----------  border  ----------*/
 $b-style: (
   n: "none",
@@ -307,3 +331,12 @@ $menu-position-right: (
 );
 
 /*=====  End of Menu  ======*/
+
+/*=============================================
+=            Notification            =
+=============================================*/
+
+$ntf-spacing-bottom: 75%;
+$ntf-spacing-left: 75%;
+
+/*=====  End of Notification  ======*/

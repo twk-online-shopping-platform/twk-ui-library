@@ -1,0 +1,26 @@
+/*=============================================
+=            Menu            =
+=============================================*/
+/*----------  Foundation  ----------*/
+@import "../foundation/all";
+/**
+ *
+ * mnu = Menu
+ *
+ */
+
+.mnu {
+  @include flex-row;
+  gap: 1.25rem;
+
+  &-v {
+    @extend .mnu;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  &-h {
+    @extend .mnu;
+    flex-direction: row;
+  }
+}
+/*=====  End of Menu  ======*/

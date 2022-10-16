@@ -1,3 +1,3 @@
-const ButtonTestId = "button-test-id";
+const ButtonTestId: string = "button-test-id";
 
-export default { ButtonTestId };
+export { ButtonTestId };

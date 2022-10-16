@@ -33,6 +33,7 @@ interface TypographyType {
   weight?: TypographyWeight;
   size?: TypographySize;
   handler?: TypographyEventHandler | undefined;
+  nowrapText?: boolean;
 }
 export { TypographyWeight, TypographyVariant, TypographySize };
 export type { TypographyType, TypographyEventHandler };

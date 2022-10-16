@@ -7,7 +7,9 @@
     ],
     "nohoist": [
       "**/normalize-scss",
-      "**/@fortawesome/fontawesome-free"
+      "**/@fortawesome/fontawesome-free",
+      "**/bootstrap-icons",
+      "**/@iconscout/unicons"
     ]
   },
   "devDependencies": {

@@ -6,7 +6,7 @@ import { MenuItemSize, MenuItemType } from "./Type";
 
 describe("Test MenuItem Component", () => {
   it("should display MenuItem Component", async () => {
-    render(<MenuItem />);
+    render(<MenuItem label={""} />);
     const muenuItem = await screen.getByTestId(menuItemTestId);
     expect(muenuItem).toBeInTheDocument();
   });
@@ -21,7 +21,9 @@ describe("Test MenuItem Component", () => {
     expect(muenuItem).toBeInTheDocument();
   });
   it("should accept click handler", async () => {
-    const menuItemProps: MenuItemType = {};
+    const menuItemProps: MenuItemType = {
+      label: "",
+    };
     render(<MenuItem {...menuItemProps} />);
     const muenuItem = await screen.getByTestId(subMenuItemTestId);
     expect(muenuItem).toBeInTheDocument();

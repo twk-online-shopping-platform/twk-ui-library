@@ -1,6 +1,7 @@
 import React, { useId, useState } from "react";
 import Icon from "../Icon/Icon";
-import FieldConstants from "./FieldConstants";
+import { IconSize } from "../Icon/Type";
+import { TextFieldTestId } from "./FieldConstants";
 import { TextFiedType, TextFieldRadius, TextFieldSize } from "./Type";
 
 const TextField = ({
@@ -23,35 +24,39 @@ const TextField = ({
     <div className={groupClassName}>
       {leftIcon ? (
         leftIcon.iconCssValue ? (
-          <Icon cssValue={leftIconClassName.concat(leftIcon.iconCssValue)} />
+          <Icon
+            cssValue={leftIconClassName.concat(leftIcon.iconCssValue)}
+            size={leftIcon.iconSize ? leftIcon.iconSize : IconSize.X_SMALL}
+          />
         ) : (
           <Icon
             cssValue={leftIconClassName.concat("fa-solid fa-magnifying-glass")}
+            size={IconSize.X_SMALL}
           />
         )
       ) : null}
       <input
         id={fieldId}
         className={inputClassName}
-        data-testid={FieldConstants.TextFieldTestId.toString()}
+        data-testid={TextFieldTestId}
         type={type ? type : "text"}
         placeholder={placeholder}
-        onChange={
-          typeEventHandler
-            ? (e) => typeEventHandler(e)
-            : (e) => {
-                console.log("user input " + e.target.value);
-              }
-        }
+        onChange={typeEventHandler ? (e) => typeEventHandler(e) : () => {}}
       />
       <label className={labelClassName} htmlFor={fieldId}>
         {placeholder}
       </label>
       {rightIcon ? (
         rightIcon.iconCssValue ? (
-          <Icon cssValue={rightIconClassName.concat(rightIcon.iconCssValue)} />
+          <Icon
+            cssValue={rightIconClassName.concat(rightIcon.iconCssValue)}
+            size={rightIcon.iconSize ? rightIcon.iconSize : IconSize.X_SMALL}
+          />
         ) : (
-          <Icon cssValue={rightIconClassName.concat("fa-solid fa-xmark")} />
+          <Icon
+            cssValue={rightIconClassName.concat("fa-solid fa-xmark")}
+            size={IconSize.X_SMALL}
+          />
         )
       ) : null}
     </div>

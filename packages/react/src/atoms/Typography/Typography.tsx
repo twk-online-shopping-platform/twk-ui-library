@@ -13,9 +13,12 @@ const Typography = ({
   weight = TypographyWeight.NORMAL,
   size = TypographySize.SMALL,
   handler,
+  nowrapText,
 }: TypographyType) => {
   const defaultText: string = TypoDefaultText;
-  const typoClassName = `ft-family ${variant}-${size}-font ${variant}-fw-${weight}`;
+  const typoClassName = `ft-family ${variant}-${size}-font ${variant}-fw-${weight} ${
+    nowrapText ? "non-wrap-font" : ""
+  }`;
   const voidFunction = (e: { preventDefault: () => void }) => {
     e.preventDefault();
   };

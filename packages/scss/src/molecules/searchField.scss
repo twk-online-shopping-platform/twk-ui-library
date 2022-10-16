@@ -1,0 +1,7 @@
+/*----------  Foundation  ----------*/
+@import "../foundation/all";
+
+.srch {
+  @include flex-row;
+  gap: 0rem;
+}

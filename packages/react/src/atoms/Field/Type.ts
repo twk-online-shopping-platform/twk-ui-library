@@ -1,3 +1,5 @@
+import { IconSize } from "../Icon/Type";
+
 enum TextFieldSize {
   SMALL = "sm",
   LARGE = "lg",
@@ -10,7 +12,8 @@ enum TextFieldRadius {
 
 interface IconValue {
   iconCssValue: string;
-  eventHanlder: Function;
+  eventHanlder?: Function;
+  iconSize: IconSize;
 }
 
 interface TextFiedType {

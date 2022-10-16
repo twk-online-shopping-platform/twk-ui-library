@@ -8,8 +8,8 @@
 /**
  *
  * mni = menuitem
- * c = container
- * p = panel
+ * c = menuitem container
+ * p = submenu panel
  */
 
 .mni {
@@ -21,8 +21,7 @@
   @include menuitem-padding-size("none", "none");
 }
 .mni-p {
-  min-width: 10rem;
-  min-height: 10rem;
+  @include menu-padding-size("sm", "sm");
   position: absolute;
   display: none;
   z-index: 10;

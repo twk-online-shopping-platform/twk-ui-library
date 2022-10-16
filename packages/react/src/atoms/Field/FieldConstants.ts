@@ -1,2 +1,2 @@
-const TextFieldTestId = "";
-export default { TextFieldTestId };
+const TextFieldTestId: string = "text-fieldTest-id";
+export { TextFieldTestId };

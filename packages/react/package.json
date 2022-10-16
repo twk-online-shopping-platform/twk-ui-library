@@ -40,12 +40,14 @@
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "test": "jest --verbose"
+    "test": "jest --verbose --watch"
   },
   "workspaces": [
     "packages/*"
   ],
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.2.0"
+    "@fortawesome/fontawesome-free": "^6.2.0",
+    "@iconscout/unicons": "^4.0.1",
+    "bootstrap-icons": "^1.9.1"
   }
 }

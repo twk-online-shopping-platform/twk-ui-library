@@ -139,6 +139,7 @@ $font-color: var(--twk-font-color, map-get($gray, "900")) !default;
 =            Notification Color            =
 =============================================*/
 
-$b-ntf-color: var(--twk-notification-color, map-get($green, "500"));
+$b-ntf-color: var(--twk-notification-bg-color, map-get($green, "500"));
+$ntf-txt-color: var(--twk-notification-text-color, map-get($white, "white"));
 
 /*=====  End of Notification Color  ======*/

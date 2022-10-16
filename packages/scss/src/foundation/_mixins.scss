@@ -51,12 +51,28 @@
   );
 }
 
+@mixin ntf-padding-size($leftright, $upbottom) {
+  @include padding-size(
+    $leftright,
+    $upbottom,
+    $ntf-padding-size-h,
+    $ntf-padding-size-v
+  );
+}
 @mixin menuitem-padding-size($leftright, $upbottom) {
   @include padding-size(
     $leftright,
     $upbottom,
     $mni-padding-size-h,
     $mni-padding-size-v
+  );
+}
+@mixin menu-padding-size($leftright, $upbottom) {
+  @include padding-size(
+    $leftright,
+    $upbottom,
+    $mnu-padding-size-h,
+    $mnu-padding-size-v
   );
 }
 /*=====  End of Padding  ======*/

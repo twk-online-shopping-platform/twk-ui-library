@@ -6,7 +6,7 @@
  *
  */
 
-/*----------  font weight  ----------*/
+/*---------- Display font weight  ----------*/
 
 .dis-fw-n {
   font-weight: $fw-n;
@@ -77,6 +77,20 @@
   font-size: $txtFt-lg-size;
 }
 
+/*----------  Text Font Weight  ----------*/
+
+.txt-fw-n {
+  font-weight: $fw-n;
+}
+.txt-fw-m {
+  font-weight: $fw-m;
+}
+.txt-fw-s {
+  font-weight: $fw-s;
+}
+.txt-fw-b {
+  font-weight: $fw-b;
+}
 /*----------  Small Text  ----------*/
 
 .sml-sm-font {

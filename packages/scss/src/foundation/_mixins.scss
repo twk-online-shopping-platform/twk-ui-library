@@ -110,6 +110,14 @@
   gap: 0.375rem;
 }
 
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.375rem;
+}
+
 /*=====  End of Layout  ======*/
 
 /*=============================================
@@ -135,3 +143,52 @@
 }
 
 /*=====  End of Menu Position  ======*/
+
+/*=============================================
+=            Color Mapper            =
+=============================================*/
+
+@mixin map-color($css-selector) {
+  @each $key, $val in $white {
+    &-white-#{$key} {
+      #{$css-selector}: $val;
+    }
+  }
+  @each $key, $val in $gray {
+    &-gray-#{$key} {
+      #{$css-selector}: $val;
+    }
+  }
+  @each $key, $val in $blue {
+    &-blue-#{$key} {
+      #{$css-selector}: $val;
+    }
+  }
+  @each $key, $val in $turquoise {
+    &-turquoise-#{$key} {
+      #{$css-selector}: $val;
+    }
+  }
+  @each $key, $val in $red {
+    &-red-#{$key} {
+      #{$css-selector}: $val;
+    }
+  }
+  @each $key, $val in $green {
+    &-green-#{$key} {
+      #{$css-selector}: $val;
+    }
+  }
+  @each $key, $val in $orange {
+    &-orange-#{$key} {
+      #{$css-selector}: $val;
+    }
+  }
+  @each $key, $val in $violet {
+    &-violet-#{$key} {
+      #{$css-selector}: $val;
+    }
+  }
+}
+
+/*=====  End of Color Mapper  ======*/

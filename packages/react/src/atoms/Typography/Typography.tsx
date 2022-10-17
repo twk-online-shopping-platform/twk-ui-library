@@ -14,11 +14,12 @@ const Typography = ({
   size = TypographySize.SMALL,
   handler,
   nowrapText,
+  color,
 }: TypographyType) => {
   const defaultText: string = TypoDefaultText;
   const typoClassName = `ft-family ${variant}-${size}-font ${variant}-fw-${weight} ${
     nowrapText ? "non-wrap-font" : ""
-  }`;
+  }  ${color ? "clr-txt-" + color.type + "-" + color.value : ""}`;
   const voidFunction = (e: { preventDefault: () => void }) => {
     e.preventDefault();
   };

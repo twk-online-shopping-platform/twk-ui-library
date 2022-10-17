@@ -1,0 +1,70 @@
+/*=============================================
+=            Flex Layout            =
+=============================================*/
+@import "../foundation/all";
+
+/**
+ *
+ * flx = flex
+ * r = row
+ * c = column
+ * dvc = view device 
+ * spc = space
+ * btn = between
+ * ctr = center
+ *
+ */
+$flex-cols: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+.flx {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &-h {
+    @extend .flx;
+    flex-direction: row;
+  }
+  &-v {
+    @extend .flx;
+    flex-direction: column;
+  }
+  &-spc-btn {
+    justify-content: space-between;
+  }
+  &-spc-ctr {
+    justify-content: center;
+  }
+  &-gap-xs {
+    gap: 0.25rem;
+  }
+  &-gap-sm {
+    gap: 0.5rem;
+  }
+  &-gap-md {
+    gap: 1rem;
+  }
+  &-gap-lg {
+    gap: 2rem;
+  }
+  &-gap-xl {
+    gap: 3rem;
+  }
+  @each $col in $flex-cols {
+    &-col-#{$col} {
+      flex-grow: $col;
+    }
+  }
+}
+
+.dvc {
+  &-disktop {
+    max-width: 75rem;
+    width: 100%;
+    min-width: 56.25rem;
+  }
+  &-full {
+    width: 100%;
+  }
+}
+
+/*=====  End of Flex Layout  ======*/

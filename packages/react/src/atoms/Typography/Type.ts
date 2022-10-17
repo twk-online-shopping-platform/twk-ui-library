@@ -21,6 +21,21 @@ enum TypographySize {
   MEDIUM = "md",
   LARGE = "lg",
 }
+enum TypographyColorType {
+  WHITE = "white",
+  GRAY = "gray",
+  BLUE = "blue",
+  TURQUOISE = "turquoise",
+  RED = "red",
+  GREEN = "green",
+  YELLOW = "yellow",
+  ORANGE = "orange",
+  VIOLET = "violet",
+}
+interface TypographyColor {
+  value: string;
+  type: TypographyColorType;
+}
 interface TypographyEventHandler {
   clickHandler?: MouseEventHandler;
   mouseHandler?: MouseEventHandler;
@@ -34,6 +49,12 @@ interface TypographyType {
   size?: TypographySize;
   handler?: TypographyEventHandler | undefined;
   nowrapText?: boolean;
+  color?: TypographyColor;
 }
-export { TypographyWeight, TypographyVariant, TypographySize };
-export type { TypographyType, TypographyEventHandler };
+export {
+  TypographyWeight,
+  TypographyVariant,
+  TypographySize,
+  TypographyColorType,
+};
+export type { TypographyType, TypographyEventHandler, TypographyColor };

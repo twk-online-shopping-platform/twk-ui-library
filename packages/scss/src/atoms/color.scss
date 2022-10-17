@@ -1,0 +1,22 @@
+/*=============================================
+=            Color Styles            =
+=============================================*/
+
+@import "../foundation/all";
+
+/**
+ *
+ * clr
+ *
+ */
+
+.clr {
+  &-bg {
+    @include map-color("background-color");
+  }
+  &-txt {
+    @include map-color("color");
+  }
+}
+
+/*=====  End of Color Styles  ======*/

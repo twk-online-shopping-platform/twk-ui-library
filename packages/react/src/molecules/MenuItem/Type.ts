@@ -32,4 +32,4 @@ interface MenuItemType {
 }
 export { MenuItemSize, SubMenuPosition };
 
-export type { MenuItemType, RightIconType };
+export type { MenuItemType, RightIconType, SubMenuType };

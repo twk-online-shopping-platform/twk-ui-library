@@ -29,6 +29,8 @@
     align-content: center;
     @include ntf-padding-size("sm", "sm");
     color: $ntf-txt-color;
+    min-width: 0.2rem;
+    min-height: 0.4rem;
   }
 }
 

@@ -12,6 +12,8 @@
  * spc = space
  * btn = between
  * ctr = center
+ * lft = left
+ * rht = right
  *
  */
 $flex-cols: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
@@ -27,6 +29,15 @@ $flex-cols: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
   &-v {
     @extend .flx;
     flex-direction: column;
+    &-ctr {
+      align-items: center;
+    }
+    &-lft {
+      align-items: flex-start;
+    }
+    &-rht {
+      align-items: flex-end;
+    }
   }
   &-spc-btn {
     justify-content: space-between;

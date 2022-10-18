@@ -6,7 +6,8 @@
 
 /**
  *
- * clr
+ * clr = 
+ * lnk = link
  *
  */
 
@@ -16,6 +17,13 @@
   }
   &-txt {
     @include map-color("color");
+    &-lnk {
+      color: map-get($gray, "800");
+      cursor: pointer;
+      &:hover {
+        color: map-get($blue, "500");
+      }
+    }
   }
 }
 

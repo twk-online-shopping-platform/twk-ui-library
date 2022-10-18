@@ -4,8 +4,17 @@ import Menu from "../Menu/Menu";
 import Icon from "../../atoms/Icon/Icon";
 import Typography from "../../atoms/Typography/Typography";
 import { menuItemTestId, subMenuItemTestId } from "./MenuItemConstants";
-import { MenuItemType, RightIconType } from "./Type";
-import { TypographySize, TypographyVariant } from "../../atoms/Typography/Type";
+import {
+  MenuItemType,
+  RightIconType,
+  SubMenuPosition,
+  SubMenuType,
+} from "./Type";
+import {
+  TypographyColorType,
+  TypographySize,
+  TypographyVariant,
+} from "../../atoms/Typography/Type";
 import { IconSize } from "../../atoms/Icon/Type";
 
 const MenuItem = ({
@@ -29,7 +38,7 @@ const MenuItem = ({
       <div
         data-testid={menuItemTestId}
         onClick={(e: any) => menuOnClickHandler(e, setOpenMenu)}
-        className="mni"
+        className="mni clr-txt-lnk"
       >
         {leftIcon ? (
           typeof leftIcon === "string" ? (
@@ -44,14 +53,14 @@ const MenuItem = ({
           size={TypographySize.SMALL}
           nowrapText={true}
         />
-        {rightIcon ? righIconComp(rightIcon, openMenu) : null}
+        {righIconComp(rightIcon, openMenu, submenu)}
       </div>
       {submenu ? (
         submenu.menu ? (
           <div
             className={`mni-p mni-p-${subMenuPosition} mni-p-${
               openMenu ? "on" : "off"
-            } b-rd b-rd-blue b-rd-thick b-style-d`}
+            } b-rd b-rd-blue b-rd-thick b-style-d clr-bg-white-white`}
             data-testid={subMenuItemTestId}
           >
             {submenu ? (
@@ -71,17 +80,41 @@ const MenuItem = ({
 
 const righIconComp = (
   input: RightIconType | boolean | undefined,
-  isOpen: boolean
+  isOpen: boolean,
+  subMenu: SubMenuType | undefined
 ) => {
   if (typeof input === "boolean" && input) {
     return <Icon />;
   }
-  if (!input) return null;
+  if (!input) {
+    if (subMenu && subMenu.menu) {
+      if (subMenu.position) {
+        if (subMenu.position === SubMenuPosition.UNDER) {
+          if (isOpen) {
+            return (
+              <Icon cssValue="fa-solid fa-angle-down" size={IconSize.X_SMALL} />
+            );
+          } else {
+            return (
+              <Icon cssValue="fa-solid fa-angle-left" size={IconSize.X_SMALL} />
+            );
+          }
+        }
+      }
+      if (isOpen) {
+        return <Icon cssValue="fa-solid fa-minus" size={IconSize.X_SMALL} />;
+      } else {
+        return <Icon cssValue="fa-solid fa-plus" size={IconSize.X_SMALL} />;
+      }
+    } else {
+      return null;
+    }
+  }
   if (isRightIcon(input)) {
     if (isOpen) {
-      return <Icon cssValue={input.openValue} />;
+      return <Icon cssValue={input.openValue} size={IconSize.X_SMALL} />;
     } else {
-      return <Icon cssValue={input.closeValue} />;
+      return <Icon cssValue={input.closeValue} size={IconSize.X_SMALL} />;
     }
   } else {
     return null;

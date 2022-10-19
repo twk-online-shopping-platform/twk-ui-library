@@ -139,7 +139,7 @@ const Header = ({ headerMenu, navNotification }: HeaderType) => {
         </div>
       </div>
 
-      <div className="flx-h flx-spc-ctr  dvc-full clr-bg-gray-800 pdd-v-sm">
+      <div className="flx-h flx-spc-ctr  dvc-full clr-bg-gray-800 pdd-v-sm pdd-h-sm">
         <div className="flx-h dvc-disktop " data-testid={headerSrchTestId}>
           <Dropdown />
           <div className="flx-h flx-gap-sm">

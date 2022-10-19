@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { MenuOrientation, MenuType } from "./Type";
 import { menuTestId } from "./MenuConstants";
 import Menu from "./Menu";
@@ -25,7 +25,8 @@ describe("Test Menu Component", () => {
     };
 
     render(<Menu {...menuProps} />);
-    const menuComponent = await screen.getAllByTestId(subMenuItemTestId);
+    const menuComponent = await screen.getByTestId(menuTestId);
+    fireEvent.click(menuComponent);
     expect(menuComponent.length).toBe(3);
   });
 });

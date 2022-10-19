@@ -1,3 +1,5 @@
+import { MouseEventHandler } from "react";
+
 enum IconSize {
   X_SMALL = "xs",
   SMALL = "sm",
@@ -9,6 +11,7 @@ enum IconSize {
 interface IconType {
   cssValue?: string;
   size?: IconSize;
+  clickHandler?: MouseEventHandler;
 }
 
 export type { IconType };

@@ -23,6 +23,7 @@
       &:hover {
         color: map-get($blue, "500");
       }
+      @include map-color("color");
     }
   }
 }

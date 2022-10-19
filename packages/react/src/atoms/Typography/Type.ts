@@ -33,7 +33,7 @@ enum TypographyColorType {
   VIOLET = "violet",
 }
 interface TypographyColor {
-  value: string;
+  value?: string;
   type: TypographyColorType;
 }
 interface TypographyEventHandler {
@@ -50,6 +50,7 @@ interface TypographyType {
   handler?: TypographyEventHandler | undefined;
   nowrapText?: boolean;
   color?: TypographyColor;
+  cssClasses?: string;
 }
 export {
   TypographyWeight,

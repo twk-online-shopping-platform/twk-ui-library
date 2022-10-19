@@ -9,6 +9,7 @@ import {
   TypographyWeight,
 } from "../../atoms/Typography/Type";
 import Typography from "../../atoms/Typography/Typography";
+import Dropdown from "../../molecules/Dropdown/Dropdown";
 import Menu from "../../molecules/Menu/Menu";
 import SearchField from "../../molecules/SearchField/SearchField";
 import {
@@ -33,11 +34,13 @@ const Header = ({ headerMenu, navNotification }: HeaderType) => {
               text="About Us"
               variant={TypographyVariant.SMALL}
               size={TypographySize.LARGE}
+              cssClasses="clr-txt-lnk"
             />
             <Typography
               text="My account"
               variant={TypographyVariant.SMALL}
               size={TypographySize.LARGE}
+              cssClasses="clr-txt-lnk"
             />
           </div>
           <div className="flx-h">
@@ -45,6 +48,7 @@ const Header = ({ headerMenu, navNotification }: HeaderType) => {
               text="Order Tracking"
               variant={TypographyVariant.SMALL}
               size={TypographySize.LARGE}
+              cssClasses="clr-txt-lnk"
             />
           </div>
         </div>
@@ -137,19 +141,7 @@ const Header = ({ headerMenu, navNotification }: HeaderType) => {
 
       <div className="flx-h flx-spc-ctr  dvc-full clr-bg-gray-800 pdd-v-sm">
         <div className="flx-h dvc-disktop " data-testid={headerSrchTestId}>
-          <div className="flx-h clr-txt-gray-400 flx-gap-sm">
-            <Icon cssValue="fa-solid fa-bars" size={IconSize.X_SMALL} />
-            <div className="flx-v flx-v-lft">
-              <Typography
-                text="All Department for you"
-                variant={TypographyVariant.TEXT}
-              />
-              <Typography
-                text="Total 66 products"
-                variant={TypographyVariant.SMALL}
-              />
-            </div>
-          </div>
+          <Dropdown />
           <div className="flx-h flx-gap-sm">
             <Typography
               text="What are you looking for ?"

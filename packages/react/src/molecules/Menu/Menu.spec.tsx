@@ -3,8 +3,10 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { MenuOrientation, MenuType } from "./Type";
 import { menuTestId } from "./MenuConstants";
 import Menu from "./Menu";
-import { subMenuItemTestId } from "../MenuItem/MenuItemConstants";
-import MenuItem from "../MenuItem/MenuItem";
+import {
+  menuItemTestId,
+  subMenuItemTestId,
+} from "../MenuItem/MenuItemConstants";
 import { MenuItemType } from "../MenuItem/Type";
 
 describe("Test Menu Component", () => {
@@ -25,8 +27,7 @@ describe("Test Menu Component", () => {
     };
 
     render(<Menu {...menuProps} />);
-    const menuComponent = await screen.getByTestId(menuTestId);
-    fireEvent.click(menuComponent);
+    const menuComponent = await screen.getAllByTestId(menuItemTestId);
     expect(menuComponent.length).toBe(3);
   });
 });

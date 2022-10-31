@@ -9,9 +9,10 @@ enum ButtonSize {
 }
 
 enum ButtondRadius {
-  LEFT = "lt",
-  RIGHT = "rt",
-  BOTH = "",
+  LEFT = "rd-lt",
+  RIGHT = "rd-rt",
+  BOTH = "rd",
+  NONE = "nr",
 }
 
 interface ButtonType {

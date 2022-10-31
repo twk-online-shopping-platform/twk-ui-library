@@ -5,9 +5,10 @@ enum TextFieldSize {
   LARGE = "lg",
 }
 enum TextFieldRadius {
-  LEFT = "lt",
-  RIGHT = "rt",
-  BOTH = "",
+  LEFT = "rd-lt",
+  RIGHT = "rd-rt",
+  BOTH = "rd",
+  NONE = "nr",
 }
 
 interface IconValue {

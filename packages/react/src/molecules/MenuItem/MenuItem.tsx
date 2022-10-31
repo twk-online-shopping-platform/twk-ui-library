@@ -10,11 +10,7 @@ import {
   SubMenuPosition,
   SubMenuType,
 } from "./Type";
-import {
-  TypographyColorType,
-  TypographySize,
-  TypographyVariant,
-} from "../../atoms/Typography/Type";
+import { TypographySize, TypographyVariant } from "../../atoms/Typography/Type";
 import { IconSize } from "../../atoms/Icon/Type";
 
 const MenuItem = ({
@@ -22,6 +18,8 @@ const MenuItem = ({
   leftIcon,
   rightIcon,
   handler,
+  textSize,
+  textVariant,
   submenu,
 }: MenuItemType) => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -49,8 +47,8 @@ const MenuItem = ({
         ) : null}
         <Typography
           text={label}
-          variant={TypographyVariant.TEXT}
-          size={TypographySize.SMALL}
+          variant={textVariant ? textVariant : TypographyVariant.TEXT}
+          size={textSize ? textSize : TypographySize.SMALL}
           nowrapText={true}
         />
         {righIconComp(rightIcon, openMenu, submenu)}
@@ -97,6 +95,18 @@ const righIconComp = (
           } else {
             return (
               <Icon cssValue="fa-solid fa-angle-left" size={IconSize.X_SMALL} />
+            );
+          }
+        }
+        if (subMenu.position === SubMenuPosition.UNDER_RIGHT) {
+          if (isOpen) {
+            return null;
+          } else {
+            return (
+              <Icon
+                cssValue="fa-solid fa-chevron-down"
+                size={IconSize.X_SMALL}
+              />
             );
           }
         }

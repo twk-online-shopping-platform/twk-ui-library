@@ -140,6 +140,16 @@
     top: var(--twk-top-menu-position, map-get($menu-position-under, "top"));
     left: var(--twk-left-menu-position, map-get($menu-position-under, "left"));
   }
+  @if $position == "under-right" {
+    top: var(
+      --twk-top-menu-position,
+      map-get($menu-position-under-right, "top")
+    );
+    right: var(
+      --twk-left-menu-position,
+      map-get($menu-position-under-right, "right")
+    );
+  }
 }
 
 /*=====  End of Menu Position  ======*/
@@ -171,6 +181,11 @@
   }
   @each $key, $val in $red {
     &-red-#{$key} {
+      #{$css-selector}: $val;
+    }
+  }
+  @each $key, $val in $yellow {
+    &-yellow-#{$key} {
       #{$css-selector}: $val;
     }
   }

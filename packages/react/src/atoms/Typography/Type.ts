@@ -1,4 +1,5 @@
 import { KeyboardEventHandler, MouseEventHandler } from "react";
+import { ColorClassType } from "../Color/Type";
 
 enum TypographyVariant {
   DISPLAY = "dis",
@@ -21,20 +22,10 @@ enum TypographySize {
   MEDIUM = "md",
   LARGE = "lg",
 }
-enum TypographyColorType {
-  WHITE = "white",
-  GRAY = "gray",
-  BLUE = "blue",
-  TURQUOISE = "turquoise",
-  RED = "red",
-  GREEN = "green",
-  YELLOW = "yellow",
-  ORANGE = "orange",
-  VIOLET = "violet",
-}
+
 interface TypographyColor {
   value?: string;
-  type: TypographyColorType;
+  type: ColorClassType;
 }
 interface TypographyEventHandler {
   clickHandler?: MouseEventHandler;
@@ -52,10 +43,5 @@ interface TypographyType {
   color?: TypographyColor;
   cssClasses?: string;
 }
-export {
-  TypographyWeight,
-  TypographyVariant,
-  TypographySize,
-  TypographyColorType,
-};
+export { TypographyWeight, TypographyVariant, TypographySize };
 export type { TypographyType, TypographyEventHandler, TypographyColor };

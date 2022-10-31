@@ -1,21 +1,23 @@
 import React from "react";
 import TextField from "../../atoms/Field/TextField";
 import Button from "../../atoms/Button/Button";
-import { SearchFieldType } from "./Type";
+import { InputButtonGroupType } from "./Type";
 import { ButtondRadius } from "../../atoms/Button/Type";
 import { TextFieldRadius } from "../../atoms/Field/Type";
 import { IconSize } from "../../atoms/Icon/Type";
 
-const SearchField = ({
+const InputButtonGroup = ({
   buttonText,
   searchFieldPlaceHolder,
-}: SearchFieldType) => {
+  buttonRadius,
+  fieldRaddius,
+}: InputButtonGroupType) => {
   const searchClassName = `srch`;
   return (
     <div className={searchClassName}>
       <TextField
         placeholder={searchFieldPlaceHolder ? searchFieldPlaceHolder : "Search"}
-        radius={TextFieldRadius.LEFT}
+        radius={fieldRaddius ? fieldRaddius : TextFieldRadius.LEFT}
         leftIcon={{
           eventHanlder: () => {},
           iconCssValue: "fa-solid fa-magnifying-glass",
@@ -23,11 +25,11 @@ const SearchField = ({
         }}
       />
       <Button
-        radius={ButtondRadius.RIGHT}
+        radius={buttonRadius ? buttonRadius : ButtondRadius.RIGHT}
         label={buttonText ? buttonText : "Search"}
       />
     </div>
   );
 };
 
-export default SearchField;
+export default InputButtonGroup;

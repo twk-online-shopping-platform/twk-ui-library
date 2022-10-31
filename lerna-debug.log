@@ -1,0 +1,13 @@
+0 silly argv {
+0 silly argv   _: [ 'add' ],
+0 silly argv   globs: [ 'packages/react' ],
+0 silly argv   lernaVersion: '5.5.4',
+0 silly argv   '$0': '/Users/handakinafuchea/Documents/projects/ui_shared/storybook/node_modules/.bin/lerna',
+0 silly argv   pkg: 'react-hashblur'
+0 silly argv }
+1 notice cli v5.5.4
+2 verbose rootPath /Users/handakinafuchea/Documents/projects/ui_shared/storybook
+3 error HttpErrorGeneral: 404 Not Found - GET https://registry.yarnpkg.com/react-hashblur - Not found
+3 error     at /Users/handakinafuchea/Documents/projects/ui_shared/storybook/node_modules/npm-registry-fetch/lib/check-response.js:95:15
+3 error     at processTicksAndRejections (node:internal/process/task_queues:96:5)
+3 error     at async RegistryFetcher.packument (/Users/handakinafuchea/Documents/projects/ui_shared/storybook/node_modules/pacote/lib/registry.js:92:19)

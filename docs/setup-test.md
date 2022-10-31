@@ -43,3 +43,5 @@
         ]
     }
   ```
+
+jest-canvas-mock

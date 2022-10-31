@@ -3,16 +3,16 @@ import { render, screen } from "@testing-library/react";
 import { TextFieldTestId } from "../../atoms/Field/FieldConstants";
 import { ButtonTestId } from "../../atoms/Button/ButtonConstants";
 import { SearchFieldType } from "./Type";
-import SearchField from "./SearchField";
+import InputButtonGroup from "./InputButtonGroup";
 
 describe("Test SearchField component", () => {
   it("should display TextField component", async () => {
-    render(<SearchField />);
+    render(<InputButtonGroup />);
     const searchField = await screen.getByTestId(TextFieldTestId);
     expect(searchField).toBeInTheDocument();
   });
   it("should display Button component", async () => {
-    render(<SearchField />);
+    render(<InputButtonGroup />);
     const searchField = await screen.getByTestId(ButtonTestId);
     expect(searchField).toBeInTheDocument();
   });
@@ -22,7 +22,7 @@ describe("Test SearchField component", () => {
       searchFieldPlaceHolder: "",
       searchIcon: "",
     };
-    render(<SearchField {...searchFieldProps} />);
+    render(<InputButtonGroup {...searchFieldProps} />);
     const searchField = await screen.getByTestId(ButtonTestId);
     expect(searchField).toBeInTheDocument();
   });

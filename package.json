@@ -17,6 +17,7 @@
   },
   "scripts": {
     "test": "yarn lerna run test",
+    "test:w": "yarn lerna run test:watch",
     "graph": "nx graph",
     "build:storybook": "yarn build && yarn lerna run build-storybook",
     "storybook": "yarn lerna run storybook",

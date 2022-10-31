@@ -1,5 +1,6 @@
 import React, { MouseEventHandler, useEffect, useRef, useState } from "react";
 import Icon from "../../atoms/Icon/Icon";
+import { IconSize } from "../../atoms/Icon/Type";
 import { TypographyVariant } from "../../atoms/Typography/Type";
 import Typography from "../../atoms/Typography/Typography";
 import Menu from "../Menu/Menu";
@@ -7,7 +8,13 @@ import { MenuOrientation } from "../Menu/Type";
 import MenuItem from "../MenuItem/MenuItem";
 import { dropdownTestId } from "./DropdownConstants";
 import { DropdownType } from "./Type";
-const Dropdown = ({}: DropdownType) => {
+const Dropdown = ({
+  popupItems,
+  icons,
+  lowerText,
+  uperText,
+  popupPositon,
+}: DropdownType) => {
   const [openMenu, setOpenMenu] = useState(false);
   const menuRef = useRef(null);
   useOutsideAlerter(menuRef, setOpenMenu);
@@ -15,38 +22,35 @@ const Dropdown = ({}: DropdownType) => {
   return (
     <div className="mni-c" ref={menuRef}>
       <div
-        className="mni flx-h clr-txt-gray-400 flx-spc-ctr flx-gap-sm"
+        className={`mni flx-h  flx-spc-ctr flx-gap-sm`}
         data-testid={dropdownTestId}
+        onClick={(e) => dropdownClickHandler(e, setOpenMenu)}
       >
-        <Icon
-          cssValue="fa-solid fa-bars clr-txt-lnk clr-txt-lnk-white-white  "
-          clickHandler={(e) => dropdownClickHandler(e, setOpenMenu)}
-        />
-        <div className="flx-v flx-v-lft">
-          <Typography
-            text="All department for you"
-            variant={TypographyVariant.TEXT}
+        {icons ? (
+          <Icon
+            cssValue={`${openMenu ? icons.open : icons.close} ${
+              icons ? (icons.cssValue ? icons.cssValue : "") : ""
+            }`}
+            // clickHandler={(e) => dropdownClickHandler(e, setOpenMenu)}
+            size={icons.size ? icons.size : IconSize.SMALL}
           />
-          <Typography
-            text="total 66 products"
-            variant={TypographyVariant.SMALL}
-          />
+        ) : null}
+
+        <div className="flx-v flx-v-lft clr-txt-lnk">
+          {uperText ? <Typography {...uperText} /> : null}
+          {lowerText ? <Typography {...lowerText} /> : null}
         </div>
       </div>
       <div
-        className={`mni-p mni-under mni-p-${
+        className={`mni-p mni-p-${
+          popupPositon ? popupPositon : "under"
+        } mni-p-${
           openMenu ? "on" : "off"
         }  b-rd-blue b-rd-thick b-style-d clr-bg-white-white`}
       >
-        <Menu
-          menuItems={[
-            { label: "Electronics", leftIcon: "fa-solid fa-house-user" },
-            { label: "Hair Products", leftIcon: "fa-solid fa-rectangle-list" },
-            { label: "Furniture", leftIcon: "fa-solid fa-earth-americas" },
-            { label: "Automotive", leftIcon: "fa-solid fa-radio" },
-          ]}
-          orientation={MenuOrientation.VERTICAL}
-        />
+        {popupItems ? (
+          <Menu menuItems={popupItems} orientation={MenuOrientation.VERTICAL} />
+        ) : null}
       </div>
     </div>
   );

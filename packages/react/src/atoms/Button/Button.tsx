@@ -19,7 +19,7 @@ const Button = ({
   let rightIconClassName:
     | string
     | undefined = `icn-rt icn-${size}-input-field `;
-  const buttonClass = `btn-${variant} btn-${size} b-rd-${radius} b-rd-blue b-rd-thick`;
+  const buttonClass = `btn-${variant} btn-${size} b-${radius} b-rd-blue b-rd-thick`;
   if (typeof leftIcon === "string") {
     leftIconClassName = leftIconClassName.concat(leftIcon);
   } else if (typeof leftIcon == "boolean" && leftIcon) {

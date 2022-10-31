@@ -13,7 +13,7 @@ const TextField = ({
   rightIcon,
   radius = TextFieldRadius.BOTH,
 }: TextFiedType) => {
-  const inputClassName = `fld-${size} b-rd-${radius} b-rd-gray txt-xs-font`;
+  const inputClassName = `fld-${size} b-${radius} b-rd-gray txt-xs-font`;
   const labelClassName = "lbl";
   const groupClassName: string = "input-grp";
   const leftIconClassName: string = `icn-lf icn-${size}-input-field `;

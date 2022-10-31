@@ -19,12 +19,7 @@ const Menu = ({ menuItems, orientation }: MenuType) => {
   return (
     <div className={menuClassName} data-testid={menuTestId}>
       {menuItems.map((menuitem) => (
-        <MenuItem
-          leftIcon={menuitem.leftIcon}
-          submenu={menuitem.submenu}
-          label={menuitem.label}
-          key={useId()}
-        />
+        <MenuItem {...menuitem} key={useId()} />
       ))}
     </div>
   );

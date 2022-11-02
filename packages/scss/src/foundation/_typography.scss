@@ -99,4 +99,32 @@ $icon-xl-size: var(
   map-get($icon-font-size, "xl")
 ) !default;
 
+/*----------  Heading Font Size  ----------*/
+
+$hdFt-xxs-size: var(
+  --twk-txt-ft-xxs-size,
+  map-get($heading-font-size, "xxs")
+) !default;
+
+$hdFt-xs-size: var(
+  --twk-hd-ft-xs-size,
+  map-get($heading-font-size, "xs")
+) !default;
+$hdFt-sm-size: var(
+  --twk-hd-ft-sm-size,
+  map-get($heading-font-size, "sm")
+) !default;
+$hdFt-md-size: var(
+  --twk-hd-ft-md-size,
+  map-get($heading-font-size, "md")
+) !default;
+$hdFt-lg-size: var(
+  --twk-hd-ft-lg-size,
+  map-get($heading-font-size, "lg")
+) !default;
+$hdFt-xl-size: var(
+  --twk-hd-ft-lg-size,
+  map-get($heading-font-size, "xl")
+) !default;
+
 /*=====  End Typography  ======*/

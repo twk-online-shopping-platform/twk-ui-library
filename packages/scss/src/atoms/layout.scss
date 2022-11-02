@@ -14,6 +14,7 @@
  * ctr = center
  * lft = left
  * rht = right
+ * sqr = square
  *
  */
 $flex-cols: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
@@ -94,6 +95,46 @@ $flex-cols: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
   }
   &-xl {
     width: 40rem;
+  }
+}
+.sqr {
+  &-sm {
+    width: 5rem;
+    height: 5rem;
+  }
+  &-md {
+    width: 10rem;
+    height: 10rem;
+  }
+  &-lg {
+    width: 20rem;
+    height: 20rem;
+  }
+  &-xl {
+    width: 40rem;
+    height: 40rem;
+  }
+}
+
+.rel {
+  position: relative;
+  &-item {
+    margin: auto;
+  }
+}
+.abs {
+  position: absolute;
+  display: inline-block;
+  z-index: 10;
+  &-t-lft {
+    @extend .abs;
+    top: 0%;
+    left: 0%;
+  }
+  &-t-rgt {
+    @extend .abs;
+    top: 0%;
+    right: 0%;
   }
 }
 

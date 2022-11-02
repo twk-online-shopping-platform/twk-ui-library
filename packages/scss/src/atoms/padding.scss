@@ -5,7 +5,7 @@
  * pdd = Padding
  *
  */
-$padding-sizes: ("xs", "sm", "md", "lg", "xl");
+$padding-sizes: ("xxs", "xs", "sm", "md", "lg", "xl");
 .pdd {
   &-v {
     @each $size in $padding-sizes {

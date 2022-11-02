@@ -6,7 +6,7 @@ import { ColorType } from "./Type";
 const Color = ({ color, weight }: ColorType) => {
   return (
     <div
-      className={`box-lg clr-bg-${color}-${weight}`}
+      className={`sqr-lg clr-bg-${color}-${weight}`}
       data-testid={colorTestId}
     ></div>
   );

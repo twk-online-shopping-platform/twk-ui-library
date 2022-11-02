@@ -1,0 +1,33 @@
+/*----------  Foundation  ----------*/
+@import "../foundation/all";
+/**
+ *
+ * crd = card
+ * lg = large
+ * xl = extra large
+ *
+ */
+
+.crd {
+  display: inline-block;
+  &-xl {
+    @extend .crd;
+    width: map-get($card-size, "xl");
+  }
+  &-lg {
+    @extend .crd;
+    width: map-get($card-size, "lg");
+  }
+  &-md {
+    @extend .crd;
+    width: map-get($card-size, "md");
+  }
+  &-sm {
+    @extend .crd;
+    width: map-get($card-size, "sm");
+  }
+  &-xs {
+    @extend .crd;
+    width: map-get($card-size, "xs");
+  }
+}

@@ -7,6 +7,8 @@ import { CardElementOrder, CurrencyType } from "./Type";
 
 describe("Test Image Component", () => {
   it("should display image", async () => {
+    const title: string = "Gaming Headphones";
+    const subtitle: string = "Headphone";
     render(
       <ProductCard
         productImage={{
@@ -20,22 +22,22 @@ describe("Test Image Component", () => {
         icons={[]}
         title={{
           order: CardElementOrder.FIRST_ROW,
-          text: { text: "Gaming Headphones" },
+          text: { text: title },
         }}
         subTitle={{
           order: CardElementOrder.SECOND_ROW,
-          text: { text: "Headphone" },
+          text: { text: subtitle },
         }}
         rating={{ value: 5, order: CardElementOrder.THRID_ROW }}
         price={{
-          amount: { text: "32" },
-          discount: { text: "22" },
+          amount: { text: " 32 " },
+          discount: { text: " 22 " },
           order: CardElementOrder.FOUTH_ROW,
         }}
         currency={CurrencyType.USD}
         actionButton={{
           order: CardElementOrder.FIFTH_ROW,
-          value: { label: "Add to Cart" },
+          value: { label: " Add to Cart " },
         }}
       />
     );
@@ -43,5 +45,9 @@ describe("Test Image Component", () => {
     expect(cardComponent).toBeInTheDocument();
     const imageComponent = await screen.getByTestId(imageTestId);
     expect(imageComponent).toBeInTheDocument();
+    const titleComp = await screen.getByText(title);
+    expect(titleComp).toBeInTheDocument();
+    const subtitleComp = await screen.getByText(subtitle);
+    expect(subtitleComp).toBeInTheDocument();
   });
 });

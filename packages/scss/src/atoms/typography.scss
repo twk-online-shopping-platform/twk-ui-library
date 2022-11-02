@@ -103,3 +103,39 @@
 .non-wrap-font {
   white-space: nowrap;
 }
+
+/*----------  Heading Font  ----------*/
+
+.hd-xxs-font {
+  font-size: $txtFt-xxs-size;
+}
+.hd-xs-font {
+  font-size: $txtFt-xs-size;
+}
+.hd-sm-font {
+  font-size: $txtFt-sm-size;
+}
+.hd-md-font {
+  font-size: $txtFt-md-size;
+}
+.hd-lg-font {
+  font-size: $txtFt-lg-size;
+}
+.hd-xl-font {
+  font-size: $txtFt-lg-size;
+}
+
+/*----------  Heading Font Weight  ----------*/
+
+.hd-fw-n {
+  font-weight: $fw-n;
+}
+.hd-fw-m {
+  font-weight: $fw-m;
+}
+.hd-fw-s {
+  font-weight: $fw-s;
+}
+.hd-fw-b {
+  font-weight: $fw-b;
+}

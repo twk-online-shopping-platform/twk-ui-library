@@ -216,6 +216,14 @@ $text-font-size: (
   xs: 0.875rem,
   xxs: 0.75rem,
 );
+$heading-font-size: (
+  xl: 3rem,
+  lg: 2.5rem,
+  md: 2rem,
+  sm: 1.75rem,
+  xs: 1.5rem,
+  xxs: 1.125rem,
+);
 $btn-font-size: (
   lg: 1.125rem,
   md: 1rem,
@@ -344,3 +352,16 @@ $ntf-spacing-bottom: 75%;
 $ntf-spacing-left: 75%;
 
 /*=====  End of Notification  ======*/
+
+/*=============================================
+=           Car Size            =
+=============================================*/
+$card-size: (
+  xl: 41.875rem,
+  lg: 35.625rem,
+  md: 23.125rem,
+  sm: 16.875rem,
+  xs: 10.625rem,
+);
+
+/*=====  End of Section comment block  ======*/

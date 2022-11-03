@@ -1,0 +1,56 @@
+/*=============================================
+=            Icon Description            =
+=============================================*/
+
+/**
+ *
+ * icn = icon
+ *
+ */
+
+/*----------  Icon  ----------*/
+
+/*=============================================
+=            Foundation            =
+=============================================*/
+
+@import "../foundation/all";
+
+/*=====  End of Foundation  ======*/
+
+.icn {
+  color: $fld-type-color;
+  &-xl {
+    font-size: $icon-xl-size;
+  }
+  &-lg {
+    font-size: $icon-lg-size;
+  }
+  &-md {
+    font-size: $icon-md-size;
+  }
+  &-sm {
+    font-size: $icon-sm-size;
+  }
+  &-xs {
+    font-size: $icon-xs-size;
+  }
+
+  &-primary {
+    @extend .icn;
+    color: $icn-primary-color;
+  }
+  &-secondary {
+    @extend .icn;
+    color: $icn-secondary-color;
+  }
+}
+
+.icn-loading {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}

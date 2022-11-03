@@ -1,0 +1,57 @@
+$fld-padding-side-size: var(
+  --twk-padding-side-size,
+  $fld-padding-size-left-right
+) !default;
+$fld-padding-lg-h-size: var(
+  --twk-padding-lg-h-size,
+  $fld-padding-size-lg-up-bottom
+) !default;
+$fld-padding-lg-type-up-size: var(
+  --twk-padding-lg-type-h-size,
+  $fld-padding-size-lg-type-up
+) !default;
+$fld-padding-lg-type-bottom-size: var(
+  --twk-padding-lg-type-h-size,
+  $fld-padding-size-lg-type-bottom
+) !default;
+$fld-padding-sm-h-size: var(
+  --twk-padding-sm-h-size,
+  $fld-padding-size-sm-up-bottom
+) !default;
+
+$fld-padding-left-icon-size: var(
+  --twk-padding-left,
+  $fld-padding-size-left-extra-padding-for-icon
+) !default;
+
+/*----------  Input Lable  ----------*/
+
+$lbl-focus-position-top: var(
+  --twk-label-focus-position-top,
+  map-get($spacing, "sm")
+) !default;
+$lbl-focus-position-left: var(
+  --twk-label-focus-position-top,
+  map-get($spacing, "md")
+) !default;
+$lbl-focus-icon-position-left: var(
+  --twk-label-focus-icon-position-left,
+  map-get($spacing, "xxxl")
+) !default;
+
+/*----------  Input Icon  ----------*/
+
+$icn-small-input-position-top: var(
+  --twk-icon-small-input-position-top,
+  map-get($spacing, "xs")
+) !default;
+
+$icn-large-input-position-top: var(
+  --twk-icon-large-input-position-top,
+  map-get($spacing, "lm")
+) !default;
+
+$icn-large-input-focus-position-top: var(
+  --twk-icon-large-input-focus-position-top,
+  map-get($spacing, "lg")
+) !default;

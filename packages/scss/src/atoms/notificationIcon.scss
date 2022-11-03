@@ -1,0 +1,37 @@
+/*=============================================
+=            Notification            =
+=============================================*/
+
+@import "../foundation/all";
+/**
+ *
+ * ntf = notification
+ * nm = notification numbers
+ * sq = square 
+ * cr = circle
+ * c = container
+ */
+
+.ntf {
+  &-c {
+    display: inline-block;
+    position: relative;
+  }
+
+  &-nm {
+    display: flex;
+    background-color: $b-ntf-color;
+    position: absolute;
+    bottom: var(--twk-nitification-value-spacing-bottom, $ntf-spacing-bottom);
+    left: var(--twk-nitification-value-spacing-left, $ntf-spacing-left);
+    z-index: 10;
+    justify-content: center;
+    align-content: center;
+    @include ntf-padding-size("sm", "sm");
+    color: $ntf-txt-color;
+    min-width: 0.2rem;
+    min-height: 0.4rem;
+  }
+}
+
+/*=====  End of Notification  ======*/

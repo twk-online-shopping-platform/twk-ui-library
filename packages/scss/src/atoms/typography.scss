@@ -1,0 +1,141 @@
+@import "../foundation/all";
+
+/**
+ *
+ * ft = font
+ *
+ */
+
+/*---------- Display font weight  ----------*/
+
+.dis-fw-n {
+  font-weight: $fw-n;
+}
+.dis-fw-m {
+  font-weight: $fw-m;
+}
+.dis-fw-s {
+  font-weight: $fw-s;
+}
+.dis-fw-b {
+  font-weight: $fw-b;
+}
+
+/*----------  Font family ----------*/
+
+.ft-family {
+  font-family: $font-family;
+}
+
+/*----------  Display font  ----------*/
+
+.dis-sm-font {
+  font-size: $dft-sm-size;
+}
+.dis-md-font {
+  font-size: $dft-md-size;
+}
+.dis-lg-font {
+  font-size: $dft-lg-size;
+}
+
+/*----------  Button Font  ----------*/
+.btn-sm-font {
+  font-size: $bft-sm-size;
+}
+.btn-md-font {
+  font-size: $bft-md-size;
+}
+.btn-lg-font {
+  font-size: $bft-lg-size;
+}
+
+/*----------  Button Weights  ----------*/
+
+.btn-fw-s {
+  font-weight: $fw-s;
+}
+.btn-fw-b {
+  font-weight: $fw-b;
+}
+
+/*----------  Text Font  ----------*/
+
+.txt-xxs-font {
+  font-size: $txtFt-xxs-size;
+}
+.txt-xs-font {
+  font-size: $txtFt-xs-size;
+}
+.txt-sm-font {
+  font-size: $txtFt-sm-size;
+}
+.txt-md-font {
+  font-size: $txtFt-md-size;
+}
+.txt-lg-font {
+  font-size: $txtFt-lg-size;
+}
+
+/*----------  Text Font Weight  ----------*/
+
+.txt-fw-n {
+  font-weight: $fw-n;
+}
+.txt-fw-m {
+  font-weight: $fw-m;
+}
+.txt-fw-s {
+  font-weight: $fw-s;
+}
+.txt-fw-b {
+  font-weight: $fw-b;
+}
+/*----------  Small Text  ----------*/
+
+.sml-sm-font {
+  font-size: $small-sm-size;
+}
+.sml-lg-font {
+  font-size: $small-lg-size;
+}
+
+.non-wrap-font {
+  white-space: nowrap;
+}
+
+/*----------  Heading Font  ----------*/
+
+.hd-xxs-font {
+  font-size: $txtFt-xxs-size;
+}
+.hd-xs-font {
+  font-size: $txtFt-xs-size;
+}
+.hd-sm-font {
+  font-size: $txtFt-sm-size;
+}
+.hd-md-font {
+  font-size: $txtFt-md-size;
+}
+.hd-lg-font {
+  font-size: $txtFt-lg-size;
+}
+.hd-xl-font {
+  font-size: $txtFt-lg-size;
+}
+
+/*----------  Heading Font Weight  ----------*/
+
+.hd-fw-n {
+  font-weight: $fw-n;
+}
+.hd-fw-m {
+  font-weight: $fw-m;
+}
+.hd-fw-s {
+  font-weight: $fw-s;
+}
+.hd-fw-b {
+  font-weight: $fw-b;
+}

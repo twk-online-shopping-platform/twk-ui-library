@@ -1,0 +1,367 @@
+/*=============================================
+    #Variables
+=============================================*/
+
+/*=============================================
+=                  Colors                     =
+=============================================*/
+$white: (
+  "white": #ffffff,
+);
+
+$gray: (
+  "900": #14142b,
+  "800": #4e4b66,
+  "700": #6e7191,
+  "600": #a0a3bd,
+  "500": #d9dbe9,
+  "400": #eff0f6,
+  "300": #fcfcfc,
+  "100": #ffffff,
+);
+
+$blue: (
+  "600": #155cba,
+  "500": #1a73e8,
+  "400": #488fed,
+  "300": #76abf1,
+  "200": #a3c7f6,
+  "100": #d1e3fa,
+);
+
+$turquoise: (
+  "600": #37aab9,
+  "500": #45d4e8,
+  "400": #6addec,
+  "300": #8fe5f1,
+  "200": #b4eef6,
+  "100": #daf6fa,
+);
+
+$red: (
+  "600": #c8565e,
+  "500": #fa6c76,
+  "400": #fb8991,
+  "300": #fca7ad,
+  "200": #fdc4c8,
+  "100": #fee2e4,
+);
+
+$green: (
+  "600": #2ea38d,
+  "500": #39ccb0,
+  "400": #61d6c0,
+  "300": #88e0d0,
+  "200": #b0ebdf,
+  "100": #d7f5ef,
+);
+
+$yellow: (
+  "600": #cca036,
+  "500": #ffc844,
+  "400": #ffd369,
+  "300": #ffde8f,
+  "200": #ffe9b4,
+  "100": #fff4da,
+);
+
+$orange: (
+  "800": #66321b,
+  "700": #994a29,
+  "600": #cc6336,
+  "500": #ff7c44,
+  "400": #ff9669,
+  "300": #ffb08f,
+  "200": #ffcbb4,
+  "100": #ffe5da,
+);
+
+$violet: (
+  "800": #420a5d,
+  "700": #64108b,
+  "600": #8515ba,
+  "500": #a61ae8,
+  "400": #b848ed,
+  "300": #ca76f1,
+  "200": #dba3f6,
+  "100": #edd1fa,
+);
+
+/*=====  End of Colors  ======*/
+
+/*=============================================
+=            Breakpoints                      =
+=============================================*/
+
+$breakpoints: (
+  md: 48rem,
+  // 768px
+  lg: 64rem,
+  // 1024px
+  xl: 80rem,
+  // 1280px
+);
+
+/*=====  End of Breakpoints  ======*/
+
+/*=============================================
+=            Spacing                          =
+=============================================*/
+
+$spacing: (
+  none: 0rem,
+  xxxs: 0.25rem,
+  xxs: 0.5rem,
+  xs: 0.75rem,
+  sm: 1rem,
+  md: 1.5rem,
+  lm: 1.25rem,
+  lg: 2rem,
+  xml: 2.25rem,
+  xl: 2.5rem,
+  xxl: 3rem,
+  xxxl: 3.5rem,
+  xxxxl: 4rem,
+  xxxxxl: 4.5rem,
+) !default;
+
+$btn-padding-size-v: (
+  none: 0rem,
+  sm: 0.625rem,
+  lg: 1.063rem,
+);
+
+$btn-padding-size-h: (
+  none: 0rem,
+  sm: 2rem,
+  lg: 3rem,
+);
+
+$mni-padding-size-v: (
+  none: 0rem,
+  sm: 0.625rem,
+  lg: 1.063rem,
+);
+
+$mni-padding-size-h: (
+  none: 0rem,
+  sm: 2rem,
+  lg: 3rem,
+);
+
+$mnu-padding-size-v: (
+  none: 0rem,
+  sm: 1.25rem,
+  lg: 2rem,
+);
+
+$mnu-padding-size-h: (
+  none: 0rem,
+  sm: 1.25rem,
+  lg: 2rem,
+);
+
+$ntf-padding-size-v: (
+  none: 0rem,
+  sm: 0.063rem,
+  lg: 0.125rem,
+);
+
+$ntf-padding-size-h: (
+  none: 0rem,
+  sm: 0.25rem,
+  lg: 0.5rem,
+);
+
+/*----------  border  ----------*/
+$b-style: (
+  n: "none",
+  s: "solid",
+  ds: "dashed",
+  dt: "dotted",
+);
+$b-widths: (
+  thin: 0.031rem,
+  normal: 0.063rem,
+  thick: 0.125rem,
+  thickes: 0.188rem,
+);
+$b-no-radius: 0rem;
+$b-circle-radius: 50%;
+
+/*=====  End of Spacing  ======*/
+
+/*=============================================
+=                Typography                   =
+=============================================*/
+/*----------  Font Size  ----------*/
+
+$display-font-size: (
+  lg: 5.25rem,
+  md: 4rem,
+  sm: 3.5rem,
+);
+$heading-font-size: (
+  xxl: 3rem,
+  xl: 2.5rem,
+  lg: 2rem,
+  md: 1.75rem,
+  sm: 1.5rem,
+  xs: 1.125rem,
+);
+$text-font-size: (
+  lg: 1.5rem,
+  md: 1.125rem,
+  sm: 1rem,
+  xs: 0.875rem,
+  xxs: 0.75rem,
+);
+$heading-font-size: (
+  xl: 3rem,
+  lg: 2.5rem,
+  md: 2rem,
+  sm: 1.75rem,
+  xs: 1.5rem,
+  xxs: 1.125rem,
+);
+$btn-font-size: (
+  lg: 1.125rem,
+  md: 1rem,
+  sm: 0.875rem,
+);
+$link-font-size: 0.875rem;
+$small-font-size: (
+  lg: 0.75rem,
+  sm: 0.625rem,
+);
+$icon-font-size: (
+  xl: 7.5rem,
+  lg: 4rem,
+  md: 2rem,
+  sm: 1.5rem,
+  xs: 1.125rem,
+);
+/* Font families */
+
+$playfair: "Playfair Display", serif; /* 1 */
+$raleway: "Raleway", "HelveticaNeue", "Helvetica", sans-serif; /* 2 */
+$montserrat: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+
+/* Font weights */
+
+$fw-normal: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+/*=====  End of Typography  ======*/
+
+/*=============================================
+=            Box Shadow            =
+=============================================*/
+
+/**
+ *
+ * shd = shadow 
+ * dbl = double
+ * blr = blur
+ * hof = horizontal offset
+ * vof = vertical offset
+ * def = default
+ */
+
+$shd-color-1: rgba(17, 17, 17, 0.12);
+$shd-color-2: rgba(9, 30, 66, 0.15);
+$shd-color-3: rgba(9, 30, 66, 0.31);
+$shd-color-4: rgba(9, 30, 66, 0.08);
+
+$box-sm-def-shadow-size: (
+  hof: 0rem,
+  vof: 0.5rem,
+  blr: 1rem,
+);
+$box-md-def-shadow-size: (
+  hof: 0rem,
+  vof: 1.25rem,
+  blr: 1.5rem,
+);
+$box-lg-def-shadow-size: (
+  hof: 0rem,
+  vof: 2rem,
+  blr: 4rem,
+);
+$box-dbl-shd2-def-shadow-size: (
+  hof: 0rem,
+  vof: 0rem,
+  blr: 0.063rem,
+);
+$box-dbl-shd1-sm-shadow-size: (
+  hof: 0rem,
+  vof: 30.188rem,
+  blr: 0.75rem,
+);
+$box-dbl-shd1-md-shadow-size: (
+  hof: 0rem,
+  vof: 0.563rem,
+  blr: 0.938rem,
+);
+$box-dbl-shd1-lg-shadow-size: (
+  hof: 0rem,
+  vof: 1.438rem,
+  blr: 1.125rem,
+);
+/*=====  End of Box Shadow  ======*/
+
+/*----------  Field Padding  ----------*/
+
+$fld-padding-size-left-right: 1.5rem;
+$fld-padding-size-lg-up-bottom: 1.25rem;
+$fld-padding-size-lg-type-up: 2rem;
+$fld-padding-size-lg-type-bottom: 0.688rem;
+$fld-padding-size-sm-up-bottom: 0.688rem;
+$fld-padding-size-left-extra-padding-for-icon: 3.563rem;
+
+/*=============================================
+=            Menu            =
+=============================================*/
+
+$menu-position-left: (
+  left: 105%,
+  top: 0rem,
+);
+$menu-position-under: (
+  top: 105%,
+  left: 0rem,
+);
+$menu-position-under-right: (
+  top: 70%,
+  right: 0rem,
+);
+$menu-position-right: (
+  right: 105%,
+  top: 0rem,
+);
+
+/*=====  End of Menu  ======*/
+
+/*=============================================
+=            Notification            =
+=============================================*/
+
+$ntf-spacing-bottom: 75%;
+$ntf-spacing-left: 75%;
+
+/*=====  End of Notification  ======*/
+
+/*=============================================
+=           Car Size            =
+=============================================*/
+$card-size: (
+  xl: 41.875rem,
+  lg: 35.625rem,
+  md: 23.125rem,
+  sm: 16.875rem,
+  xs: 10.625rem,
+);
+
+/*=====  End of Section comment block  ======*/

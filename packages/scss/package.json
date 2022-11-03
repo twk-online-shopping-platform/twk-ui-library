@@ -1,0 +1,18 @@
+{
+  "name": "@twk-ui-lib/scss",
+  "version": "1.0.0",
+  "description": "css library file for twk project",
+  "main": "index.js",
+  "author": "kina",
+  "license": "MIT",
+  "dependencies": {
+    "normalize-scss": "^7.0.1"
+  },
+  "devDependencies": {
+    "sass": "^1.55.0"
+  },
+  "scripts": {
+    "sass-dev": "sass --watch --update --style=expanded src:dist/css",
+    "sass-prod": "sass --no-source-map --style=compressed src:root"
+  }
+}

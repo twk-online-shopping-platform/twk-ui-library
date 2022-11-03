@@ -1,0 +1,209 @@
+/*=============================================
+=            Box Size Mixin           =
+=============================================*/
+
+@mixin box-size($width, $height) {
+  @if $height != 0 {
+    height: map-get($spacing, $height);
+  }
+  @if $height == 0 {
+    height: auto;
+  }
+  @if $width != 0 {
+    width: map-get($spacing, $width);
+  }
+  @if $width == 0 {
+    width: auto;
+  }
+}
+
+/*=====  End of Box Size Mixin  ======*/
+
+/*=============================================
+=            Padding            =
+=============================================*/
+
+@mixin padding-size($leftright, $upbottom, $padding-h-size, $padding-v-size) {
+  @if $leftright != 0 {
+    padding-left: map-get($padding-h-size, $leftright);
+    padding-right: map-get($padding-h-size, $leftright);
+  }
+  @if $leftright == 0 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  @if $upbottom!= 0 {
+    padding-top: map-get($padding-v-size, $leftright);
+    padding-bottom: map-get($padding-v-size, $leftright);
+  }
+  @if $upbottom == 0 {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+@mixin btn-padding-size($leftright, $upbottom) {
+  @include padding-size(
+    $leftright,
+    $upbottom,
+    $btn-padding-size-h,
+    $btn-padding-size-v
+  );
+}
+
+@mixin ntf-padding-size($leftright, $upbottom) {
+  @include padding-size(
+    $leftright,
+    $upbottom,
+    $ntf-padding-size-h,
+    $ntf-padding-size-v
+  );
+}
+@mixin menuitem-padding-size($leftright, $upbottom) {
+  @include padding-size(
+    $leftright,
+    $upbottom,
+    $mni-padding-size-h,
+    $mni-padding-size-v
+  );
+}
+@mixin menu-padding-size($leftright, $upbottom) {
+  @include padding-size(
+    $leftright,
+    $upbottom,
+    $mnu-padding-size-h,
+    $mnu-padding-size-v
+  );
+}
+/*=====  End of Padding  ======*/
+
+/*=============================================
+=            Box Shadowing Mixin            =
+=============================================*/
+@mixin box-dlb-shadow-size(
+  $hof1,
+  $vof1,
+  $blr1,
+  $color1,
+  $hof2,
+  $vof2,
+  $blr2,
+  $color2
+) {
+  box-shadow: $hof1 $vof1 $blr1 $color1, $hof2 $vof2 $blr2 $color2;
+}
+@mixin box-shadow-size($hof, $vof, $blr, $color) {
+  box-shadow: $hof $vof $blr $color;
+}
+
+/*=====  End of Box Shadowing Mixin  ======*/
+
+/*=============================================
+=            Layout            =
+=============================================*/
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+/*=====  End of Layout  ======*/
+
+/*=============================================
+=            Menu Position            =
+=============================================*/
+
+@mixin menu-position($position) {
+  @if $position == "left" {
+    top: var(--twk-top-menu-position, map-get($menu-position-left, "top"));
+    left: var(--twk-left-menu-position, map-get($menu-position-left, "left"));
+  }
+  @if $position == "right" {
+    top: var(--twk-top-menu-position, map-get($menu-position-right, "top"));
+    right: var(
+      --twk-right-menu-position,
+      map-get($menu-position-right, "right")
+    );
+  }
+  @if $position == "under" {
+    top: var(--twk-top-menu-position, map-get($menu-position-under, "top"));
+    left: var(--twk-left-menu-position, map-get($menu-position-under, "left"));
+  }
+  @if $position == "under-right" {
+    top: var(
+      --twk-top-menu-position,
+      map-get($menu-position-under-right, "top")
+    );
+    right: var(
+      --twk-left-menu-position,
+      map-get($menu-position-under-right, "right")
+    );
+  }
+}
+
+/*=====  End of Menu Position  ======*/
+
+/*=============================================
+=            Color Mapper            =
+=============================================*/
+
+@mixin map-color($css-selector) {
+  @each $key, $val in $white {
+    &-white-#{$key} {
+      #{$css-selector}: $val;
+    }
+  }
+  @each $key, $val in $gray {
+    &-gray-#{$key} {
+      #{$css-selector}: $val;
+    }
+  }
+  @each $key, $val in $blue {
+    &-blue-#{$key} {
+      #{$css-selector}: $val;
+    }
+  }
+  @each $key, $val in $turquoise {
+    &-turquoise-#{$key} {
+      #{$css-selector}: $val;
+    }
+  }
+  @each $key, $val in $red {
+    &-red-#{$key} {
+      #{$css-selector}: $val;
+    }
+  }
+  @each $key, $val in $yellow {
+    &-yellow-#{$key} {
+      #{$css-selector}: $val;
+    }
+  }
+  @each $key, $val in $green {
+    &-green-#{$key} {
+      #{$css-selector}: $val;
+    }
+  }
+  @each $key, $val in $orange {
+    &-orange-#{$key} {
+      #{$css-selector}: $val;
+    }
+  }
+  @each $key, $val in $violet {
+    &-violet-#{$key} {
+      #{$css-selector}: $val;
+    }
+  }
+}
+
+/*=====  End of Color Mapper  ======*/

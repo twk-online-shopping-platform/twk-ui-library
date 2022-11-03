@@ -1,0 +1,97 @@
+/*=============================================
+=            Border            =
+=============================================*/
+
+/**
+ *
+ * b = border
+ * rd = round
+ * nr = no radius
+ * cr = circle
+ *
+ */
+
+/*=============================================
+=            Foundation            =
+=============================================*/
+
+@import "../foundation/all";
+
+/*=====  End of Foundation  ======*/
+
+.b-rd {
+  border-radius: $b-radius;
+  border-width: $b-width;
+  &-blue {
+    @extend .b-rd;
+    border-color: $b-primary-color;
+    &:hover {
+      border-color: $b-primary-color-hover;
+    }
+    &:focus {
+      border-color: $b-primary-color-focus;
+    }
+    &:active {
+      border-color: $b-primary-color-active;
+    }
+    &:disabled {
+      border-color: $b-primary-color-disabled;
+    }
+  }
+  &-thick {
+    border-width: $b-width-thick;
+  }
+  &-thin {
+    border-width: $b-width-thin;
+  }
+
+  &-gray {
+    @extend .b-rd;
+    border-color: $b-gray-color;
+    &:hover {
+      border-color: $b-gray-color-hover;
+    }
+    &:focus {
+      outline: $b-gray-color;
+    }
+  }
+  &-lt {
+    @extend .b-rd;
+    border-top-right-radius: $b-sharp-rt;
+    border-bottom-right-radius: $b-sharp-rb;
+  }
+  &-rt {
+    @extend .b-rd;
+    border-top-left-radius: $b-sharp-lt;
+    border-bottom-left-radius: $b-sharp-lb;
+  }
+  &-sm {
+    border-radius: $b-sm-radius;
+  }
+  &-lg {
+    border-radius: $b-lg-radius;
+  }
+}
+
+.b-nr {
+  @extend .b-rd;
+  border-radius: $b-sharp-r;
+  &-blue {
+    border-color: $b-primary-color;
+  }
+}
+
+.b-cr {
+  border-radius: $b-circle-radius;
+}
+
+.b-style {
+  &-d {
+    border-style: dashed;
+  }
+  &-s {
+    border-style: solid;
+  }
+}
+
+/*=====  End of Border  ======*/

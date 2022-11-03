@@ -1,0 +1,67 @@
+@import "../foundation/all";
+
+.box-shd-sm {
+  @include box-shadow-size(
+    $box-shd-sm-hof-size,
+    $box-shd-sm-vof-size,
+    $box-shd-sm-blr,
+    $box-shd-sm-color
+  );
+}
+
+.box-shd-md {
+  @include box-shadow-size(
+    $box-shd-md-hof-size,
+    $box-shd-md-vof-size,
+    $box-shd-md-blr,
+    $box-shd-md-color
+  );
+}
+
+.box-shd-lg {
+  @include box-shadow-size(
+    $box-shd-lg-hof-size,
+    $box-shd-lg-vof-size,
+    $box-shd-lg-blr,
+    $box-shd-lg-color
+  );
+}
+
+.box-dbl-shd-sm {
+  @include box-dlb-shadow-size(
+    $box-dbl-shd-sm-hof1-size,
+    $box-dbl-shd-sm-vof1-size,
+    $box-dbl-shd-sm-blr1,
+    $box-dbl-shd-sm-color1,
+    $box-dbl-shd-sm-hof2-size,
+    $box-dbl-shd-sm-vof2-size,
+    $box-dbl-shd-sm-blr2,
+    $box-dbl-shd-sm-color2
+  );
+}
+
+.box-dbl-shd-md {
+  @include box-dlb-shadow-size(
+    $box-dbl-shd-md-hof1-size,
+    $box-dbl-shd-md-vof1-size,
+    $box-dbl-shd-md-blr1,
+    $box-dbl-shd-md-color1,
+    $box-dbl-shd-md-hof2-size,
+    $box-dbl-shd-md-vof2-size,
+    $box-dbl-shd-md-blr2,
+    $box-dbl-shd-md-color2
+  );
+}
+
+.box-dbl-shd-lg {
+  @include box-dlb-shadow-size(
+    $box-dbl-shd-lg-hof1-size,
+    $box-dbl-shd-lg-vof1-size,
+    $box-dbl-shd-lg-blr1,
+    $box-dbl-shd-lg-color1,
+    $box-dbl-shd-lg-hof2-size,
+    $box-dbl-shd-lg-vof2-size,
+    $box-dbl-shd-lg-blr2,
+    $box-dbl-shd-lg-color2
+  );
+}

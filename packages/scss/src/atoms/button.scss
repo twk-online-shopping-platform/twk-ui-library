@@ -1,0 +1,69 @@
+/*=============================================
+=            Button            =
+=============================================*/
+
+/*=============================================
+=            Import foundation            =
+=============================================*/
+
+@import "../foundation/all";
+
+/*=====  End of Import foundation  ======*/
+
+/**
+ *
+ * btn = button
+ * txt = button typography
+ * 
+ *
+ */
+
+.btn-basic {
+  @include flex-row;
+  cursor: pointer;
+}
+
+.btn {
+  &-lg {
+    @include btn-padding-size("lg", "lg");
+  }
+
+  &-sm {
+    @include btn-padding-size("sm", "sm");
+  }
+
+  &-primary {
+    @extend .btn-basic;
+    background-color: $btn-primary-bg;
+    color: $btn-primary-color;
+    &:hover {
+      background-color: $btn-primary-bg-hover;
+    }
+    &:focus {
+      background-color: $b-primary-color-focus;
+    }
+    &:active {
+      background-color: $btn-primary-bg-active;
+    }
+    &:disabled {
+      background-color: $btn-primary-bg-disabled;
+    }
+  }
+  &-secondary {
+    @extend .btn-basic;
+    background-color: $btn-secondary-bg;
+    color: $btn-secondary-color;
+    &:hover {
+      color: $btn-primary-bg-hover;
+    }
+    &:focus {
+      color: $b-primary-color-focus;
+    }
+    &:active {
+      color: $btn-primary-bg-active;
+    }
+    &:disabled {
+      color: $btn-primary-bg-disabled;
+    }
+  }
+}

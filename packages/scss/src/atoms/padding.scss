@@ -1,0 +1,26 @@
+@import "../foundation/all";
+
+/**
+ *
+ * pdd = Padding
+ *
+ */
+$padding-sizes: ("xxs", "xs", "sm", "md", "lg", "xl");
+.pdd {
+  &-v {
+    @each $size in $padding-sizes {
+      &-#{$size} {
+        padding-top: map-get($spacing, $size);
+        padding-bottom: map-get($spacing, $size);
+      }
+    }
+  }
+  &-h {
+    @each $size in $padding-sizes {
+      &-#{$size} {
+        padding-left: map-get($spacing, $size);
+        padding-right: map-get($spacing, $size);
+      }
+    }
+  }
+}

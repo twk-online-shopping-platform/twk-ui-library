@@ -1,0 +1,155 @@
+/*=============================================
+=            Shadow            =
+====================================*/
+
+/*---------- hadow Size  ----------*/
+
+/*----------  Small  ----------*/
+
+$box-shd-sm-hof-size: var(
+  --twk-shd-sm-hof,
+  map-get($box-sm-def-shadow-size, "hof")
+) !default;
+
+$box-shd-sm-vof-size: var(
+  --twk-shd-sm-vof,
+  map-get($box-sm-def-shadow-size, "vof")
+) !default;
+
+$box-shd-sm-blr: var(
+  --twk-shd-sm-blr,
+  map-get($box-sm-def-shadow-size, "blr")
+) !default;
+
+/*----------  Medium  ----------*/
+
+$box-shd-md-hof-size: var(
+  --twk-shd-md-hof,
+  map-get($box-md-def-shadow-size, "hof")
+) !default;
+
+$box-shd-md-vof-size: var(
+  --twk-shd-md-vof,
+  map-get($box-md-def-shadow-size, "vof")
+) !default;
+
+$box-shd-md-blr: var(
+  --twk-shd-md-blr,
+  map-get($box-md-def-shadow-size, "blr")
+) !default;
+
+/*----------  Large  ----------*/
+
+$box-shd-lg-hof-size: var(
+  --twk-shd-lg-hof,
+  map-get($box-lg-def-shadow-size, "hof")
+) !default;
+
+$box-shd-lg-vof-size: var(
+  --twk-shd-lg-blr,
+  map-get($box-lg-def-shadow-size, "blr")
+) !default;
+
+$box-shd-lg-blr: var(
+  --twk-shd-md-blr,
+  map-get($box-md-def-shadow-size, "blr")
+) !default;
+
+/*----------  Double Shadow  ----------*/
+
+/*----------  Small  ----------*/
+
+$box-dbl-shd-sm-hof1-size: var(
+  --twk-dbl-shd1-sm-hof,
+  map-get($box-dbl-shd1-sm-shadow-size, "hof")
+) !default;
+
+$box-dbl-shd-sm-vof1-size: var(
+  --twk-dbl-shd1-sm-vof,
+  map-get($box-dbl-shd1-sm-shadow-size, "vof")
+) !default;
+
+$box-dbl-shd-sm-blr1: var(
+  --twk-dbl-shd1-sm-blr,
+  map-get($box-dbl-shd1-sm-shadow-size, "blr")
+) !default;
+
+$box-dbl-shd-sm-hof2-size: var(
+  --twk-dbl-shd2-sm-hof,
+  map-get($box-dbl-shd2-def-shadow-size, "hof")
+) !default;
+
+$box-dbl-shd-sm-vof2-size: var(
+  --twk-dbl-shd2-sm-vof,
+  map-get($box-dbl-shd2-def-shadow-size, "vof")
+) !default;
+
+$box-dbl-shd-sm-blr2: var(
+  --twk-dbl-shd2-sm-blr,
+  map-get($box-dbl-shd2-def-shadow-size, "blr")
+) !default;
+
+/*----------  Medium  ----------*/
+$box-dbl-shd-md-hof1-size: var(
+  --twk-dbl-shd1-md-hof,
+  map-get($box-dbl-shd1-md-shadow-size, "hof")
+) !default;
+
+$box-dbl-shd-md-vof1-size: var(
+  --twk-dbl-shd1-md-vof,
+  map-get($box-dbl-shd1-md-shadow-size, "vof")
+) !default;
+
+$box-dbl-shd-md-blr1: var(
+  --twk-dbl-shd1-md-blr,
+  map-get($box-dbl-shd1-md-shadow-size, "blr")
+) !default;
+
+$box-dbl-shd-md-hof2-size: var(
+  --twk-dbl-shd2-md-hof,
+  map-get($box-dbl-shd2-def-shadow-size, "hof")
+) !default;
+
+$box-dbl-shd-md-vof2-size: var(
+  --twk-dbl-shd2-md-vof,
+  map-get($box-dbl-shd2-def-shadow-size, "vof")
+) !default;
+
+$box-dbl-shd-md-blr2: var(
+  --twk-dbl-shd2-md-blr,
+  map-get($box-dbl-shd2-def-shadow-size, "blr")
+) !default;
+
+/*----------  Large  ----------*/
+
+$box-dbl-shd-lg-hof1-size: var(
+  --twk-dbl-shd1-lg-hof,
+  map-get($box-dbl-shd1-lg-shadow-size, "hof")
+) !default;
+
+$box-dbl-shd-lg-vof1-size: var(
+  --twk-dbl-shd1-lg-vof,
+  map-get($box-dbl-shd1-lg-shadow-size, "vof")
+) !default;
+
+$box-dbl-shd-lg-blr1: var(
+  --twk-dbl-shd1-lg-blr,
+  map-get($box-dbl-shd1-lg-shadow-size, "blr")
+) !default;
+
+$box-dbl-shd-lg-hof2-size: var(
+  --twk-dbl-shd2-lg-hof,
+  map-get($box-dbl-shd2-def-shadow-size, "hof")
+) !default;
+
+$box-dbl-shd-lg-vof2-size: var(
+  --twk-dbl-shd2-lg-vof,
+  map-get($box-dbl-shd2-def-shadow-size, "vof")
+) !default;
+
+$box-dbl-shd-lg-blr2: var(
+  --twk-dbl-shd2-lg-blr,
+  map-get($box-dbl-shd2-def-shadow-size, "blr")
+) !default;
+
+/*=====  End  Shadow  ======*/

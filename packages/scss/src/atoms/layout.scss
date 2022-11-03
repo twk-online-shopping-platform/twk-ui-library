@@ -1,0 +1,141 @@
+/*=============================================
+=            Flex Layout            =
+=============================================*/
+@import "../foundation/all";
+
+/**
+ *
+ * flx = flex
+ * r = row
+ * c = column
+ * dvc = view device 
+ * spc = space
+ * btn = between
+ * ctr = center
+ * lft = left
+ * rht = right
+ * sqr = square
+ *
+ */
+$flex-cols: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+.flx {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &-h {
+    @extend .flx;
+    flex-direction: row;
+  }
+  &-v {
+    @extend .flx;
+    flex-direction: column;
+    &-ctr {
+      align-items: center;
+    }
+    &-lft {
+      align-items: flex-start;
+    }
+    &-rht {
+      align-items: flex-end;
+    }
+  }
+  &-spc-btn {
+    justify-content: space-between;
+  }
+  &-spc-ctr {
+    justify-content: center;
+  }
+  &-gap-xs {
+    gap: 0.25rem;
+  }
+  &-gap-sm {
+    gap: 0.5rem;
+  }
+  &-gap-md {
+    gap: 1rem;
+  }
+  &-gap-lg {
+    gap: 2rem;
+  }
+  &-gap-xl {
+    gap: 3rem;
+  }
+  @each $col in $flex-cols {
+    &-col-#{$col} {
+      flex-grow: $col;
+    }
+  }
+}
+
+.dvc {
+  &-disktop {
+    max-width: 75rem;
+    width: 100%;
+  }
+  &-full {
+    width: 100%;
+  }
+  &-off {
+    display: none;
+  }
+  &-on {
+    display: inline-block;
+  }
+}
+.box {
+  &-sm {
+    width: 5rem;
+  }
+  &-md {
+    width: 10rem;
+  }
+  &-lg {
+    width: 20rem;
+  }
+  &-xl {
+    width: 40rem;
+  }
+}
+.sqr {
+  &-sm {
+    width: 5rem;
+    height: 5rem;
+  }
+  &-md {
+    width: 10rem;
+    height: 10rem;
+  }
+  &-lg {
+    width: 20rem;
+    height: 20rem;
+  }
+  &-xl {
+    width: 40rem;
+    height: 40rem;
+  }
+}
+
+.rel {
+  position: relative;
+  &-item {
+    margin: auto;
+  }
+}
+.abs {
+  position: absolute;
+  display: inline-block;
+  z-index: 10;
+  &-t-lft {
+    @extend .abs;
+    top: 0%;
+    left: 0%;
+  }
+  &-t-rgt {
+    @extend .abs;
+    top: 0%;
+    right: 0%;
+  }
+}
+
+/*=====  End of Flex Layout  ======*/

@@ -1,0 +1,27 @@
+{
+  "name": "twk-ui-lib",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/normalize-scss",
+      "**/@fortawesome/fontawesome-free",
+      "**/bootstrap-icons",
+      "**/@iconscout/unicons"
+    ]
+  },
+  "devDependencies": {
+    "lerna": "^5.5.4"
+  },
+  "scripts": {
+    "test": "yarn lerna run test",
+    "test:w": "yarn lerna run test:watch",
+    "graph": "nx graph",
+    "build:storybook": "yarn build && yarn lerna run build-storybook",
+    "storybook": "yarn lerna run storybook",
+    "sass-compile": "yarn lerna run sass-prod",
+    "sass-css": "yarn lerna run sass-dev"
+  }
+}

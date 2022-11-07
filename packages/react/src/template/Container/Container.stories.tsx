@@ -17,7 +17,11 @@ import {
 } from "../../atoms/Typography/Type";
 import ProductCard from "../../molecules/Card/ProductCard/ProductCard";
 import { ContainerStyleType, ContainerType, FlexFlow, GapSize } from "./Type";
-import { ButtonSize, ButtonVariant } from "../../atoms/Button/Type";
+import {
+  ButtondRadius,
+  ButtonSize,
+  ButtonVariant,
+} from "../../atoms/Button/Type";
 import { IconSize } from "../../atoms/Icon/Type";
 import Typography from "../../atoms/Typography/Typography";
 import { VerticalMenu } from "../../molecules/Menu/Menu.stories";
@@ -64,17 +68,22 @@ const productCard = (
     actionButton={{
       order: CardElementOrder.FIFTH_ROW,
       value: {
-        label: "Add To Cart",
+        label: {
+          text: "Add to Cart",
+          size: TypographySize.EXTRA_EXTRA_SMALL,
+        },
         variant: ButtonVariant.SECONDARY,
+        radius: ButtondRadius.OVAL,
         leftIcon: {
           cssValue: "fa-solid fa-cart-shopping",
-          size: IconSize.X_SMALL,
+          size: IconSize.X_X_SMALL,
         },
         size: ButtonSize.SMALL,
       },
     }}
     currency={CurrencyType.USD}
     size={CardSize.SMALL}
+    hashBorder={false}
   />
 );
 

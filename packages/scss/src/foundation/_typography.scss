@@ -37,6 +37,7 @@ $dft-lg-size: var(
 
 /*----------  Button Font Size  ----------*/
 
+$bft-xs-size: var(--twk-btn-ft-xs-size, map-get($btn-font-size, "xs")) !default;
 $bft-sm-size: var(--twk-btn-ft-sm-size, map-get($btn-font-size, "sm")) !default;
 $bft-md-size: var(--twk-btn-ft-md-size, map-get($btn-font-size, "md")) !default;
 $bft-lg-size: var(--twk-btn-ft-lg-size, map-get($btn-font-size, "lg")) !default;

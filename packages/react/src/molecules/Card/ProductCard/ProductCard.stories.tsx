@@ -10,6 +10,7 @@ import {
   TypographyVariant,
   TypographyWeight,
 } from "../../../atoms/Typography/Type";
+import { IconSize } from "../../../atoms/Icon/Type";
 
 export default {
   title: "Molecules/Cards/ProductCard",
@@ -52,8 +53,15 @@ Default.args = {
   actionButton: {
     order: CardElementOrder.FIFTH_ROW,
     value: {
-      leftIcon: "fa-solid fa-cart-shopping",
-      label: "Add to Cart",
+      leftIcon: {
+        cssValue: "fa-solid fa-cart-shopping",
+        size: IconSize.X_X_SMALL,
+      },
+      label: {
+        text: "Add to Cart",
+        size: TypographySize.EXTRA_SMALL,
+        weight: TypographyWeight.BOLD,
+      },
       variant: ButtonVariant.SECONDARY,
       size: ButtonSize.SMALL,
     },

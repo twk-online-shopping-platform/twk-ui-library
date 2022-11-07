@@ -1,5 +1,10 @@
 import React from "react";
-import { TypographyVariant, TypographyWeight } from "../Typography/Type";
+import {
+  TypographySize,
+  TypographyType,
+  TypographyVariant,
+  TypographyWeight,
+} from "../Typography/Type";
 import { ButtondRadius, ButtonVariant } from "./Type";
 import Typography from "../Typography/Typography";
 import { ButtonTestId } from "./ButtonConstants";
@@ -54,12 +59,24 @@ const Button = ({
       ) : leftIconComponent ? (
         leftIconComponent
       ) : null}
+      {label ? (
+        typeof label === "string" ? (
+          <Typography
+            text={label}
+            variant={TypographyVariant.BUTTON}
+            weight={TypographyWeight.SEMI_BOLD}
+            size={
+              size ? mapButtonSizeToTypographySize(size) : TypographySize.SMALL
+            }
+          />
+        ) : null
+      ) : null}
+      {label ? (
+        typeof label !== "string" && isType(label) ? (
+          <Typography {...label} />
+        ) : null
+      ) : null}
 
-      <Typography
-        text={label}
-        variant={TypographyVariant.BUTTON}
-        weight={TypographyWeight.SEMI_BOLD}
-      />
       {rightIconClassName ? <Icon cssValue={rightIconClassName} /> : null}
     </button>
   );
@@ -67,10 +84,30 @@ const Button = ({
 
 export default Button;
 
+const mapButtonSizeToTypographySize = (btnSize: ButtonSize) => {
+  if (btnSize == ButtonSize.EXTRA_SMALL) {
+    return TypographySize.EXTRA_SMALL;
+  }
+  if (btnSize == ButtonSize.SMALL) {
+    return TypographySize.SMALL;
+  }
+  if (btnSize == ButtonSize.LARGE) {
+    return TypographySize.LARGE;
+  }
+};
+
 const instanceOfIcon = (object: any): object is IconType => {
   return "cssValue" in object;
 };
 
 const isIcon = (iconProps: any): boolean => {
   return instanceOfIcon(iconProps);
+};
+
+const instanceOfTypo = (object: any): object is TypographyType => {
+  return "text" in object;
+};
+
+const isType = (iconProps: any): boolean => {
+  return instanceOfTypo(iconProps);
 };

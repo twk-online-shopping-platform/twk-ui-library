@@ -133,6 +133,7 @@ $btn-padding-size-v: (
 
 $btn-padding-size-h: (
   none: 0rem,
+  xs: 1rem,
   sm: 2rem,
   lg: 3rem,
 );
@@ -229,6 +230,7 @@ $btn-font-size: (
   lg: 1.125rem,
   md: 1rem,
   sm: 0.875rem,
+  xs: 0.625rem,
 );
 $link-font-size: 0.875rem;
 $small-font-size: (

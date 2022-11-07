@@ -1,4 +1,5 @@
 import { IconType } from "../Icon/Type";
+import { TypographyType } from "../Typography/Type";
 
 enum ButtonVariant {
   PRIMARY = "primary",
@@ -6,6 +7,7 @@ enum ButtonVariant {
 }
 
 enum ButtonSize {
+  EXTRA_SMALL = "xs",
   SMALL = "sm",
   LARGE = "lg",
 }
@@ -20,7 +22,7 @@ enum ButtondRadius {
 }
 
 interface ButtonType {
-  label?: string;
+  label?: string | TypographyType;
   clickHandler?: Function;
   variant?: ButtonVariant;
   size?: ButtonSize;

@@ -16,7 +16,7 @@ import Typography from "../../../atoms/Typography/Typography";
 import { TypographyType } from "../../../atoms/Typography/Type";
 import { IconSize, IconType } from "../../../atoms/Icon/Type";
 import { TagType } from "../../../atoms/Graphics/Tag/Type";
-import { ButtonType } from "../../../atoms/Button/Type";
+import { ButtonSize, ButtonType } from "../../../atoms/Button/Type";
 import Button from "../../../atoms/Button/Button";
 import Icon from "../../../atoms/Icon/Icon";
 import Rate from "../../../atoms/Graphics/Rate/Rate";

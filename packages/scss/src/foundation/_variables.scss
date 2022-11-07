@@ -188,6 +188,7 @@ $b-widths: (
 );
 $b-no-radius: 0rem;
 $b-circle-radius: 50%;
+$b-curve-radius: 16rem;
 
 /*=====  End of Spacing  ======*/
 
@@ -240,6 +241,7 @@ $icon-font-size: (
   md: 2rem,
   sm: 1.5rem,
   xs: 1.125rem,
+  xxs: 0.75rem,
 );
 /* Font families */
 

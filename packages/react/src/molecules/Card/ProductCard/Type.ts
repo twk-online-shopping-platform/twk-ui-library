@@ -3,6 +3,7 @@ import { IconType } from "../../../atoms/Icon/Type";
 import { ImageType } from "../../../atoms/Image/Type";
 import { TagType } from "../../../atoms/Graphics/Tag/Type";
 import { TypographyType } from "../../../atoms/Typography/Type";
+import { RateType } from "../../../atoms/Graphics/Rate/Type";
 
 enum CurrencyType {
   USD,
@@ -27,7 +28,7 @@ interface CardPrice {
   order: CardElementOrder;
 }
 interface CardRatting {
-  value: number;
+  value: RateType;
   order: CardElementOrder;
 }
 interface CardActionButton {
@@ -59,15 +60,16 @@ interface CardIconype {
 interface ProductType {
   productImage: ImageType;
   description: string;
-  iconList: CardIconype;
-  tagList: CardTagType;
+  iconList?: CardIconype;
+  tagList?: CardTagType;
   title: CardText;
   subTitle: CardText;
-  rating: CardRatting;
+  rating?: CardRatting;
   price: CardPrice;
   currency: CurrencyType;
-  actionButton: CardActionButton;
+  actionButton?: CardActionButton;
   size: CardSize;
+  hashBorder: boolean;
 }
 
 export { CurrencyType, CardElementOrder, CardPosition, CardSize };

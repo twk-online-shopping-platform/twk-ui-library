@@ -12,7 +12,6 @@ describe("Test Rate Component", () => {
     expect(rateComp.length).toBe(5);
     let countSolid = 0;
     rateComp.forEach((rate) => {
-      console.log(rate.className + " " + countSolid);
       if (rate.className.startsWith("fa-solid")) {
         countSolid += 1;
       }

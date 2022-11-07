@@ -8,7 +8,7 @@
  * rd = round
  * nr = no radius
  * cr = circle
- *
+ * cv = curve
  */
 
 /*=============================================
@@ -83,6 +83,9 @@
 
 .b-cr {
   border-radius: $b-circle-radius;
+}
+.b-cv {
+  border-radius: $b-curve-r;
 }
 
 .b-style {

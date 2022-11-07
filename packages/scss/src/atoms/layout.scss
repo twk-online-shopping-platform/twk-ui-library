@@ -15,6 +15,8 @@
  * lft = left
  * rht = right
  * sqr = square
+ * grd = grid
+ * col = column
  *
  */
 $flex-cols: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
@@ -46,6 +48,9 @@ $flex-cols: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
   &-spc-ctr {
     justify-content: center;
   }
+  &-spc-lft {
+    justify-content: flex-start;
+  }
   &-gap-xs {
     gap: 0.25rem;
   }
@@ -64,6 +69,43 @@ $flex-cols: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
   @each $col in $flex-cols {
     &-col-#{$col} {
       flex-grow: $col;
+    }
+  }
+  &-wrap {
+    flex-wrap: wrap;
+  }
+  &-r-wrap {
+    flex-wrap: wrap-reverse;
+  }
+  &-n-wrap {
+    flex-wrap: nowrap;
+  }
+}
+$grid-cols: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+$grid-gaps: (
+  xs: 0.25rem,
+  sm: 0.5rem,
+  md: 1rem,
+  lg: 2rem,
+  xl: 3rem,
+);
+
+.grd {
+  display: grid;
+
+  @each $col in $grid-cols {
+    &-col-#{$col} {
+      grid-template-columns: repeat($col, 1fr);
+    }
+  }
+  @each $gap, $val in $grid-gaps {
+    &-c-gap-#{$gap} {
+      column-gap: $val;
+    }
+  }
+  @each $gap, $val in $grid-gaps {
+    &-r-gap-#{$gap} {
+      row-gap: $val;
     }
   }
 }

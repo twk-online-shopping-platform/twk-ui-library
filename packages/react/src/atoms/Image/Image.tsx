@@ -10,7 +10,7 @@ const Image = ({ imageUrl, hashImagUrl, style }: ImageType) => {
   const imageClassName =
     "dvc-full " + (loaded ? "dvc-on " : "dvc-off ") + (style ? style : "");
   return (
-    <div data-testid={imageTestId}>
+    <div data-testid={imageTestId} className="flx-h flx-spc-ctr">
       <img
         className={imageClassName}
         src={imageUrl}

@@ -5,6 +5,7 @@ import Typography from "../Typography/Typography";
 import { ButtonTestId } from "./ButtonConstants";
 import { ButtonType, ButtonSize } from "./Type";
 import Icon from "../Icon/Icon";
+import { IconType } from "../Icon/Type";
 
 const Button = ({
   label = "button",
@@ -16,6 +17,7 @@ const Button = ({
   rightIcon,
 }: ButtonType) => {
   let leftIconClassName: string | undefined = `icn-lf icn-${size}-input-field `;
+  let leftIconComponent = null;
   let rightIconClassName:
     | string
     | undefined = `icn-rt icn-${size}-input-field `;
@@ -26,6 +28,8 @@ const Button = ({
     leftIconClassName = leftIconClassName.concat(
       "fa-sharp fa-solid fa-angle-left"
     );
+  } else if (leftIcon && isIcon(leftIcon)) {
+    leftIconComponent = <Icon {...leftIcon} />;
   } else {
     leftIconClassName = undefined;
   }
@@ -45,7 +49,11 @@ const Button = ({
       }}
       data-testid={ButtonTestId}
     >
-      {leftIconClassName ? <Icon cssValue={leftIconClassName} /> : null}
+      {leftIconClassName && !leftIconComponent ? (
+        <Icon cssValue={leftIconClassName} />
+      ) : leftIconComponent ? (
+        leftIconComponent
+      ) : null}
 
       <Typography
         text={label}
@@ -58,3 +66,11 @@ const Button = ({
 };
 
 export default Button;
+
+const instanceOfIcon = (object: any): object is IconType => {
+  return "cssValue" in object;
+};
+
+const isIcon = (iconProps: any): boolean => {
+  return instanceOfIcon(iconProps);
+};

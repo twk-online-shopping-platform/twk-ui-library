@@ -43,10 +43,10 @@ Default.args = {
     },
     order: CardElementOrder.FIRST_ROW,
   },
-  rating: { order: CardElementOrder.THRID_ROW, value: 6 },
+  rating: { order: CardElementOrder.THRID_ROW, value: { value: 3, max: 6 } },
   price: {
-    amount: { text: "23.99" },
-    discount: { text: "18.99" },
+    amount: { text: "$23.99" },
+    discount: { text: "$18.99" },
     order: CardElementOrder.FOUTH_ROW,
   },
   actionButton: {
@@ -88,10 +88,10 @@ Small.args = {
     },
     order: CardElementOrder.FIRST_ROW,
   },
-  rating: { order: CardElementOrder.THRID_ROW, value: 6 },
+  rating: { order: CardElementOrder.THRID_ROW, value: { value: 4, max: 5 } },
   price: {
-    amount: { text: "23.99" },
-    discount: { text: "18.99" },
+    amount: { text: "$23.99" },
+    discount: { text: "$18.99" },
     order: CardElementOrder.FOUTH_ROW,
   },
   actionButton: {
@@ -104,7 +104,53 @@ Small.args = {
     },
   },
   iconList: {
-    icons: [{ cssValue: "fa-regular fa-heart" }],
+    icons: [
+      { cssValue: "fa-regular fa-heart" },
+      { cssValue: "fa-solid fa-magnifying-glass" },
+      { cssValue: "fa-solid fa-cart-shopping" },
+    ],
     position: CardPosition.RIGHT,
+  },
+};
+
+export const NoSubTitle = Template.bind({});
+NoSubTitle.args = {
+  productImage: {
+    imageUrl:
+      "https://secure.img1-fg.wfcdn.com/im/50782487/resize-h755-w755%5Ecompr-r85/1840/184065343/Height+Adjustable+Standing+Desk.jpg",
+    hashImagUrl: "LHF~s@-;CS4-_4oMIpRj%gRjMwxa",
+  },
+  title: {
+    text: {
+      text: "Gaming Headphone",
+      variant: TypographyVariant.HEADING,
+      size: TypographySize.SMALL,
+      weight: TypographyWeight.BOLD,
+    },
+    order: CardElementOrder.FIRST_ROW,
+  },
+  rating: { order: CardElementOrder.THRID_ROW, value: { value: 4, max: 5 } },
+  price: {
+    amount: { text: "$23.99" },
+    discount: { text: "$18.99" },
+    order: CardElementOrder.SECOND_ROW,
+  },
+};
+
+export const Category = Template.bind({});
+Category.args = {
+  productImage: {
+    imageUrl:
+      "https://secure.img1-fg.wfcdn.com/im/50782487/resize-h755-w755%5Ecompr-r85/1840/184065343/Height+Adjustable+Standing+Desk.jpg",
+    hashImagUrl: "LHF~s@-;CS4-_4oMIpRj%gRjMwxa",
+  },
+  title: {
+    text: {
+      text: "Gaming Headphone",
+      variant: TypographyVariant.HEADING,
+      size: TypographySize.SMALL,
+      weight: TypographyWeight.BOLD,
+    },
+    order: CardElementOrder.FIRST_ROW,
   },
 };

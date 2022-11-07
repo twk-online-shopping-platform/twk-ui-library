@@ -1,3 +1,5 @@
+import { IconType } from "../Icon/Type";
+
 enum ButtonVariant {
   PRIMARY = "primary",
   SECONDARY = "secondary",
@@ -12,6 +14,8 @@ enum ButtondRadius {
   LEFT = "rd-lt",
   RIGHT = "rd-rt",
   BOTH = "rd",
+  OVAL = "cv",
+  CIRCLE = "cr",
   NONE = "nr",
 }
 
@@ -21,8 +25,8 @@ interface ButtonType {
   variant?: ButtonVariant;
   size?: ButtonSize;
   radius?: ButtondRadius;
-  leftIcon?: string | boolean;
-  rightIcon?: string | boolean;
+  leftIcon?: string | boolean | IconType;
+  rightIcon?: string | boolean | IconType;
 }
 export type { ButtonType };
 

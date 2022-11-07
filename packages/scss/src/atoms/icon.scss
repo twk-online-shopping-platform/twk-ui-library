@@ -35,6 +35,9 @@
   &-xs {
     font-size: $icon-xs-size;
   }
+  &-xxs {
+    font-size: $icon-xxs-size;
+  }
 
   &-primary {
     @extend .icn;

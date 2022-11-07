@@ -124,7 +124,6 @@
 .hd-xl-font {
   font-size: $txtFt-lg-size;
 }
-
 /*----------  Heading Font Weight  ----------*/
 
 .hd-fw-n {
@@ -138,4 +137,8 @@
 }
 .hd-fw-b {
   font-weight: $fw-b;
+}
+
+.typo-strick {
+  text-decoration: line-through;
 }

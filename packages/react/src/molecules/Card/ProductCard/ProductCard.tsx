@@ -14,7 +14,7 @@ import {
 import Image from "../../../atoms/Image/Image";
 import Typography from "../../../atoms/Typography/Typography";
 import { TypographyType } from "../../../atoms/Typography/Type";
-import { IconType } from "../../../atoms/Icon/Type";
+import { IconSize, IconType } from "../../../atoms/Icon/Type";
 import { TagType } from "../../../atoms/Graphics/Tag/Type";
 import { ButtonType } from "../../../atoms/Button/Type";
 import Button from "../../../atoms/Button/Button";
@@ -30,6 +30,7 @@ const ProductCard = ({
   iconList,
   tagList,
   size,
+  hashBorder,
 }: ProductType) => {
   const row1Id = useId();
   const row2Id = useId();
@@ -39,16 +40,16 @@ const ProductCard = ({
   return (
     <div
       data-testid={productCardTestid}
-      className={`flx-v flx-v-lft pdd-h-sm pdd-v-sm b-rd b-rd-gray clr-bg-white-white b-style-s crd-${
-        size ? size : "sm"
-      }`}
+      className={`flx-v flx-v-lft pdd-h-sm pdd-v-sm ${
+        hashBorder ? "b-rd b-rd-gray b-style-s" : ""
+      } clr-bg-white-white  crd-${size ? size : "sm"}`}
     >
-      <div className="rel">
+      <div className="rel  pdd-v-b-sm ">
         <Image {...productImage} />
         {(iconList || tagList) && getLeftComponents(iconList, tagList)}
         {(iconList || tagList) && getRightComponents(iconList, tagList)}
       </div>
-      <div className="flx-v flx-gap-sm dvc-full">
+      <div className="flx-v flx-gap-sm dvc-full ">
         {getRowElement(
           CardElementOrder.FIRST_ROW,
           title,
@@ -111,19 +112,26 @@ const getRowElement = (
   if (title && title.order && title.order === order) {
     return <Typography {...title.text} key={key} />;
   } else if (subTitle && subTitle.order && subTitle.order === order) {
-    return <Typography {...subTitle.text} key={key} />;
+    return (
+      <Typography {...subTitle.text} key={key} cssClasses="clr-txt-gray-700" />
+    );
   } else if (price && price.order && price.order === order) {
     return (
       <div className="flx-h flx-gap-xl">
+        {price.discount ? (
+          <Typography
+            {...price.discount}
+            key={key}
+            cssClasses="typo-strick clr-txt-gray-600"
+          />
+        ) : null}
         <Typography {...price.amount} />
-        {price.discount ? <Typography {...price.discount} key={key} /> : null}
       </div>
     );
   } else if (rating && rating.order && rating.order === order) {
     return (
       <Rate
-        value={3}
-        max={5}
+        {...rating.value}
         style={{ open: "clr-txt-gray-500", solid: "clr-txt-yellow-600" }}
       />
     );
@@ -136,7 +144,10 @@ const getRowElement = (
   return <></>;
 };
 
-const getLeftComponents = (iconList: CardIconype, tagList: CardTagType) => {
+const getLeftComponents = (
+  iconList: CardIconype | undefined,
+  tagList: CardTagType | undefined
+) => {
   let rightComp = null;
   if (iconList && iconList.icons && iconList.position === CardPosition.LEFT) {
     rightComp = iconList.icons.map((icon) => {
@@ -159,14 +170,17 @@ const getLeftComponents = (iconList: CardIconype, tagList: CardTagType) => {
   return rightComp ? <div className="abs-t-lft">{rightComp}</div> : null;
 };
 
-const getRightComponents = (iconList: CardIconype, tagList: CardTagType) => {
+const getRightComponents = (
+  iconList: CardIconype | undefined,
+  tagList: CardTagType | undefined
+) => {
   let leftComp = null;
   if (iconList && iconList.icons && iconList.position === CardPosition.RIGHT) {
     leftComp = iconList.icons.map((icon) => {
       const iconKey = useId();
       return (
         <div className="b-cr clr-bg-white-white pdd-v-xxs pdd-h-xxs">
-          <Icon {...icon} key={iconKey} />
+          <Icon {...icon} key={iconKey} size={IconSize.X_SMALL} />
         </div>
       );
     });
@@ -179,7 +193,11 @@ const getRightComponents = (iconList: CardIconype, tagList: CardTagType) => {
       })
     );
   }
-  return leftComp ? <div className="abs-t-rgt">{leftComp}</div> : null;
+  return leftComp ? (
+    <div className="abs-t-rgt pdd-h-r-xxs pdd-v-t-xxs">
+      <div className="flx-v flx-gap-md">{leftComp}</div>
+    </div>
+  ) : null;
 };
 
 export default ProductCard;

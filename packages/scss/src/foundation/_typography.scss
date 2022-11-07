@@ -82,6 +82,10 @@ $icon-xs-size: var(
   --twk-icon-ft-xs-size,
   map-get($icon-font-size, "xs")
 ) !default;
+$icon-xxs-size: var(
+  --twk-icon-ft-xxs-size,
+  map-get($icon-font-size, "xxs")
+) !default;
 $icon-sm-size: var(
   --twk-icon-ft-sm-size,
   map-get($icon-font-size, "sm")

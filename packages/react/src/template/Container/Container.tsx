@@ -29,7 +29,11 @@ const Container = ({
     type ? type : ContainerStyleType.FLEX
   }${flexFlowValue} ${
     flexWrap ? "flx-wrap" : ""
-  } ${flexGapValue} ${flexContentAlignValue} ${gridColumnValue} ${gridGapValue} ${style}`;
+  } ${flexGapValue} ${flexContentAlignValue} ${
+    type ? (type == ContainerStyleType.GRID ? gridColumnValue : "") : ""
+  } ${
+    type ? (type == ContainerStyleType.GRID ? gridGapValue : "") : ""
+  } ${style}`;
 
   return <div className={containerClassName}>{children}</div>;
 };

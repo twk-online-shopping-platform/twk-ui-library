@@ -13,6 +13,7 @@ interface IconType {
   cssValue?: string;
   size?: IconSize;
   clickHandler?: MouseEventHandler;
+  description?: string;
 }
 
 export type { IconType };

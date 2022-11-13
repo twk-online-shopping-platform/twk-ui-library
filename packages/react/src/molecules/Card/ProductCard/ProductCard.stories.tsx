@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentMeta, ComponentStory, Meta, Story } from "@storybook/react";
 import "@twk-ui-lib/scss/root/global.css";
 import "@fortawesome/fontawesome-free/css/all.css";
-import { CardElementOrder, CardPosition, ProductType } from "./Type";
+import { CardElementOrder, CardPosition, CardSize, ProductType } from "./Type";
 import ProductCard from "./ProductCard";
 import { ButtonSize, ButtonVariant } from "../../../atoms/Button/Type";
 import {
@@ -11,6 +11,17 @@ import {
   TypographyWeight,
 } from "../../../atoms/Typography/Type";
 import { IconSize } from "../../../atoms/Icon/Type";
+import Icon from "../../../atoms/Icon/Icon";
+import Button from "../../../atoms/Button/Button";
+import Container from "../../../template/Container/Container";
+import {
+  ContainerStyleType,
+  FlexFlow,
+  GapSize,
+} from "../../../template/Container/Type";
+import DiagonalTag from "../../../atoms/Graphics/Tag/DiagonalTag";
+import { TagePosition } from "../../../atoms/Graphics/Tag/Type";
+import BookMarkTag from "../../../atoms/Graphics/Tag/BookMarkTag";
 
 export default {
   title: "Molecules/Cards/ProductCard",
@@ -21,6 +32,9 @@ const Template: ComponentStory<typeof ProductCard> = (args: ProductType) => (
 );
 
 export const Default = Template.bind({});
+const cardImageIcon = (
+  <Icon cssValue="fa-regular fa-heart" description="Heart Icon" />
+);
 Default.args = {
   productImage: {
     imageUrl:
@@ -66,12 +80,31 @@ Default.args = {
       size: ButtonSize.SMALL,
     },
   },
-  iconList: {
-    icons: [{ cssValue: "fa-regular fa-heart" }],
-    position: CardPosition.RIGHT,
-  },
+  description: "Gaming Headphone Image",
+  imageRightComponent: cardImageIcon,
 };
 
+const rightIcons = (
+  <Container
+    type={ContainerStyleType.FLEX}
+    flexFlow={FlexFlow.COLMN}
+    flexGap={GapSize.EXTRA_EXTRA_SMALL}
+    style="pdd-h-xxs pdd-v-xxs"
+  >
+    <div className="b-cr clr-bg-white-white pdd-v-xxs pdd-h-xxs">
+      <Icon cssValue="fa-regular fa-heart" />
+    </div>
+    ,
+    <div className="b-cr clr-bg-white-white pdd-v-xxs pdd-h-xxs">
+      <Icon cssValue="fa-solid fa-magnifying-glass" />
+    </div>
+    ,
+    <div className="b-cr clr-bg-white-white pdd-v-xxs pdd-h-xxs">
+      <Icon cssValue="fa-solid fa-cart-shopping" />
+    </div>
+  </Container>
+);
+const leftTag = <DiagonalTag position={TagePosition.TOP_LEFT} />;
 export const Small = Template.bind({});
 Small.args = {
   productImage: {
@@ -111,21 +144,16 @@ Small.args = {
       size: ButtonSize.SMALL,
     },
   },
-  iconList: {
-    icons: [
-      { cssValue: "fa-regular fa-heart" },
-      { cssValue: "fa-solid fa-magnifying-glass" },
-      { cssValue: "fa-solid fa-cart-shopping" },
-    ],
-    position: CardPosition.RIGHT,
-  },
+  imageLeftComponent: leftTag,
+  imageRightComponent: rightIcons,
 };
 
+const rightDiagonalTag = <DiagonalTag position={TagePosition.TOP_RIGHT} />;
 export const NoSubTitle = Template.bind({});
 NoSubTitle.args = {
   productImage: {
     imageUrl:
-      "https://secure.img1-fg.wfcdn.com/im/50782487/resize-h755-w755%5Ecompr-r85/1840/184065343/Height+Adjustable+Standing+Desk.jpg",
+      "https://img.ltwebstatic.com/images3_pi/2020/08/27/159851121050fe1194fa7764f136203407f8a1e51c_thumbnail_900x.webp",
     hashImagUrl: "LHF~s@-;CS4-_4oMIpRj%gRjMwxa",
   },
   title: {
@@ -143,13 +171,46 @@ NoSubTitle.args = {
     discount: { text: "$18.99" },
     order: CardElementOrder.SECOND_ROW,
   },
+  imageRightComponent: rightDiagonalTag,
 };
 
+const saleTageBtn = (
+  <Button
+    label={"Sale"}
+    variant={ButtonVariant.SECONDARY}
+    style="clr-bg-no clr-txt-red-600 clr-b-red-600"
+  />
+);
 export const Category = Template.bind({});
 Category.args = {
   productImage: {
     imageUrl:
-      "https://secure.img1-fg.wfcdn.com/im/50782487/resize-h755-w755%5Ecompr-r85/1840/184065343/Height+Adjustable+Standing+Desk.jpg",
+      "https://cdn.bitlanders.com/users/galleries/230043/canon_eos_7d_side_view_fa_rszd.jpg",
+    hashImagUrl: "LHF~s@-;CS4-_4oMIpRj%gRjMwxa",
+  },
+  title: {
+    text: {
+      text: "Category",
+      variant: TypographyVariant.HEADING,
+      size: TypographySize.SMALL,
+      weight: TypographyWeight.BOLD,
+    },
+    order: CardElementOrder.FIRST_ROW,
+  },
+  size: CardSize.SMALL,
+  imageLeftComponent: saleTageBtn,
+};
+
+const bookmark = (
+  <div className="pdd-h-xs">
+    <BookMarkTag position={TagePosition.TOP_LEFT} />
+  </div>
+);
+export const CardWithBookmark = Template.bind({});
+CardWithBookmark.args = {
+  productImage: {
+    imageUrl:
+      "https://img.ltwebstatic.com/images3_pi/2020/08/27/159851121050fe1194fa7764f136203407f8a1e51c_thumbnail_900x.webp",
     hashImagUrl: "LHF~s@-;CS4-_4oMIpRj%gRjMwxa",
   },
   title: {
@@ -161,4 +222,41 @@ Category.args = {
     },
     order: CardElementOrder.FIRST_ROW,
   },
+  rating: { order: CardElementOrder.THRID_ROW, value: { value: 4, max: 5 } },
+  price: {
+    amount: { text: "$23.99" },
+    discount: { text: "$18.99" },
+    order: CardElementOrder.SECOND_ROW,
+  },
+  imageLeftComponent: bookmark,
+};
+
+const bookmarkRight = (
+  <div className="pdd-h-xs">
+    <BookMarkTag position={TagePosition.TOP_RIGHT} />
+  </div>
+);
+export const CardWithRightBookmark = Template.bind({});
+CardWithRightBookmark.args = {
+  productImage: {
+    imageUrl:
+      "https://img.ltwebstatic.com/images3_pi/2020/08/27/159851121050fe1194fa7764f136203407f8a1e51c_thumbnail_900x.webp",
+    hashImagUrl: "LHF~s@-;CS4-_4oMIpRj%gRjMwxa",
+  },
+  title: {
+    text: {
+      text: "Gaming Headphone",
+      variant: TypographyVariant.HEADING,
+      size: TypographySize.SMALL,
+      weight: TypographyWeight.BOLD,
+    },
+    order: CardElementOrder.FIRST_ROW,
+  },
+  rating: { order: CardElementOrder.THRID_ROW, value: { value: 4, max: 5 } },
+  price: {
+    amount: { text: "$23.99" },
+    discount: { text: "$18.99" },
+    order: CardElementOrder.SECOND_ROW,
+  },
+  imageRightComponent: bookmarkRight,
 };

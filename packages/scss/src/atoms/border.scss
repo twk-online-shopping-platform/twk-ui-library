@@ -83,9 +83,29 @@
 
 .b-cr {
   border-radius: $b-circle-radius;
+  &-lt {
+    @extend .b-rd;
+    border-top-right-radius: $b-circle-radius;
+    border-bottom-right-radius: $b-circle-radius;
+  }
+  &-rt {
+    @extend .b-rd;
+    border-top-left-radius: $b-circle-radius;
+    border-bottom-left-radius: $b-circle-radius;
+  }
 }
 .b-cv {
   border-radius: $b-curve-r;
+  &-lt {
+    @extend .b-rd;
+    border-top-right-radius: $b-curve-r;
+    border-bottom-right-radius: $b-curve-r;
+  }
+  &-rt {
+    @extend .b-rd;
+    border-top-left-radius: $b-curve-r;
+    border-bottom-left-radius: $b-curve-r;
+  }
 }
 
 .b-style {

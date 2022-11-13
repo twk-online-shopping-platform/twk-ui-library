@@ -17,7 +17,7 @@ const Menu = ({ menuItems, orientation }: MenuType) => {
     orientation ? orientation : MenuOrientation.HORIZONTAL
   } flx-wrap`;
   return (
-    <div className={menuClassName} data-testid={menuTestId}>
+    <div className={menuClassName} data-testid={menuTestId} role="menu">
       {menuItems.map((menuitem) => (
         <MenuItem {...menuitem} key={useId()} />
       ))}

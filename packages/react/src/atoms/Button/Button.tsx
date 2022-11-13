@@ -20,13 +20,14 @@ const Button = ({
   radius = ButtondRadius.BOTH,
   leftIcon,
   rightIcon,
+  style,
 }: ButtonType) => {
   let leftIconClassName: string | undefined = `icn-lf icn-${size}-input-field `;
   let leftIconComponent = null;
   let rightIconClassName:
     | string
     | undefined = `icn-rt icn-${size}-input-field `;
-  const buttonClass = `btn-${variant} btn-${size} b-${radius} b-rd-blue b-rd-thick`;
+  const buttonClass = `btn-${variant} btn-${size} b-${radius} b-rd-blue b-rd-thick ${style}`;
   if (typeof leftIcon === "string") {
     leftIconClassName = leftIconClassName.concat(leftIcon);
   } else if (typeof leftIcon == "boolean" && leftIcon) {

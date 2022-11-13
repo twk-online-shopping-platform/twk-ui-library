@@ -27,10 +27,11 @@ const ProductCard = ({
   price,
   rating,
   actionButton,
-  iconList,
-  tagList,
+  imageLeftComponent,
+  imageRightComponent,
   size,
   hashBorder,
+  description,
 }: ProductType) => {
   const row1Id = useId();
   const row2Id = useId();
@@ -45,9 +46,18 @@ const ProductCard = ({
       } clr-bg-white-white  crd-${size ? size : "sm"}`}
     >
       <div className="rel  pdd-v-b-sm ">
-        <Image {...productImage} />
-        {(iconList || tagList) && getLeftComponents(iconList, tagList)}
-        {(iconList || tagList) && getRightComponents(iconList, tagList)}
+        <Image
+          {...productImage}
+          description={
+            productImage.description ? productImage.description : description
+          }
+        />
+        {imageLeftComponent ? (
+          <div className="abs-t-lft">{imageLeftComponent}</div>
+        ) : null}
+        {imageRightComponent ? (
+          <div className="abs-t-rgt">{imageRightComponent}</div>
+        ) : null}
       </div>
       <div className="flx-v flx-gap-sm dvc-full ">
         {getRowElement(
@@ -168,36 +178,6 @@ const getLeftComponents = (
     );
   }
   return rightComp ? <div className="abs-t-lft">{rightComp}</div> : null;
-};
-
-const getRightComponents = (
-  iconList: CardIconype | undefined,
-  tagList: CardTagType | undefined
-) => {
-  let leftComp = null;
-  if (iconList && iconList.icons && iconList.position === CardPosition.RIGHT) {
-    leftComp = iconList.icons.map((icon) => {
-      const iconKey = useId();
-      return (
-        <div className="b-cr clr-bg-white-white pdd-v-xxs pdd-h-xxs">
-          <Icon {...icon} key={iconKey} size={IconSize.X_SMALL} />
-        </div>
-      );
-    });
-  }
-  if (tagList && tagList.tags && tagList.position === CardPosition.RIGHT) {
-    leftComp?.concat(
-      tagList.tags.map((tag) => {
-        const tagKey = useId();
-        return <Icon {...tag} key={tagKey} />;
-      })
-    );
-  }
-  return leftComp ? (
-    <div className="abs-t-rgt pdd-h-r-xxs pdd-v-t-xxs">
-      <div className="flx-v flx-gap-md">{leftComp}</div>
-    </div>
-  ) : null;
 };
 
 export default ProductCard;

@@ -4,6 +4,7 @@ import { ImageType } from "../../../atoms/Image/Type";
 import { TagType } from "../../../atoms/Graphics/Tag/Type";
 import { TypographyType } from "../../../atoms/Typography/Type";
 import { RateType } from "../../../atoms/Graphics/Rate/Type";
+import { ReactNode } from "react";
 
 enum CurrencyType {
   USD,
@@ -60,8 +61,8 @@ interface CardIconype {
 interface ProductType {
   productImage: ImageType;
   description: string;
-  iconList?: CardIconype;
-  tagList?: CardTagType;
+  imageLeftComponent?: ReactNode;
+  imageRightComponent?: ReactNode;
   title: CardText;
   subTitle: CardText;
   rating?: CardRatting;

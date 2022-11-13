@@ -16,7 +16,9 @@ enum ButtondRadius {
   LEFT = "rd-lt",
   RIGHT = "rd-rt",
   BOTH = "rd",
-  OVAL = "cv",
+  CURVE = "cv",
+  LEFT_CURVE = "cv-lt",
+  RIGHT_CURVE = "cv-rt",
   CIRCLE = "cr",
   NONE = "nr",
 }
@@ -29,6 +31,7 @@ interface ButtonType {
   radius?: ButtondRadius;
   leftIcon?: string | boolean | IconType;
   rightIcon?: string | boolean | IconType;
+  style: string;
 }
 export type { ButtonType };
 

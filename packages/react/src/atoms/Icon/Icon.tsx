@@ -6,12 +6,15 @@ const Icon = ({
   cssValue = "fa-solid fa-magnifying-glass",
   size = IconSize.SMALL,
   clickHandler,
+  description,
 }: IconType) => {
-  const iconClassName = `${cssValue} icn-${size}`;
+  const iconClassName = `${cssValue} icn-${size} clr-txt-lnk`;
   return (
     <i
       data-testid={IconTestId}
       className={iconClassName}
+      role="button"
+      aria-label={description ? description : "Icon"}
       onClick={
         clickHandler
           ? clickHandler

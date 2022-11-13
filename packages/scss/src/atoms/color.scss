@@ -14,6 +14,9 @@
 .clr {
   &-bg {
     @include map-color("background-color");
+    &-no {
+      background-color: transparent;
+    }
   }
   &-txt {
     @include map-color("color");
@@ -23,6 +26,16 @@
         color: map-get($blue, "500");
       }
       @include map-color("color");
+    }
+  }
+  &-b {
+    @include map-color("border-color");
+    &-lnk {
+      cursor: pointer;
+      &:hover {
+        color: map-get($blue, "500");
+      }
+      @include map-color("border-color");
     }
   }
 }

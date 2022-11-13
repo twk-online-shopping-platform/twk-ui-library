@@ -26,3 +26,9 @@ WithNoRadus.args = {
   buttonRadius: ButtondRadius.NONE,
   fieldRaddius: TextFieldRadius.NONE,
 };
+export const WithCurveRadus = Template.bind({});
+WithCurveRadus.args = {
+  buttonText: "Search",
+  buttonRadius: ButtondRadius.LEFT_CURVE,
+  fieldRaddius: TextFieldRadius.RIGHT_CURVE,
+};

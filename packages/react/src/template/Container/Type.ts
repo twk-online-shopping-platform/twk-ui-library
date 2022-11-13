@@ -10,6 +10,7 @@ enum FlexContainAlign {
   LEFT_RIGHT = "flx-spc-btn",
 }
 enum GapSize {
+  EXTRA_EXTRA_SMALL = "xxs",
   EXTRA_SMALL = "xs",
   SMALL = "sm",
   MID = "md",

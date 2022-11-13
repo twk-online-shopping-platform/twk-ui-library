@@ -9,6 +9,9 @@ enum TextFieldRadius {
   RIGHT = "rd-rt",
   BOTH = "rd",
   NONE = "nr",
+  CURVE = "cv",
+  LEFT_CURVE = "cv-lt",
+  RIGHT_CURVE = "cv-rt",
 }
 
 interface IconValue {

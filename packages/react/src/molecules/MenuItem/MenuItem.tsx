@@ -30,6 +30,7 @@ const MenuItem = ({
       ? submenu.position
       : "left"
     : "left";
+  const hasSubMenu: boolean = submenu ? true : false;
 
   return (
     <div className="mni-c" ref={menuRef}>
@@ -37,12 +38,20 @@ const MenuItem = ({
         data-testid={menuItemTestId}
         onClick={(e: any) => menuOnClickHandler(e, setOpenMenu)}
         className="mni clr-txt-lnk"
+        role="select"
+        aria-expanded={openMenu && hasSubMenu ? true : undefined}
+        aria-haspopup={hasSubMenu}
+        aria-controls="twk-menu-list"
       >
         {leftIcon ? (
           typeof leftIcon === "string" ? (
-            <Icon cssValue={leftIcon} size={IconSize.X_SMALL} />
+            <Icon
+              cssValue={leftIcon}
+              size={IconSize.X_SMALL}
+              description={label + " icon"}
+            />
           ) : typeof leftIcon === "boolean" && leftIcon ? (
-            <Icon size={IconSize.X_SMALL} />
+            <Icon size={IconSize.X_SMALL} description={label + " icon"} />
           ) : null
         ) : null}
         <Typography
@@ -60,6 +69,8 @@ const MenuItem = ({
               openMenu ? "on" : "off"
             } b-rd b-rd-blue b-rd-thick b-style-d clr-bg-white-white`}
             data-testid={subMenuItemTestId}
+            id="twk-menu-list"
+            role={"menu"}
           >
             {submenu ? (
               submenu.menu ? (

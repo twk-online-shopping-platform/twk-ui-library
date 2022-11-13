@@ -1,0 +1,41 @@
+.diagonal-tag {
+  width: 16rem;
+  height: 16rem;
+  &-t-r {
+    @extend .diagonal-tag;
+    clip-path: polygon(69% 0, 86% 0, 100% 17%, 100% 37%);
+  }
+  &-t-l {
+    @extend .diagonal-tag;
+    clip-path: polygon(30% 0, 14% 0, 0 16%, 0 32%);
+  }
+  &-txt-t-l {
+    transform: rotate(-51deg);
+    float: left;
+  }
+  &-txt-t-r {
+    float: right;
+    transform: rotate(51deg);
+  }
+}
+
+.bookmark-tag {
+  width: 16rem;
+  height: 8rem;
+  &-t-l {
+    @extend .bookmark-tag;
+    clip-path: polygon(8% 56%, 16% 62%, 16% 0, 0 0, 0 62%);
+  }
+  &-t-r {
+    @extend .bookmark-tag;
+    clip-path: polygon(94% 56%, 100% 62%, 100% 0, 86% 0, 86% 62%);
+  }
+  &-txt-t-l {
+    transform: rotate(90deg);
+    float: left;
+  }
+  &-txt-t-r {
+    float: right;
+    transform: rotate(90deg);
+  }
+}

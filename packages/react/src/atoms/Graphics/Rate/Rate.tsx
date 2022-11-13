@@ -6,7 +6,11 @@ import { IconSize } from "../../Icon/Type";
 
 const Rate = ({ value, max = 5, style, size }: RateType) => {
   return (
-    <div className={`flx-h`}>
+    <div
+      className={`flx-h`}
+      role="status"
+      aria-label={`${value} + star out of + ${max}`}
+    >
       {getSoldStar(value, max, size, style ? style.solid : "")}
       {getOpenStar(value, max, size, style ? style.open : "")}
     </div>

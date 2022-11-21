@@ -12,7 +12,6 @@ enum IconSize {
 interface IconType {
   cssValue?: string;
   size?: IconSize;
-  clickHandler?: MouseEventHandler;
   description?: string;
 }
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { screen, render } from "@testing-library/react";
-import DiagonalTag from "./BookMarkTag";
+import DiagonalTag from "./DiagonalTag";
 import { diagonalTagTestId } from "./TagConstants";
 import { TagePosition } from "./Type";
 

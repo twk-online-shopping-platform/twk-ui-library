@@ -2,7 +2,7 @@ import React from "react";
 import { ColorClassType } from "../../atoms/Color/Type";
 import Icon from "../../atoms/Icon/Icon";
 import { IconSize } from "../../atoms/Icon/Type";
-import NotificationIcon from "../../atoms/NotificationIcon/NotificationIcon";
+import Notification from "../../molecules/Notification/Notification";
 import {
   TypographySize,
   TypographyVariant,
@@ -136,7 +136,7 @@ const Header = ({ headerMenu, navNotification }: HeaderType) => {
                 weight: TypographyWeight.MDIUM,
               }}
             />
-            <NotificationIcon
+            <Notification
               textSize={TypographySize.MEDIUM}
               icon={
                 navNotification
@@ -153,7 +153,7 @@ const Header = ({ headerMenu, navNotification }: HeaderType) => {
                   : 0
               }
             />
-            <NotificationIcon
+            <Notification
               textSize={TypographySize.MEDIUM}
               icon={
                 navNotification

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useId } from "react";
 import { ComponentMeta, ComponentStory, Meta, Story } from "@storybook/react";
 import "@twk-ui-lib/scss/root/global.css";
 import "@fortawesome/fontawesome-free/css/all.css";
@@ -30,6 +30,14 @@ import { MenuItemType } from "../../molecules/MenuItem/Type";
 import Menu from "../../molecules/Menu/Menu";
 import { ColorClassType } from "../../atoms/Color/Type";
 import Icon from "../../atoms/Icon/Icon";
+
+// const prd1Id = useId();
+// const prd2Id = useId();
+// const prd3Id = useId();
+// const prd4Id = useId();
+// const prd5Id = useId();
+// const prd6Id = useId();
+// const prdId = useId();
 
 const productCard = (
   <ProductCard
@@ -82,7 +90,7 @@ const productCard = (
       },
     }}
     currency={CurrencyType.USD}
-    size={CardSize.SMALL}
+    size={CardSize.EXTRA_SMALL}
     hashBorder={false}
   />
 );
@@ -149,6 +157,18 @@ const prodCard6 = (
     }}
   />
 );
+const prodCard7 = (
+  <ProductCard
+    {...productCard.props}
+    {...{
+      productImage: {
+        hashImagUrl: "LHF~s@-;CS4-_4oMIpRj%gRjMwxa",
+        imageUrl:
+          "https://static.fully.com/image/upload/c_limit,dpr_2.0,f_auto,h_700,q_auto,w_700/v1/media/catalog/product/f/u/fully-jarvis-standing-desk-white-whiteboard-c-v1.jpg",
+      },
+    }}
+  />
+);
 
 export default {
   title: "Template/Container",
@@ -179,6 +199,7 @@ FlexRowWrap.args = {
     prodCard5,
     prodCard6,
     prodCard4,
+    prodCard7,
   ],
   type: ContainerStyleType.FLEX,
   flexWrap: true,
@@ -206,6 +227,7 @@ GridContainer.args = {
     prodCard5,
     prodCard6,
     prodCard4,
+    prodCard7,
   ],
   type: ContainerStyleType.GRID,
 };
@@ -220,6 +242,7 @@ const subContainer = (
       prodCard5,
       prodCard6,
       prodCard4,
+      prodCard7,
     ]}
     flexWrap={true}
   />

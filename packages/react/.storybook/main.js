@@ -20,4 +20,7 @@ module.exports = {
     "@storybook/addon-outline",
   ],
   framework: "@storybook/react",
+  reactOptions: {
+    strictMode: true,
+  },
 };

@@ -31,7 +31,7 @@ interface ButtonType {
   radius?: ButtondRadius;
   leftIcon?: string | boolean | IconType;
   rightIcon?: string | boolean | IconType;
-  style: string;
+  style?: string;
 }
 export type { ButtonType };
 

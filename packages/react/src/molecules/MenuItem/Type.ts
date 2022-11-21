@@ -22,20 +22,22 @@ interface RightIconType {
   openValue: string;
   closeValue: string;
 }
+interface MenuItemEventHandler {
+  clickHanlder: MouseEventHandler;
+  mouseHanlder: MouseEventHandler;
+  keyboardHandler: KeyboardEventHandler;
+}
 interface MenuItemType {
+  parentKey: string;
   label: string;
   leftIcon?: string | boolean;
   rightIcon?: RightIconType | boolean;
   textVariant?: TypographyVariant;
   textSize?: TypographySize;
   submenu?: SubMenuType;
-  handler?: {
-    clickHanlder: MouseEventHandler;
-    mouseHanlder: MouseEventHandler;
-    keyboardHandler: KeyboardEventHandler;
-  };
+  handler?: MenuItemEventHandler;
   size?: MenuItemSize;
 }
-export { MenuItemSize, SubMenuPosition };
 
-export type { MenuItemType, RightIconType, SubMenuType };
+export { MenuItemSize, SubMenuPosition };
+export type { MenuItemType, RightIconType, SubMenuType, MenuItemEventHandler };

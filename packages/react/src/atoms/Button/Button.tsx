@@ -11,6 +11,7 @@ import { ButtonTestId } from "./ButtonConstants";
 import { ButtonType, ButtonSize } from "./Type";
 import Icon from "../Icon/Icon";
 import { IconType } from "../Icon/Type";
+import { KeyboardKey } from "../../accessibility/KeyboardEvents";
 
 const Button = ({
   label = "button",
@@ -39,21 +40,22 @@ const Button = ({
   } else {
     leftIconClassName = undefined;
   }
-  if (typeof rightIcon === "string") {
-    rightIconClassName = rightIconClassName.concat(rightIcon);
-  } else if (typeof rightIcon === "boolean" && rightIcon) {
-    rightIconClassName = rightIconClassName.concat("fa-solid fa-angle-right");
-  } else {
-    rightIconClassName = undefined;
-  }
+
+  rightIconClassName = getRightIconClassName(rightIcon, rightIconClassName);
+
   return (
     <button
       title="Button"
+      role="button"
+      aria-label={
+        typeof label === "string" ? label + " button" : label.text + "button"
+      }
       className={buttonClass}
-      onClick={() => {
-        if (clickHandler) clickHandler();
+      onClick={(e) => {
+        if (clickHandler) clickHandler(e);
       }}
       data-testid={ButtonTestId}
+      onKeyDown={(e) => onButtonKeyDown(e, clickHandler)}
     >
       {leftIconClassName && !leftIconComponent ? (
         <Icon cssValue={leftIconClassName} />
@@ -111,4 +113,27 @@ const instanceOfTypo = (object: any): object is TypographyType => {
 
 const isType = (iconProps: any): boolean => {
   return instanceOfTypo(iconProps);
+};
+function getRightIconClassName(
+  rightIcon: string | boolean | IconType | undefined,
+  rightIconClassName: string | undefined
+) {
+  if (typeof rightIcon === "string") {
+    rightIconClassName = rightIconClassName.concat(rightIcon);
+  } else if (typeof rightIcon === "boolean" && rightIcon) {
+    rightIconClassName = rightIconClassName.concat("fa-solid fa-angle-right");
+  } else {
+    rightIconClassName = undefined;
+  }
+  return rightIconClassName;
+}
+
+const onButtonKeyDown = (
+  event: KeyboardEvent,
+  clickHandler: Function | undefined
+) => {
+  if (event.key === KeyboardKey.ENTER.key) {
+    if (clickHandler) clickHandler();
+    return;
+  }
 };

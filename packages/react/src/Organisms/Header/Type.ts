@@ -1,4 +1,4 @@
-import { NotificationIconType } from "../../atoms/NotificationIcon/Type";
+import { NotificationIconType } from "../../molecules/Notification/Type";
 import { MenuType } from "../../molecules/Menu/Type";
 interface HeaderNotificationType {
   like?: NotificationIconType;

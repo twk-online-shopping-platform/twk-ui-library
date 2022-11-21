@@ -3,8 +3,13 @@ import { useState } from "react";
 import Menu from "../Menu/Menu";
 import Icon from "../../atoms/Icon/Icon";
 import Typography from "../../atoms/Typography/Typography";
-import { menuItemTestId, subMenuItemTestId } from "./MenuItemConstants";
 import {
+  menuItemTestId,
+  menuPopupId,
+  subMenuItemTestId,
+} from "./MenuItemConstants";
+import {
+  MenuItemEventHandler,
   MenuItemType,
   RightIconType,
   SubMenuPosition,
@@ -12,6 +17,11 @@ import {
 } from "./Type";
 import { TypographySize, TypographyVariant } from "../../atoms/Typography/Type";
 import { IconSize } from "../../atoms/Icon/Type";
+import { KeyboardKey } from "../../accessibility/KeyboardEvents";
+import {
+  useMenuItemRefListUpdateContext,
+  useMenuUpdateContext,
+} from "../Notification/NotificationContextProvider";
 
 const MenuItem = ({
   label,
@@ -21,10 +31,17 @@ const MenuItem = ({
   textSize,
   textVariant,
   submenu,
+  parentKey,
 }: MenuItemType) => {
   const [openMenu, setOpenMenu] = useState(false);
+  const setMainMenu = useMenuUpdateContext();
+  const addToFocusableRefs = useMenuItemRefListUpdateContext();
   const menuRef = useRef(null);
   useOutsideAlerter(menuRef, setOpenMenu);
+  useEffect(() => {
+    addToFocusableRefs(parentKey ? parentKey : "parent", label, menuRef);
+  }, [menuRef]);
+
   const subMenuPosition = submenu
     ? submenu.position
       ? submenu.position
@@ -33,23 +50,44 @@ const MenuItem = ({
   const hasSubMenu: boolean = submenu ? true : false;
 
   return (
-    <div className="mni-c" ref={menuRef}>
+    <div className="mni-c">
       <div
+        ref={menuRef}
+        tabIndex={0}
         data-testid={menuItemTestId}
-        onClick={(e: any) => menuOnClickHandler(e, setOpenMenu)}
+        onClick={(e: any) =>
+          menuOnClickHandler(
+            e,
+            setOpenMenu,
+            openMenu,
+            submenu,
+            handler,
+            setMainMenu
+          )
+        }
+        onKeyDown={(e) => {
+          if (e.key === KeyboardKey.ENTER.key) {
+            menuOnClickHandler(
+              e,
+              setOpenMenu,
+              openMenu,
+              submenu,
+              handler,
+              setMainMenu
+            );
+          } else if (e.key === KeyboardKey.DOWN_KEY.key) {
+            //todo finish this part
+          }
+        }}
         className="mni clr-txt-lnk"
-        role="select"
+        role="menuitem"
         aria-expanded={openMenu && hasSubMenu ? true : undefined}
         aria-haspopup={hasSubMenu}
-        aria-controls="twk-menu-list"
+        aria-controls={menuPopupId}
       >
         {leftIcon ? (
           typeof leftIcon === "string" ? (
-            <Icon
-              cssValue={leftIcon}
-              size={IconSize.X_SMALL}
-              description={label + " icon"}
-            />
+            <Icon cssValue={leftIcon} size={IconSize.X_SMALL} />
           ) : typeof leftIcon === "boolean" && leftIcon ? (
             <Icon size={IconSize.X_SMALL} description={label + " icon"} />
           ) : null
@@ -69,7 +107,7 @@ const MenuItem = ({
               openMenu ? "on" : "off"
             } b-rd b-rd-blue b-rd-thick b-style-d clr-bg-white-white`}
             data-testid={subMenuItemTestId}
-            id="twk-menu-list"
+            id={menuPopupId}
             role={"menu"}
           >
             {submenu ? (
@@ -157,8 +195,20 @@ const useOutsideAlerter = (ref: any, state: Function) => {
     };
   }, [ref]);
 };
-const menuOnClickHandler = (e: any, setState: Function) => {
+const menuOnClickHandler = (
+  e: any,
+  setState: Function,
+  state: boolean,
+  subMenu: SubMenuType | undefined,
+  clickHadler: MenuItemEventHandler | undefined,
+  mainMenuHadler: any
+) => {
   e.preventDefault();
-  setState(true);
+  if (subMenu) {
+    setState(state ? false : true);
+  } else {
+    if (clickHadler) clickHadler.clickHanlder(e);
+    mainMenuHadler();
+  }
 };
 export default MenuItem;

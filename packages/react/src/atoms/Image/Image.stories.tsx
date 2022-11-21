@@ -24,6 +24,7 @@ ExtraLargeImage.args = {
     "https://media.cnn.com/api/v1/images/stellar/prod/220715121407-macbook-air-m2-review-1.jpg?c=16x9&q=h_720,w_1280,c_fill",
   hashImagUrl: "LSFr0VxnEtrG~Dt4bVrrX1sqRXW+",
   style: "box-xl",
+  description: "Mackbook Pro 2021 Laptop Image",
 };
 export const LargeImage = Template.bind({});
 LargeImage.args = {
@@ -31,6 +32,7 @@ LargeImage.args = {
     "https://media.direct.playstation.com/is/image/sierialto/pulse-3d-wireless-ps5-headset-accessory-front-angle?$Background_Large$",
   hashImagUrl: "LHF~s@-;CS4-_4oMIpRj%gRjMwxa",
   style: "box-lg",
+  description: "Gaming Headphone Image",
 };
 export const MidImage = Template.bind({});
 MidImage.args = {

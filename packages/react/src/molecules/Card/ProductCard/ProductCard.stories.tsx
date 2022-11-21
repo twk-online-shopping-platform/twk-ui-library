@@ -22,6 +22,7 @@ import {
 import DiagonalTag from "../../../atoms/Graphics/Tag/DiagonalTag";
 import { TagePosition } from "../../../atoms/Graphics/Tag/Type";
 import BookMarkTag from "../../../atoms/Graphics/Tag/BookMarkTag";
+import StarTag from "../../../atoms/Graphics/Tag/StarTag";
 
 export default {
   title: "Molecules/Cards/ProductCard",
@@ -109,12 +110,12 @@ export const Small = Template.bind({});
 Small.args = {
   productImage: {
     imageUrl:
-      "https://secure.img1-fg.wfcdn.com/im/50782487/resize-h755-w755%5Ecompr-r85/1840/184065343/Height+Adjustable+Standing+Desk.jpg",
+      "https://www.cartier.com/dw/image/v2/BGTJ_PRD/on/demandware.static/-/Sites-cartier-master/default/dw0a39ef41/images/large/637709281894939504-2263748.png?sw=2000&sh=2000&sm=fit&sfrm=png",
     hashImagUrl: "LHF~s@-;CS4-_4oMIpRj%gRjMwxa",
   },
   title: {
     text: {
-      text: "Gaming Headphone",
+      text: "Men Rolex",
       variant: TypographyVariant.HEADING,
       size: TypographySize.SMALL,
       weight: TypographyWeight.BOLD,
@@ -123,7 +124,7 @@ Small.args = {
   },
   subTitle: {
     text: {
-      text: "Headphone",
+      text: "Watch",
       variant: TypographyVariant.TEXT,
       size: TypographySize.EXTRA_SMALL,
     },
@@ -202,7 +203,7 @@ Category.args = {
 };
 
 const bookmark = (
-  <div className="pdd-h-xs">
+  <div className="pdd-h-xxs">
     <BookMarkTag position={TagePosition.TOP_LEFT} />
   </div>
 );
@@ -259,4 +260,64 @@ CardWithRightBookmark.args = {
     order: CardElementOrder.SECOND_ROW,
   },
   imageRightComponent: bookmarkRight,
+};
+
+const StarRight = (
+  <div className="pdd-h-xs pdd-v-xs">
+    <StarTag position={TagePosition.TOP_RIGHT} />
+  </div>
+);
+export const CardWithRightStar = Template.bind({});
+CardWithRightStar.args = {
+  productImage: {
+    imageUrl:
+      "https://www.cartier.com/dw/image/v2/BGTJ_PRD/on/demandware.static/-/Sites-cartier-master/default/dw0a39ef41/images/large/637709281894939504-2263748.png?sw=2000&sh=2000&sm=fit&sfrm=png",
+    hashImagUrl: "LHF~s@-;CS4-_4oMIpRj%gRjMwxa",
+  },
+  title: {
+    text: {
+      text: "Gaming Headphone",
+      variant: TypographyVariant.HEADING,
+      size: TypographySize.SMALL,
+      weight: TypographyWeight.BOLD,
+    },
+    order: CardElementOrder.FIRST_ROW,
+  },
+  rating: { order: CardElementOrder.THRID_ROW, value: { value: 4, max: 5 } },
+  price: {
+    amount: { text: "$23.99" },
+    discount: { text: "$18.99" },
+    order: CardElementOrder.SECOND_ROW,
+  },
+  imageRightComponent: StarRight,
+};
+
+const StarLeft = (
+  <div className="pdd-h-xs pdd-v-xxs">
+    <StarTag position={TagePosition.TOP_LEFT} />
+  </div>
+);
+export const CardWithLeftStar = Template.bind({});
+CardWithLeftStar.args = {
+  productImage: {
+    imageUrl:
+      "https://www.cartier.com/dw/image/v2/BGTJ_PRD/on/demandware.static/-/Sites-cartier-master/default/dw0a39ef41/images/large/637709281894939504-2263748.png?sw=2000&sh=2000&sm=fit&sfrm=png",
+    hashImagUrl: "LHF~s@-;CS4-_4oMIpRj%gRjMwxa",
+  },
+  title: {
+    text: {
+      text: "Gaming Headphone",
+      variant: TypographyVariant.HEADING,
+      size: TypographySize.SMALL,
+      weight: TypographyWeight.BOLD,
+    },
+    order: CardElementOrder.FIRST_ROW,
+  },
+  rating: { order: CardElementOrder.THRID_ROW, value: { value: 4, max: 5 } },
+  price: {
+    amount: { text: "$23.99" },
+    discount: { text: "$18.99" },
+    order: CardElementOrder.SECOND_ROW,
+  },
+  imageLeftComponent: StarLeft,
 };

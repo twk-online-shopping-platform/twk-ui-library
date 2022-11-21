@@ -38,8 +38,10 @@ const ProductCard = ({
   const row3Id = useId();
   const row4Id = useId();
   const row5Id = useId();
+  const cardId = useId();
   return (
     <div
+      key={cardId}
       data-testid={productCardTestid}
       className={`flx-v flx-v-lft pdd-h-sm pdd-v-sm ${
         hashBorder ? "b-rd b-rd-gray b-style-s" : ""

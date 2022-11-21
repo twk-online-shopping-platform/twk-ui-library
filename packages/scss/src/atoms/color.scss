@@ -22,10 +22,17 @@
     @include map-color("color");
     &-lnk {
       cursor: pointer;
+
+      @include map-color("color");
       &:hover {
+        color: map-get($blue, "600");
+      }
+      &:focus {
         color: map-get($blue, "500");
       }
-      @include map-color("color");
+      &:active {
+        color: map-get($blue, "600");
+      }
     }
   }
   &-b {

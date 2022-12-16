@@ -18,5 +18,4 @@ const iconClickHandler = (e: Event) => {
 export const Primary = Template.bind({});
 Primary.args = {
   description: "Search Icon",
-  clickHandler: iconClickHandler,
 };

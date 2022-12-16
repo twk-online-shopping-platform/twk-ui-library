@@ -27,7 +27,8 @@ interface NotificationType {
   description?: string;
   dropDown?: ReactNode;
   dropDownPosition?: DropDownPosition;
-  compontentKey:string
+  compontentKey?: string;
+  dropDownContainerStyle?: string;
 }
 
 export { NotificationValueShape, DropDownPosition };

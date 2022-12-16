@@ -2,8 +2,8 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import { TextFieldTestId } from "../../atoms/Field/FieldConstants";
 import { ButtonTestId } from "../../atoms/Button/ButtonConstants";
-import { SearchFieldType } from "./Type";
 import InputButtonGroup from "./InputButtonGroup";
+import { InputButtonGroupType } from "./Type";
 
 describe("Test SearchField component", () => {
   it("should display TextField component", async () => {
@@ -17,7 +17,7 @@ describe("Test SearchField component", () => {
     expect(searchField).toBeInTheDocument();
   });
   it("should accept SearchFieldType props component", async () => {
-    const searchFieldProps: SearchFieldType = {
+    const searchFieldProps: InputButtonGroupType = {
       buttonText: "",
       searchFieldPlaceHolder: "",
       searchIcon: "",

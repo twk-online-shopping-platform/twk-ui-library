@@ -9,7 +9,6 @@ import {
   subMenuItemTestId,
 } from "./MenuItemConstants";
 import {
-  MenuItemEventHandler,
   MenuItemType,
   RightIconType,
   SubMenuPosition,
@@ -19,28 +18,39 @@ import { TypographySize, TypographyVariant } from "../../atoms/Typography/Type";
 import { IconSize } from "../../atoms/Icon/Type";
 import { KeyboardKey } from "../../accessibility/KeyboardEvents";
 import {
-  useMenuItemRefListUpdateContext,
+  useDropDownLevelContext,
+  useDropDownLevelUpdateContext,
+  useMenuContext,
   useMenuUpdateContext,
-} from "../Notification/NotificationContextProvider";
+} from "../../common/Contexts/DropDownContextProvider";
+import {
+  createDropDownStateListener,
+  dropDownClickHandler,
+} from "../../common/Contexts/EventHandler";
 
 const MenuItem = ({
   label,
   leftIcon,
   rightIcon,
-  handler,
+  clickHanlder,
   textSize,
   textVariant,
   submenu,
-  parentKey,
+  uniqueId,
+  parentsList,
 }: MenuItemType) => {
-  const [openMenu, setOpenMenu] = useState(false);
-  const setMainMenu = useMenuUpdateContext();
-  const addToFocusableRefs = useMenuItemRefListUpdateContext();
+  const [dropDownState, setDropDownState] = useState(false);
+  const mainContext: boolean = useMenuContext();
+  const setMainContext = useMenuUpdateContext();
+  const dropdownLevelContext: Array<string> = useDropDownLevelContext();
+  const setDropdownLevelContext = useDropDownLevelUpdateContext();
   const menuRef = useRef(null);
-  useOutsideAlerter(menuRef, setOpenMenu);
-  useEffect(() => {
-    addToFocusableRefs(parentKey ? parentKey : "parent", label, menuRef);
-  }, [menuRef]);
+  createDropDownStateListener(
+    setDropDownState,
+    mainContext,
+    dropdownLevelContext,
+    uniqueId
+  );
 
   const subMenuPosition = submenu
     ? submenu.position
@@ -55,33 +65,39 @@ const MenuItem = ({
         ref={menuRef}
         tabIndex={0}
         data-testid={menuItemTestId}
-        onClick={(e: any) =>
-          menuOnClickHandler(
+        onClick={(e) => {
+          dropDownClickHandler(
             e,
-            setOpenMenu,
-            openMenu,
-            submenu,
-            handler,
-            setMainMenu
-          )
-        }
+            dropDownState,
+            setDropDownState,
+            setMainContext,
+            dropdownLevelContext,
+            setDropdownLevelContext,
+            uniqueId,
+            parentsList,
+            submenu?.menu?.menuItems,
+            clickHanlder
+          );
+        }}
         onKeyDown={(e) => {
           if (e.key === KeyboardKey.ENTER.key) {
-            menuOnClickHandler(
+            dropDownClickHandler(
               e,
-              setOpenMenu,
-              openMenu,
-              submenu,
-              handler,
-              setMainMenu
+              dropDownState,
+              setDropDownState,
+              setMainContext,
+              dropdownLevelContext,
+              setDropdownLevelContext,
+              uniqueId,
+              parentsList,
+              submenu?.menu?.menuItems,
+              clickHanlder
             );
-          } else if (e.key === KeyboardKey.DOWN_KEY.key) {
-            //todo finish this part
           }
         }}
         className="mni clr-txt-lnk"
         role="menuitem"
-        aria-expanded={openMenu && hasSubMenu ? true : undefined}
+        aria-expanded={dropDownState && hasSubMenu ? true : undefined}
         aria-haspopup={hasSubMenu}
         aria-controls={menuPopupId}
       >
@@ -98,14 +114,14 @@ const MenuItem = ({
           size={textSize ? textSize : TypographySize.SMALL}
           nowrapText={true}
         />
-        {righIconComp(rightIcon, openMenu, submenu)}
+        {righIconComp(rightIcon, dropDownState, submenu)}
       </div>
       {submenu ? (
         submenu.menu ? (
           <div
-            className={`mni-p mni-p-${subMenuPosition} mni-p-${
-              openMenu ? "on" : "off"
-            } b-rd b-rd-blue b-rd-thick b-style-d clr-bg-white-white`}
+            className={`mni-p mni-p-${subMenuPosition} mni-p-${showDropDown(
+              dropDownState
+            )} b-rd b-rd-blue b-rd-thick b-style-d clr-bg-white-white`}
             data-testid={subMenuItemTestId}
             id={menuPopupId}
             role={"menu"}
@@ -123,6 +139,10 @@ const MenuItem = ({
       ) : null}
     </div>
   );
+};
+
+const showDropDown = (currentState: boolean): string => {
+  return currentState ? "on" : "off";
 };
 
 const righIconComp = (
@@ -182,33 +202,5 @@ const righIconComp = (
 const isRightIcon = (rightIconInput: any): rightIconInput is RightIconType => {
   return "closeValue" in rightIconInput;
 };
-const useOutsideAlerter = (ref: any, state: Function) => {
-  useEffect(() => {
-    function handleClickOutside(event: { target: any }) {
-      if (ref.current && !ref.current.contains(event.target)) {
-        state(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [ref]);
-};
-const menuOnClickHandler = (
-  e: any,
-  setState: Function,
-  state: boolean,
-  subMenu: SubMenuType | undefined,
-  clickHadler: MenuItemEventHandler | undefined,
-  mainMenuHadler: any
-) => {
-  e.preventDefault();
-  if (subMenu) {
-    setState(state ? false : true);
-  } else {
-    if (clickHadler) clickHadler.clickHanlder(e);
-    mainMenuHadler();
-  }
-};
+
 export default MenuItem;

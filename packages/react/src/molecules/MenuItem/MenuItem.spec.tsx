@@ -6,7 +6,7 @@ import { MenuItemSize, MenuItemType, SubMenuPosition } from "./Type";
 
 describe("Test MenuItem Component", () => {
   it("should display MenuItem Component", async () => {
-    render(<MenuItem label={""} />);
+    render(<MenuItem label={"Test"} uniqueId={"1"} parentsList={["1"]} />);
     const muenuItem = await screen.getByTestId(menuItemTestId);
     expect(muenuItem).toBeInTheDocument();
   });
@@ -14,6 +14,8 @@ describe("Test MenuItem Component", () => {
     const testLabel: string = "Test-MenuItem";
     const menuItemProps: MenuItemType = {
       label: testLabel,
+      uniqueId: "1",
+      parentsList: ["1"],
       size: MenuItemSize.SMALL,
     };
     render(<MenuItem {...menuItemProps} />);
@@ -23,11 +25,15 @@ describe("Test MenuItem Component", () => {
   it("should accept click handler", async () => {
     const menuItemProps: MenuItemType = {
       label: "Test",
+      uniqueId: "1",
+      parentsList: ["1"],
       submenu: {
         position: SubMenuPosition.LEFT,
         menu: {
           menuItems: [
             {
+              uniqueId: "2",
+              parentsList: ["1", "2"],
               label: "Social Media",
               leftIcon: "fa-solid fa-house-user",
               submenu: {

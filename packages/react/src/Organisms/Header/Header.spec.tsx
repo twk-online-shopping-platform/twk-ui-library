@@ -13,6 +13,8 @@ describe("Test Header Component", () => {
     const accountText = "Account";
     const menuItemList: MenuItemType[] = [
       {
+        uniqueId: "1",
+        parentsList: ["1"],
         label: menuBarText,
         leftIcon: "fa-solid fa-house-user",
       },

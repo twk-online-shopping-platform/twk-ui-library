@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import MenuItem from "../MenuItem/MenuItem";
 import { MenuItemType, SubMenuPosition } from "../MenuItem/Type";
 import { menuTestId } from "./MenuConstants";
 import { MenuOrientation, MenuType } from "./Type";
 import { useId } from "react";
+import DropDownContextProvider, {
+  useDropDownLevelContext,
+  useDropDownLevelUpdateContext,
+} from "../../common/Contexts/DropDownContextProvider";
 
 const getMenuItemComponents = (menuItems: MenuItemType[]) => {
   const menuItemComponents = [];
   for (const menuItem of menuItems) {
-    menuItemComponents.push(<MenuItem label={menuItem.label} />);
+    menuItemComponents.push(<MenuItem {...menuItem} />);
   }
   return menuItemComponents;
 };

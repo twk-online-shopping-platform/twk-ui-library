@@ -43,7 +43,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test": "jest --coverage",
-    "test:watch": "jest --verbose false --watch"
+    "test:watch": "jest --verbose false --watch --maxWorkers=20%"
   },
   "workspaces": [
     "packages/*"
@@ -53,6 +53,7 @@
     "@iconscout/unicons": "^4.0.1",
     "blurhash": "^2.0.3",
     "bootstrap-icons": "^1.9.1",
+    "jest-css-modules-transform": "^4.4.2",
     "react-blurhash": "^0.2.0"
   }
 }

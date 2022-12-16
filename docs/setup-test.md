@@ -44,4 +44,6 @@
     }
   ```
 
-jest-canvas-mock
+jest-canvas-mock -> for mocking blurhash
+
+yarn lerna add jest-css-modules-transform packages/react

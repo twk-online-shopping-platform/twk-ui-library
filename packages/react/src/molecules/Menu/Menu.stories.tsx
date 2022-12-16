@@ -1,149 +1,103 @@
-import React from "react";
+import React, { MouseEventHandler } from "react";
 import { ComponentMeta, ComponentStory, Meta, Story } from "@storybook/react";
 import "@twk-ui-lib/scss/root/global.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 import Menu from "./Menu";
 import { MenuOrientation, MenuType } from "./Type";
 import { MenuItemType, SubMenuPosition } from "../MenuItem/Type";
+import StandAloneMenu from "./StandAloneMenu";
 
 export default {
   title: "Molecules/Menu",
-  component: Menu,
-} as ComponentMeta<typeof Menu>;
+  component: StandAloneMenu,
+} as ComponentMeta<typeof StandAloneMenu>;
 
 const Template: ComponentStory<typeof Menu> = (args: MenuType) => (
-  <Menu {...args} />
+  <StandAloneMenu {...args} />
 );
+const mockFunction: MouseEventHandler = (e) => {
+  console.log("target", e.target);
+};
 export const HorizontalMenu = Template.bind({});
 let menuItemList: MenuItemType[] = [
   {
-    label: "Home",
+    uniqueId: "1",
+    parentsList: ["1"],
+    label: "Electronics",
     leftIcon: "fa-solid fa-house-user",
     submenu: {
       menu: {
         menuItems: [
           {
-            label: "Home",
-            leftIcon: "fa-solid fa-house-user",
+            uniqueId: "2",
+            parentsList: ["1", "2"],
+            label: "Hair Product",
+            leftIcon: "fa-solid fa-earth-americas",
             submenu: {
               menu: {
                 menuItems: [
                   {
-                    label: "Social Media",
-                    leftIcon: "fa-solid fa-house-user",
-                    submenu: {
-                      position: SubMenuPosition.LEFT,
-                    },
+                    uniqueId: "3",
+                    parentsList: ["1", "2", "3"],
+                    label: "Shampo",
+                    leftIcon: "fa-solid fa-earth-americas",
+                    clickHanlder: mockFunction,
                   },
                 ],
               },
-              position: SubMenuPosition.LEFT,
             },
           },
-          {
-            label: "Catalog",
-            leftIcon: "fa-solid fa-rectangle-list",
-            submenu: { position: SubMenuPosition.LEFT },
-          },
-          { label: "About us", leftIcon: "fa-solid fa-earth-americas" },
-          { label: "News", leftIcon: "fa-solid fa-radio" },
-          {
-            label: "Blog",
-            leftIcon: "fa-solid fa-mug-hot",
-            submenu: { position: SubMenuPosition.LEFT },
-          },
         ],
-        orientation: MenuOrientation.VERTICAL,
       },
       position: SubMenuPosition.UNDER,
     },
   },
   {
-    label: "Catalog",
+    uniqueId: "4",
+    parentsList: ["4"],
+    label: "Art",
     leftIcon: "fa-solid fa-rectangle-list",
-    submenu: {
-      menu: {
-        menuItems: [
-          {
-            label: "Home",
-            leftIcon: "fa-solid fa-house-user",
-            submenu: {
-              menu: {
-                menuItems: [
-                  {
-                    label: "Social Media",
-                    leftIcon: "fa-solid fa-house-user",
-                    submenu: {
-                      position: SubMenuPosition.LEFT,
-                    },
-                  },
-                ],
-              },
-              position: SubMenuPosition.LEFT,
-            },
-          },
-          {
-            label: "Catalog",
-            leftIcon: "fa-solid fa-rectangle-list",
-            submenu: { position: SubMenuPosition.LEFT },
-          },
-          { label: "About us", leftIcon: "fa-solid fa-earth-americas" },
-          { label: "News", leftIcon: "fa-solid fa-radio" },
-          {
-            label: "Blog",
-            leftIcon: "fa-solid fa-mug-hot",
-            submenu: { position: SubMenuPosition.LEFT },
-          },
-        ],
-        orientation: MenuOrientation.VERTICAL,
-      },
-      position: SubMenuPosition.UNDER,
-    },
+    clickHanlder: mockFunction,
   },
   {
-    label: "About us",
+    uniqueId: "5",
+    parentsList: ["5"],
+    label: "Furniture",
     leftIcon: "fa-solid fa-earth-americas",
     submenu: {
       menu: {
         menuItems: [
           {
-            label: "Home",
-            leftIcon: "fa-solid fa-house-user",
+            uniqueId: "6",
+            parentsList: ["5", "6"],
+            label: "Shoes",
+            leftIcon: "fa-solid fa-earth-americas",
             submenu: {
               menu: {
                 menuItems: [
                   {
-                    label: "Social Media",
-                    leftIcon: "fa-solid fa-house-user",
-                    submenu: {
-                      position: SubMenuPosition.LEFT,
-                    },
+                    uniqueId: "7",
+                    parentsList: ["5", "6", "7"],
+                    label: "Nike",
+                    leftIcon: "fa-solid fa-earth-americas",
+                    clickHanlder: mockFunction,
                   },
                 ],
               },
-              position: SubMenuPosition.LEFT,
             },
           },
-          {
-            label: "Catalog",
-            leftIcon: "fa-solid fa-rectangle-list",
-            submenu: { position: SubMenuPosition.LEFT },
-          },
-          { label: "About us", leftIcon: "fa-solid fa-earth-americas" },
-          { label: "News", leftIcon: "fa-solid fa-radio" },
-          {
-            label: "Blog",
-            leftIcon: "fa-solid fa-mug-hot",
-            submenu: { position: SubMenuPosition.LEFT },
-          },
         ],
-        orientation: MenuOrientation.VERTICAL,
       },
       position: SubMenuPosition.UNDER,
     },
   },
-  { label: "News", leftIcon: "fa-solid fa-radio" },
-  { label: "Blog", leftIcon: "fa-solid fa-mug-hot" },
+  {
+    uniqueId: "8",
+    parentsList: ["8"],
+    label: "Automotive",
+    leftIcon: "fa-solid fa-radio",
+    clickHanlder: mockFunction,
+  },
 ];
 
 HorizontalMenu.args = {

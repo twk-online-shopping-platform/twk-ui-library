@@ -16,11 +16,24 @@ describe("Test Menu Component", () => {
     expect(menuComponent).toBeInTheDocument();
   });
   it("should display MenuItems", async () => {
-    let menuItemList: MenuItemType[] = [];
-    const nums = [1, 2, 3];
-    for (let n of nums) {
-      menuItemList.push({ label: "menu-" + n });
-    }
+    const menuItemList = [
+      {
+        label: "menu-1",
+        uniqueId: "1",
+        parentsList: ["1"],
+      },
+      {
+        label: "menu-2",
+        uniqueId: "2",
+        parentsList: ["2"],
+      },
+      {
+        label: "menu-3",
+        uniqueId: "3",
+        parentsList: ["3"],
+      },
+    ];
+
     const menuProps: MenuType = {
       menuItems: menuItemList,
       orientation: MenuOrientation.HORIZONTAL,

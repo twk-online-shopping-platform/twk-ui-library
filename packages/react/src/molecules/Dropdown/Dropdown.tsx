@@ -1,11 +1,26 @@
-import React, { MouseEventHandler, useEffect, useRef, useState } from "react";
+import React, {
+  KeyboardEventHandler,
+  MouseEventHandler,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import Icon from "../../atoms/Icon/Icon";
 import { IconSize } from "../../atoms/Icon/Type";
 import { TypographyVariant } from "../../atoms/Typography/Type";
 import Typography from "../../atoms/Typography/Typography";
+import DropDownContextProvider, {
+  useMenuContext,
+  useMenuUpdateContext,
+} from "../../common/Contexts/DropDownContextProvider";
 import Menu from "../Menu/Menu";
 import { MenuOrientation } from "../Menu/Type";
 import MenuItem from "../MenuItem/MenuItem";
+import {
+  dropDownClickHandler,
+  onKeyDownDropDown,
+  useOutsideAlerter,
+} from "../../common/Contexts/EventHandler";
 import { dropdownTestId } from "./DropdownConstants";
 import { DropdownType } from "./Type";
 const Dropdown = ({
@@ -15,23 +30,33 @@ const Dropdown = ({
   uperText,
   popupPositon,
 }: DropdownType) => {
-  const [openMenu, setOpenMenu] = useState(false);
+  const mainContext = useMenuContext();
+  const setMainContext = useMenuUpdateContext();
   const menuRef = useRef(null);
-  useOutsideAlerter(menuRef, setOpenMenu);
+
+  useOutsideAlerter(menuRef, setMainContext);
+
+  const keyboardHandler: KeyboardEventHandler<HTMLDivElement> = (e) => {
+    onKeyDownDropDown(e, setMainContext, mainContext);
+  };
 
   return (
     <div className="mni-c" ref={menuRef}>
       <div
+        tabIndex={0}
         className={`mni flx-h  flx-spc-ctr flx-gap-sm`}
         data-testid={dropdownTestId}
-        onClick={(e) => dropdownClickHandler(e, setOpenMenu)}
+        onClick={(e) => {
+          e.preventDefault();
+          setMainContext(!mainContext);
+        }}
+        onKeyDown={keyboardHandler}
       >
         {icons ? (
           <Icon
-            cssValue={`${openMenu ? icons.open : icons.close} ${
+            cssValue={`${mainContext ? icons.open : icons.close} ${
               icons ? (icons.cssValue ? icons.cssValue : "") : ""
             }`}
-            // clickHandler={(e) => dropdownClickHandler(e, setOpenMenu)}
             size={icons.size ? icons.size : IconSize.SMALL}
           />
         ) : null}
@@ -45,32 +70,20 @@ const Dropdown = ({
         className={`mni-p mni-p-${
           popupPositon ? popupPositon : "under"
         } mni-p-${
-          openMenu ? "on" : "off"
+          mainContext ? "on" : "off"
         }  b-rd-blue b-rd-thick b-style-d clr-bg-white-white`}
       >
-        {popupItems ? (
-          <Menu menuItems={popupItems} orientation={MenuOrientation.VERTICAL} />
-        ) : null}
+        {popupItems ? popupItems : null}
       </div>
     </div>
   );
 };
 
-const useOutsideAlerter = (ref: any, state: Function) => {
-  useEffect(() => {
-    function handleClickOutside(event: { target: any }) {
-      if (ref.current && !ref.current.contains(event.target)) {
-        state(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [ref]);
+const DropDownWithContext = ({ ...props }: DropdownType) => {
+  return (
+    <DropDownContextProvider>
+      <Dropdown {...props} />
+    </DropDownContextProvider>
+  );
 };
-const dropdownClickHandler = (e: any, setState: Function) => {
-  e.preventDefault();
-  setState(true);
-};
-export default Dropdown;
+export default DropDownWithContext;

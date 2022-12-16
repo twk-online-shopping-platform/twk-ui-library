@@ -3,23 +3,26 @@ import Icon from "../../atoms/Icon/Icon";
 import { IconSize } from "../../atoms/Icon/Type";
 import { TypographySize, TypographyVariant } from "../../atoms/Typography/Type";
 import Typography from "../../atoms/Typography/Typography";
-import NotificationContextProvider, {
+import DropDownContextProvider, {
   useMenuContext,
-  useMenuItemListRefContext,
   useMenuUpdateContext,
-} from "./NotificationContextProvider";
-import { notificationDropDownId } from "./NotificationConstants";
+} from "../../common/Contexts/DropDownContextProvider";
+import {
+  notificationDropDownId,
+  notificationDropDownTestId,
+  notificationTestId,
+} from "./NotificationConstants";
 import {
   DropDownPosition,
   NotificationType,
   NotificationValueShape,
 } from "./Type";
 import {
-  notificationClickHandler,
-  notificationNum,
-  onKeyDownNotification,
+  createDropDownStateListener,
+  dropDownClickHandler,
+  onKeyDownDropDown,
   useOutsideAlerter,
-} from "./eventHandler";
+} from "../../common/Contexts/EventHandler";
 
 const Notification = ({
   icon,
@@ -31,23 +34,12 @@ const Notification = ({
   description = "Notification Icon",
   dropDown,
   dropDownPosition,
+  dropDownContainerStyle,
 }: NotificationType) => {
-  const openMenu = useMenuContext();
-  const setOpenMenu = useMenuUpdateContext();
-  const focusableSubItemRef = useMenuItemListRefContext();
+  const mainContext: boolean = useMenuContext();
+  const setMainContext = useMenuUpdateContext();
   const menuRef = useRef(null);
-  const popupRef = useRef(null);
-  const [currentFocus, setCurrentFocus] =
-    useState<React.MutableRefObject<any> | null>(null);
-
-  useOutsideAlerter(menuRef, setOpenMenu, setCurrentFocus);
-
-  useEffect(() => {
-    if (currentFocus && currentFocus.current) {
-      currentFocus.current.focus();
-    }
-    console.log("Curr Foc: ", currentFocus?.current);
-  }, [currentFocus]);
+  useOutsideAlerter(menuRef, setMainContext);
 
   return (
     <div className="mni-c" ref={menuRef}>
@@ -55,20 +47,16 @@ const Notification = ({
         className="mni"
         role="menu"
         aria-label={description}
-        aria-expanded={openMenu ? true : undefined}
+        aria-expanded={mainContext ? true : undefined}
         aria-controls={notificationDropDownId}
         aria-haspopup={dropDown ? true : undefined}
-        onClick={(e) => notificationClickHandler(e, setOpenMenu, openMenu)}
-        onKeyDown={(e) =>
-          onKeyDownNotification(
-            e,
-            setOpenMenu,
-            openMenu,
-            focusableSubItemRef,
-            setCurrentFocus
-          )
-        }
-        tabIndex={0}
+        data-testid={notificationTestId}
+        onClick={(e) => {
+          e.preventDefault();
+          setMainContext(!mainContext);
+        }}
+        onKeyDown={(e) => onKeyDownDropDown(e, setMainContext, mainContext)}
+        tabIndex={dropDown ? 0 : -1}
       >
         <div className="ntf-c">
           <Icon
@@ -93,14 +81,13 @@ const Notification = ({
       </div>
       {dropDown ? (
         <div
+          data-testid={notificationDropDownTestId}
           id={notificationDropDownId}
-          className={`mni-p mni-p-${
-            openMenu ? "on" : "off"
-          } clr-bg-white-white b-rd b-rd-blue b-rd-thick b-style-d mni-p-${
+          className={`mni-p mni-p-${isOpenDropDown(
+            mainContext
+          )} clr-bg-white-white b-rd b-rd-blue b-rd-thick b-style-d mni-p-${
             dropDownPosition ? dropDownPosition : DropDownPosition.UNDER_RIGHT
-          }`}
-          tabIndex={0}
-          ref={popupRef}
+          } ${dropDownContainerStyle}`}
         >
           {dropDown}
         </div>
@@ -111,9 +98,27 @@ const Notification = ({
 
 const NotiticationWithContext = ({ ...props }: NotificationType) => {
   return (
-    <NotificationContextProvider>
+    <DropDownContextProvider>
       <Notification {...props} />
-    </NotificationContextProvider>
+    </DropDownContextProvider>
   );
 };
 export default NotiticationWithContext;
+
+const notificationNum = (val: number): string => {
+  let displayValue: string = "0";
+  if (val == null) {
+    return displayValue;
+  } else if (val > 9) {
+    displayValue = "9+";
+  } else if (val < 0) {
+    displayValue = "0";
+  } else {
+    displayValue = val.toString();
+  }
+  return displayValue;
+};
+
+const isOpenDropDown = (state: boolean): string => {
+  return state ? "on" : "off";
+};

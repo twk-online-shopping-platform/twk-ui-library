@@ -21,6 +21,7 @@ import {
 } from "./HeaderConstants";
 import { HeaderType } from "./Type";
 import { MenuOrientation } from "../../molecules/Menu/Type";
+import StandAloneMenu from "../../molecules/Menu/StandAloneMenu";
 
 const Header = ({ headerMenu, navNotification }: HeaderType) => {
   const headerClassName = `flx-v flx-gap-lg`;
@@ -52,9 +53,11 @@ const Header = ({ headerMenu, navNotification }: HeaderType) => {
               size={TypographySize.LARGE}
               cssClasses="clr-txt-lnk"
             />
-            <Menu
+            <StandAloneMenu
               menuItems={[
                 {
+                  uniqueId: "1",
+                  parentsList: ["1"],
                   label: "English",
                   textVariant: TypographyVariant.SMALL,
                   textSize: TypographySize.LARGE,
@@ -62,11 +65,24 @@ const Header = ({ headerMenu, navNotification }: HeaderType) => {
                     position: SubMenuPosition.UNDER_RIGHT,
                     menu: {
                       orientation: MenuOrientation.VERTICAL,
-                      menuItems: [{ label: "English" }, { label: "Amharic" }],
+                      menuItems: [
+                        {
+                          uniqueId: "2",
+                          parentsList: ["1", "2"],
+                          label: "English",
+                        },
+                        {
+                          uniqueId: "3",
+                          parentsList: ["1", "3"],
+                          label: "Amharic",
+                        },
+                      ],
                     },
                   },
                 },
                 {
+                  uniqueId: "4",
+                  parentsList: ["4"],
                   label: "USD",
                   textVariant: TypographyVariant.SMALL,
                   textSize: TypographySize.LARGE,
@@ -74,7 +90,18 @@ const Header = ({ headerMenu, navNotification }: HeaderType) => {
                     position: SubMenuPosition.UNDER_RIGHT,
                     menu: {
                       orientation: MenuOrientation.VERTICAL,
-                      menuItems: [{ label: "USD" }, { label: "ETH" }],
+                      menuItems: [
+                        {
+                          uniqueId: "5",
+                          parentsList: ["4", "5"],
+                          label: "USD",
+                        },
+                        {
+                          uniqueId: "6",
+                          parentsList: ["4", "6"],
+                          label: "ETH",
+                        },
+                      ],
                     },
                   },
                 },
@@ -98,26 +125,43 @@ const Header = ({ headerMenu, navNotification }: HeaderType) => {
             />
             {headerMenu ? (
               headerMenu.menuItems ? (
-                <Menu menuItems={headerMenu.menuItems} />
+                <StandAloneMenu {...headerMenu} />
               ) : null
             ) : null}
           </div>
           <div className="flx-h flx-gap-md">
             <Dropdown
-              popupItems={[
-                {
-                  label: "Electronics",
-                  leftIcon: "las la-headphones",
-                },
-                {
-                  label: "Furnitures",
-                  leftIcon: "las la-chair",
-                },
-                {
-                  label: "Automotives",
-                  leftIcon: "las la-car",
-                },
-              ]}
+              popupItems={
+                <Menu
+                  menuItems={[
+                    {
+                      uniqueId: "1",
+                      parentsList: ["1"],
+                      label: "Electronics",
+                      leftIcon: "fa-solid fa-house-user",
+                    },
+                    {
+                      label: "Hair Products",
+                      leftIcon: "fa-solid fa-rectangle-list",
+                      uniqueId: "3",
+                      parentsList: ["3"],
+                    },
+                    {
+                      label: "Furniture",
+                      leftIcon: "fa-solid fa-earth-americas",
+                      uniqueId: "4",
+                      parentsList: ["4"],
+                    },
+                    {
+                      label: "Automotive",
+                      leftIcon: "fa-solid fa-radio",
+                      uniqueId: "5",
+                      parentsList: ["5"],
+                    },
+                  ]}
+                  orientation={MenuOrientation.VERTICAL}
+                />
+              }
               icons={{
                 open: "fa-solid fa-user",
                 close: "fa-regular fa-user",
@@ -137,6 +181,7 @@ const Header = ({ headerMenu, navNotification }: HeaderType) => {
               }}
             />
             <Notification
+              compontentKey="WishList"
               textSize={TypographySize.MEDIUM}
               icon={
                 navNotification
@@ -152,8 +197,40 @@ const Header = ({ headerMenu, navNotification }: HeaderType) => {
                     : 0
                   : 0
               }
+              dropDown={
+                <Menu
+                  menuItems={[
+                    {
+                      uniqueId: "1",
+                      parentsList: ["1"],
+                      label: "Electronics",
+                      leftIcon: "fa-solid fa-house-user",
+                    },
+                    {
+                      label: "Hair Products",
+                      leftIcon: "fa-solid fa-rectangle-list",
+                      uniqueId: "2",
+                      parentsList: ["2"],
+                    },
+                    {
+                      label: "Furniture",
+                      leftIcon: "fa-solid fa-earth-americas",
+                      uniqueId: "3",
+                      parentsList: ["3"],
+                    },
+                    {
+                      label: "Automotive",
+                      leftIcon: "fa-solid fa-radio",
+                      uniqueId: "4",
+                      parentsList: ["4"],
+                    },
+                  ]}
+                  orientation={MenuOrientation.VERTICAL}
+                />
+              }
             />
             <Notification
+              compontentKey="Cart"
               textSize={TypographySize.MEDIUM}
               icon={
                 navNotification
@@ -169,23 +246,72 @@ const Header = ({ headerMenu, navNotification }: HeaderType) => {
                     : 0
                   : 0
               }
+              dropDown={
+                <Menu
+                  menuItems={[
+                    {
+                      uniqueId: "1",
+                      parentsList: ["1"],
+                      label: "Electronics",
+                      leftIcon: "fa-solid fa-house-user",
+                    },
+                    {
+                      label: "Hair Products",
+                      leftIcon: "fa-solid fa-rectangle-list",
+                      uniqueId: "2",
+                      parentsList: ["2"],
+                    },
+                    {
+                      label: "Furniture",
+                      leftIcon: "fa-solid fa-earth-americas",
+                      uniqueId: "3",
+                      parentsList: ["3"],
+                    },
+                    {
+                      label: "Automotive",
+                      leftIcon: "fa-solid fa-radio",
+                      uniqueId: "4",
+                      parentsList: ["4"],
+                    },
+                  ]}
+                  orientation={MenuOrientation.VERTICAL}
+                />
+              }
             />
+
             <Dropdown
               popupPositon={SubMenuPosition.UNDER_RIGHT}
-              popupItems={[
-                {
-                  label: "Electronics",
-                  leftIcon: "las la-headphones",
-                },
-                {
-                  label: "Furnitures",
-                  leftIcon: "las la-chair",
-                },
-                {
-                  label: "Automotives",
-                  leftIcon: "las la-car",
-                },
-              ]}
+              popupItems={
+                <Menu
+                  menuItems={[
+                    {
+                      uniqueId: "1",
+                      parentsList: ["1"],
+                      label: "Electronics",
+                      leftIcon: "fa-solid fa-house-user",
+                    },
+                    {
+                      label: "Hair Products",
+                      leftIcon: "fa-solid fa-rectangle-list",
+                      uniqueId: "2",
+                      parentsList: ["2"],
+                    },
+                    {
+                      label: "Furniture",
+                      leftIcon: "fa-solid fa-earth-americas",
+                      uniqueId: "3",
+                      parentsList: ["3"],
+                    },
+                    {
+                      label: "Automotive",
+                      leftIcon: "fa-solid fa-radio",
+                      uniqueId: "4",
+                      parentsList: ["4"],
+                    },
+                  ]}
+                  orientation={MenuOrientation.VERTICAL}
+                />
+              }
               uperText={{
                 text: "Total",
                 variant: TypographyVariant.SMALL,
@@ -205,20 +331,6 @@ const Header = ({ headerMenu, navNotification }: HeaderType) => {
       <div className="flx-h flx-spc-ctr  dvc-full clr-bg-gray-800 pdd-v-sm pdd-h-sm">
         <div className="flx-h dvc-disktop " data-testid={headerSrchTestId}>
           <Dropdown
-            popupItems={[
-              {
-                label: "Electronics",
-                leftIcon: "las la-headphones",
-              },
-              {
-                label: "Furnitures",
-                leftIcon: "las la-chair",
-              },
-              {
-                label: "Automotives",
-                leftIcon: "las la-car",
-              },
-            ]}
             icons={{
               open: "fa-solid fa-bars-staggered",
               close: "fa-solid fa-bars",
@@ -234,6 +346,49 @@ const Header = ({ headerMenu, navNotification }: HeaderType) => {
               variant: TypographyVariant.SMALL,
               cssClasses: "clr-txt-gray-400",
             }}
+            popupItems={
+              <Menu
+                menuItems={[
+                  {
+                    uniqueId: "1",
+                    parentsList: ["1"],
+                    label: "Electronics",
+                    leftIcon: "fa-solid fa-house-user",
+                    submenu: {
+                      menu: {
+                        menuItems: [
+                          {
+                            uniqueId: "2",
+                            parentsList: ["1", "2"],
+                            label: "Furniture",
+                            leftIcon: "fa-solid fa-earth-americas",
+                          },
+                        ],
+                      },
+                    },
+                  },
+                  {
+                    label: "Hair Products",
+                    leftIcon: "fa-solid fa-rectangle-list",
+                    uniqueId: "3",
+                    parentsList: ["3"],
+                  },
+                  {
+                    label: "Furniture",
+                    leftIcon: "fa-solid fa-earth-americas",
+                    uniqueId: "4",
+                    parentsList: ["4"],
+                  },
+                  {
+                    label: "Automotive",
+                    leftIcon: "fa-solid fa-radio",
+                    uniqueId: "5",
+                    parentsList: ["5"],
+                  },
+                ]}
+                orientation={MenuOrientation.VERTICAL}
+              />
+            }
           />
           <div className="flx-h flx-gap-sm">
             <Typography

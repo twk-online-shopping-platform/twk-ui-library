@@ -118,9 +118,13 @@ function getRightIconClassName(
   rightIcon: string | boolean | IconType | undefined,
   rightIconClassName: string | undefined
 ) {
-  if (typeof rightIcon === "string") {
+  if (rightIconClassName != null && typeof rightIcon === "string") {
     rightIconClassName = rightIconClassName.concat(rightIcon);
-  } else if (typeof rightIcon === "boolean" && rightIcon) {
+  } else if (
+    rightIconClassName != null &&
+    typeof rightIcon === "boolean" &&
+    rightIcon
+  ) {
     rightIconClassName = rightIconClassName.concat("fa-solid fa-angle-right");
   } else {
     rightIconClassName = undefined;
@@ -128,10 +132,7 @@ function getRightIconClassName(
   return rightIconClassName;
 }
 
-const onButtonKeyDown = (
-  event: KeyboardEvent,
-  clickHandler: Function | undefined
-) => {
+const onButtonKeyDown = (event: any, clickHandler: Function | undefined) => {
   if (event.key === KeyboardKey.ENTER.key) {
     if (clickHandler) clickHandler();
     return;

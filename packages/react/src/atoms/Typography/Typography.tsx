@@ -28,6 +28,7 @@ const Typography = ({
   };
   return (
     <span
+      tabIndex={handler ? 0 : -1}
       data-testid={TypographyTestId.toString()}
       className={typoClassName}
       onClick={

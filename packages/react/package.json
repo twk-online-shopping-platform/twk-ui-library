@@ -1,6 +1,6 @@
 {
   "name": "@twk-ui-lib/react",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "this is ui library to be used by micro front end",
   "main": "index.js",
   "repository": "https://github.com/twk-online-shopping-platform/twk-ui-library.git",

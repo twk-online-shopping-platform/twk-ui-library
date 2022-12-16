@@ -21,8 +21,9 @@
     "graph": "nx graph",
     "build:storybook": "yarn build && yarn lerna run build-storybook",
     "storybook": "yarn lerna run storybook",
-    "sass-compile": "yarn lerna run sass-prod",
-    "sass-css": "yarn lerna run sass-dev"
+    "build-css": "yarn lerna run sass-prod",
+    "sass-css": "yarn lerna run sass-dev",
+    "build": "yarn lerna run build"
   },
   "publishConfig": {
     "access": "public"

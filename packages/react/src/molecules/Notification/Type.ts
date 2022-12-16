@@ -1,7 +1,6 @@
 import { ReactNode } from "react";
 import { IconSize } from "../../atoms/Icon/Type";
 import { TypographySize, TypographyVariant } from "../../atoms/Typography/Type";
-import { MenuType } from "../Menu/Type";
 enum NotificationValueShape {
   CIRCLE = "cr",
   ROUND = "rd",

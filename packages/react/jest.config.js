@@ -8,8 +8,6 @@ module.exports = {
     "node_modules/variables/.+\\.(j|t)sx?$": "babel-jest",
     "\\.(css|less|sass|scss)$": "jest-css-modules-transform",
   },
-  // moduleNameMapper: {
-  //   "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
-  // },
   transformIgnorePatterns: ["<rootDir>/node_modules/blurhash/"],
+  moduleDirectories: ["node_modules"],
 };

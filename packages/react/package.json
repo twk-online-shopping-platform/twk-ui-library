@@ -55,5 +55,8 @@
     "bootstrap-icons": "^1.9.1",
     "jest-css-modules-transform": "^4.4.2",
     "react-blurhash": "^0.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

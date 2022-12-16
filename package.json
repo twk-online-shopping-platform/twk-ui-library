@@ -23,5 +23,8 @@
     "storybook": "yarn lerna run storybook",
     "sass-compile": "yarn lerna run sass-prod",
     "sass-css": "yarn lerna run sass-dev"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

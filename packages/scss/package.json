@@ -14,5 +14,7 @@
   "scripts": {
     "sass-dev": "sass --watch --update --style=expanded src:dist/css",
     "sass-prod": "sass --no-source-map --style=compressed src:root"
+  }, "publishConfig": {
+    "access": "public"
   }
 }

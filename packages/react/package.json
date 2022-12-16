@@ -39,11 +39,15 @@
     "react-dom": "^18.2.0"
   },
   "private": true,
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test": "jest --coverage",
-    "test:watch": "jest --verbose false --watch --maxWorkers=20%"
+    "test:watch": "jest --verbose false --watch --maxWorkers=20%",
+    "build": ""
   },
   "workspaces": [
     "packages/*"

@@ -1,12 +1,17 @@
+#### dependency
+
 yarn add -D commitizen cz-conventional-changelog -W
 yarn add -D @commitlint/cli @commitlint/config-conventional husky -W
 
-add - commitlint.config.js
+#### create commitlint.config.js file and add the following
+
 module.exports = {
 extends: ['@commitlint/config-conventional']
 }
 
-lerna --
+---
+
+#### lerna - add the following
 
 "command": {
 "publish": {
@@ -14,7 +19,9 @@ lerna --
 }
 }
 
-package.json - root
+---
+
+#### package.json - root
 
 "scripts": {
 ....

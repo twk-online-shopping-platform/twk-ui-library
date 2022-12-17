@@ -50,7 +50,7 @@
     "test": "jest --coverage",
     "test:watch": "jest --verbose false --watch --maxWorkers=20%",
     "build": "rollup -c",
-    "test:chromatic": "chromatic --project-token=\"$CHROMATIC_PROJECT_TOKEN\""
+    "test:chromatic": "chromatic --project-token=fbd90305363f"
   },
   "workspaces": [
     "packages/*"

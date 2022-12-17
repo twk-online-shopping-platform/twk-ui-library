@@ -4,6 +4,7 @@
   "description": "this is ui library to be used by micro front end",
   "main": "lib/index.js",
   "repository": "https://github.com/twk-online-shopping-platform/twk-ui-library.git",
+  "homepage": "https://639ddd106138832bc52f7378-rdmmdopylc.chromatic.com/",
   "author": "kina",
   "license": "MIT",
   "devDependencies": {
@@ -50,7 +51,7 @@
     "test": "jest --coverage",
     "test:watch": "jest --verbose false --watch --maxWorkers=20%",
     "build": "rollup -c",
-    "test:chromatic": "chromatic --project-token=fbd90305363f"
+    "test:chromatic": "chromatic --project-token=\"$CHROMATIC_PROJECT_TOKEN\""
   },
   "workspaces": [
     "packages/*"

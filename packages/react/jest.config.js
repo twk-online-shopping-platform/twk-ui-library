@@ -6,8 +6,8 @@ module.exports = {
   transform: {
     "^.+\\.tsx?$": "ts-jest",
     "node_modules/variables/.+\\.(j|t)sx?$": "babel-jest",
+    "^.+\\.js$": "babel-jest",
     "\\.(css|less|sass|scss)$": "jest-css-modules-transform",
   },
   transformIgnorePatterns: ["<rootDir>/node_modules/blurhash/"],
-  moduleDirectories: ["node_modules"],
 };

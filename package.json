@@ -24,6 +24,7 @@
     "test": "yarn lerna run test",
     "test:w": "yarn lerna run test:watch",
     "graph": "nx graph",
+    "deploy": "yarn test && yarn build && yarn lerna publish",
     "build:storybook": "yarn build && yarn lerna run build-storybook",
     "storybook": "yarn lerna run storybook",
     "build-css": "yarn lerna run sass-prod",

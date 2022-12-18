@@ -1,8 +1,15 @@
-import { Button, Color, Icon, Image, TextField, Typography } from "./atoms";
-import Rate from "./atoms/Graphics/Rate/Rate";
-import BookMarkTag from "./atoms/Graphics/Tag/BookMarkTag";
-import StarTag from "./atoms/Graphics/Tag/StarTag";
-import DiagonalTag from "./atoms/Graphics/Tag/DiagonalTag";
+import {
+  Button,
+  Color,
+  Icon,
+  Image,
+  TextField,
+  Typography,
+  Rate,
+  BookMarkTag,
+  DiagonalTag,
+  StarTag,
+} from "./atoms";
 import DropDownContextProvider from "./common/Contexts/DropDownContextProvider";
 import ProductCard from "./molecules/Card/ProductCard/ProductCard";
 import DropDown from "./molecules/Dropdown/Dropdown";

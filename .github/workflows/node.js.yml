@@ -19,12 +19,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - name: test env
-        run: yarn cicd
-        env:
-          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
       - name: Build Packages
         run: yarn
+      - name: Generate CSS
+        run: yarn build-css
       - name: Automated Tests
         run: yarn test
       - name: Visual regression tests

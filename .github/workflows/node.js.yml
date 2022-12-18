@@ -24,7 +24,9 @@ jobs:
       - name: Automated Tests
         run: yarn test
       - name: test env
-        run: echo ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+        run: echo $CHROMATIC_PROJECT_TOKEN
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
       - name: Visual regression tests
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}

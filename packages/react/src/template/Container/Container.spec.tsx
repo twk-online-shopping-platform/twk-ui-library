@@ -17,49 +17,49 @@ import { productCardTestid } from "../../molecules/Card/ProductCard/ProductConst
 
 describe("Test Container Component", () => {
   it("should display container in a row", async () => {
-    // const productCard = (
-    //   <ProductCard
-    //     productImage={{
-    //       imageUrl:
-    //         "https://media.direct.playstation.com/is/image/sierialto/pulse-3d-wireless-ps5-headset-accessory-front-angle?$Background_Large$",
-    //       hashImagUrl: "LHF~s@-;CS4-_4oMIpRj%gRjMwxa",
-    //     }}
-    //     description={""}
-    //     title={{
-    //       text: {
-    //         text: "Gaming Headphone",
-    //         variant: TypographyVariant.HEADING,
-    //         size: TypographySize.SMALL,
-    //         weight: TypographyWeight.BOLD,
-    //       },
-    //       order: CardElementOrder.SECOND_ROW,
-    //     }}
-    //     subTitle={{
-    //       text: {
-    //         text: "Headphone",
-    //         variant: TypographyVariant.TEXT,
-    //         size: TypographySize.SMALL,
-    //       },
-    //       order: CardElementOrder.FIRST_ROW,
-    //     }}
-    //     price={{
-    //       amount: { text: "23.99" },
-    //       discount: { text: "18.99" },
-    //       order: CardElementOrder.FOUTH_ROW,
-    //     }}
-    //     currency={CurrencyType.USD}
-    //     size={CardSize.SMALL}
-    //     hashBorder={false}
-    //   />
-    // );
-    // render(
-    //   <Container type={ContainerStyleType.FLEX} flexFlow={FlexFlow.ROW}>
-    //     {productCard} {productCard} {productCard}
-    //   </Container>
-    // );
-    // const containerComps: any[] = await screen.getAllByTestId(
-    //   productCardTestid
-    // );
-    // expect(containerComps.length).toBe(3);
+    const productCard = (
+      <ProductCard
+        productImage={{
+          imageUrl:
+            "https://media.direct.playstation.com/is/image/sierialto/pulse-3d-wireless-ps5-headset-accessory-front-angle?$Background_Large$",
+          hashImagUrl: "LHF~s@-;CS4-_4oMIpRj%gRjMwxa",
+        }}
+        description={""}
+        title={{
+          text: {
+            text: "Gaming Headphone",
+            variant: TypographyVariant.HEADING,
+            size: TypographySize.SMALL,
+            weight: TypographyWeight.BOLD,
+          },
+          order: CardElementOrder.SECOND_ROW,
+        }}
+        subTitle={{
+          text: {
+            text: "Headphone",
+            variant: TypographyVariant.TEXT,
+            size: TypographySize.SMALL,
+          },
+          order: CardElementOrder.FIRST_ROW,
+        }}
+        price={{
+          amount: { text: "23.99" },
+          discount: { text: "18.99" },
+          order: CardElementOrder.FOUTH_ROW,
+        }}
+        currency={CurrencyType.USD}
+        size={CardSize.SMALL}
+        hashBorder={false}
+      />
+    );
+    render(
+      <Container type={ContainerStyleType.FLEX} flexFlow={FlexFlow.ROW}>
+        {productCard} {productCard} {productCard}
+      </Container>
+    );
+    const containerComps: any[] = await screen.getAllByTestId(
+      productCardTestid
+    );
+    expect(containerComps.length).toBe(3);
   });
 });

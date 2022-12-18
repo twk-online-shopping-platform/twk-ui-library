@@ -23,7 +23,7 @@ import {
 } from "../../common/Contexts/EventHandler";
 import { dropdownTestId } from "./DropdownConstants";
 import { DropdownType } from "./Type";
-const Dropdown = ({
+const DropdownComponent = ({
   popupItems,
   icons,
   lowerText,
@@ -79,11 +79,11 @@ const Dropdown = ({
   );
 };
 
-const DropDownWithContext = ({ ...props }: DropdownType) => {
+const DropDown = ({ ...props }: DropdownType) => {
   return (
     <DropDownContextProvider>
-      <Dropdown {...props} />
+      <DropdownComponent {...props} />
     </DropDownContextProvider>
   );
 };
-export default DropDownWithContext;
+export default DropDown;

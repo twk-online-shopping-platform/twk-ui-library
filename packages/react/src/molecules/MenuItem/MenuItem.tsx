@@ -1,4 +1,9 @@
-import React, { MouseEventHandler, useEffect, useRef } from "react";
+import React, {
+  KeyboardEventHandler,
+  MouseEventHandler,
+  useEffect,
+  useRef,
+} from "react";
 import { useState } from "react";
 import Menu from "../Menu/Menu";
 import Icon from "../../atoms/Icon/Icon";
@@ -58,43 +63,44 @@ const MenuItem = ({
       : "left"
     : "left";
   const hasSubMenu: boolean = submenu ? true : false;
-
+  const menuItemClickHandler: MouseEventHandler = (e) => {
+    dropDownClickHandler(
+      e,
+      dropDownState,
+      setDropDownState,
+      setMainContext,
+      dropdownLevelContext,
+      setDropdownLevelContext,
+      uniqueId,
+      parentsList,
+      submenu?.menu?.menuItems,
+      clickHanlder
+    );
+  };
+  const menItemKeyboardHandler: KeyboardEventHandler = (e) => {
+    if (e.key === KeyboardKey.ENTER.key) {
+      dropDownClickHandler(
+        e,
+        dropDownState,
+        setDropDownState,
+        setMainContext,
+        dropdownLevelContext,
+        setDropdownLevelContext,
+        uniqueId,
+        parentsList,
+        submenu?.menu?.menuItems,
+        clickHanlder
+      );
+    }
+  };
   return (
     <div className="mni-c">
       <div
         ref={menuRef}
         tabIndex={0}
         data-testid={menuItemTestId}
-        onClick={(e) => {
-          dropDownClickHandler(
-            e,
-            dropDownState,
-            setDropDownState,
-            setMainContext,
-            dropdownLevelContext,
-            setDropdownLevelContext,
-            uniqueId,
-            parentsList,
-            submenu?.menu?.menuItems,
-            clickHanlder
-          );
-        }}
-        onKeyDown={(e) => {
-          if (e.key === KeyboardKey.ENTER.key) {
-            dropDownClickHandler(
-              e,
-              dropDownState,
-              setDropDownState,
-              setMainContext,
-              dropdownLevelContext,
-              setDropdownLevelContext,
-              uniqueId,
-              parentsList,
-              submenu?.menu?.menuItems,
-              clickHanlder
-            );
-          }
-        }}
+        onClick={menuItemClickHandler}
+        onKeyDown={menItemKeyboardHandler}
         className="mni clr-txt-lnk"
         role="menuitem"
         aria-expanded={dropDownState && hasSubMenu ? true : undefined}

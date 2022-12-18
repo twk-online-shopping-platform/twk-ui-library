@@ -108,13 +108,35 @@ HorizontalMenu.args = {
 export const VerticalMenu = Template.bind({});
 let menuItemList2: MenuItemType[] = [
   {
+    uniqueId: "5",
+    parentsList: ["5"],
     label: "Home",
     leftIcon: "fa-solid fa-house-user",
   },
-  { label: "Catalog", leftIcon: "fa-solid fa-rectangle-list" },
-  { label: "About us", leftIcon: "fa-solid fa-earth-americas" },
-  { label: "News", leftIcon: "fa-solid fa-radio" },
-  { label: "Blog", leftIcon: "fa-solid fa-mug-hot" },
+  {
+    uniqueId: "5",
+    parentsList: ["5"],
+    label: "Catalog",
+    leftIcon: "fa-solid fa-rectangle-list",
+  },
+  {
+    uniqueId: "5",
+    parentsList: ["5"],
+    label: "About us",
+    leftIcon: "fa-solid fa-earth-americas",
+  },
+  {
+    uniqueId: "5",
+    parentsList: ["5"],
+    label: "News",
+    leftIcon: "fa-solid fa-radio",
+  },
+  {
+    uniqueId: "5",
+    parentsList: ["5"],
+    label: "Blog",
+    leftIcon: "fa-solid fa-mug-hot",
+  },
 ];
 
 VerticalMenu.args = {

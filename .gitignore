@@ -5,3 +5,4 @@ node_modules
 /packages/react/coverage
 *.log
 **/lib
+**/storybook-static

@@ -1,0 +1,29 @@
+name: TWK-UI-Library Deploy
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - name: Build Packages
+        run: yarn
+      - name: Generate CSS
+        run: yarn build-css
+      - name: Automated Tests
+        run: yarn test
+      - name: Visual regression tests
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+        run: yarn chromatic

@@ -25,7 +25,10 @@ jobs:
         run: yarn test
       - name: test env
         run: |
-          echo $CHROMATIC_PROJECT_TOKEN
+          if ["$CHROMATIC_PROJECT_TOKEN" == "fbd90305363f"]
+          then
+            echo "worked"
+          fi
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
       - name: Visual regression tests

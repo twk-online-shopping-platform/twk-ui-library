@@ -25,7 +25,7 @@ jobs:
         run: yarn test
       - name: test env
         run: |
-          if ["$CHROMATIC_PROJECT_TOKEN" == "fbd90305363f"]
+          if [ "$CHROMATIC_PROJECT_TOKEN" == "fbd90305363f" ]
           then
             echo "worked"
           fi

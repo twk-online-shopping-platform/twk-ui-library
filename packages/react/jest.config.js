@@ -6,10 +6,8 @@ module.exports = {
   transform: {
     "^.+\\.tsx?$": "ts-jest",
     "node_modules/variables/.+\\.(j|t)sx?$": "babel-jest",
+    "^.+\\.js$": "babel-jest",
     "\\.(css|less|sass|scss)$": "jest-css-modules-transform",
   },
-  // moduleNameMapper: {
-  //   "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
-  // },
   transformIgnorePatterns: ["<rootDir>/node_modules/blurhash/"],
 };

@@ -81,7 +81,7 @@ const productCard = (
           size: TypographySize.EXTRA_EXTRA_SMALL,
         },
         variant: ButtonVariant.SECONDARY,
-        radius: ButtondRadius.OVAL,
+        radius: ButtondRadius.CURVE,
         leftIcon: {
           cssValue: "fa-solid fa-cart-shopping",
           size: IconSize.X_X_SMALL,
@@ -258,13 +258,11 @@ const subtitle = (
   />
 );
 let menuItemList2: MenuItemType[] = [
-  {
-    label: "Home",
-  },
-  { label: "Catalog" },
-  { label: "About us" },
-  { label: "News" },
-  { label: "Blog" },
+  { uniqueId: "5", parentsList: ["5"], label: "Home" },
+  { uniqueId: "5", parentsList: ["5"], label: "Catalog" },
+  { uniqueId: "5", parentsList: ["5"], label: "About us" },
+  { uniqueId: "5", parentsList: ["5"], label: "News" },
+  { uniqueId: "5", parentsList: ["5"], label: "Blog" },
 ];
 
 const galleryMenu = (

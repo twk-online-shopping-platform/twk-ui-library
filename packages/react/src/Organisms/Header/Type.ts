@@ -1,8 +1,8 @@
-import { NotificationIconType } from "../../molecules/Notification/Type";
+import { NotificationType } from "../../molecules/Notification/Type";
 import { MenuType } from "../../molecules/Menu/Type";
 interface HeaderNotificationType {
-  like?: NotificationIconType;
-  cart?: NotificationIconType;
+  like?: NotificationType;
+  cart?: NotificationType;
 }
 
 interface HeaderType {

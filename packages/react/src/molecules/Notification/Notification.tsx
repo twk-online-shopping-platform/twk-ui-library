@@ -18,13 +18,11 @@ import {
   NotificationValueShape,
 } from "./Type";
 import {
-  createDropDownStateListener,
-  dropDownClickHandler,
   onKeyDownDropDown,
   useOutsideAlerter,
 } from "../../common/Contexts/EventHandler";
 
-const Notification = ({
+const NotificationComponent = ({
   icon,
   value,
   iconSize,
@@ -96,14 +94,14 @@ const Notification = ({
   );
 };
 
-const NotiticationWithContext = ({ ...props }: NotificationType) => {
+const Notitication = ({ ...props }: NotificationType) => {
   return (
     <DropDownContextProvider>
-      <Notification {...props} />
+      <NotificationComponent {...props} />
     </DropDownContextProvider>
   );
 };
-export default NotiticationWithContext;
+export default Notitication;
 
 const notificationNum = (val: number): string => {
   let displayValue: string = "0";

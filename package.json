@@ -13,18 +13,37 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "commitizen": "^4.2.6",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.2",
     "lerna": "^5.5.4"
   },
   "scripts": {
     "test": "yarn lerna run test",
     "test:w": "yarn lerna run test:watch",
+    "chromatic": "yarn lerna run test:chromatic",
     "graph": "nx graph",
-    "build:storybook": "yarn build && yarn lerna run build-storybook",
+    "deploy": "yarn test && yarn build && yarn lerna publish",
+    "build-storybook": "yarn build && yarn lerna run build-storybook",
     "storybook": "yarn lerna run storybook",
-    "sass-compile": "yarn lerna run sass-prod",
-    "sass-css": "yarn lerna run sass-dev"
+    "build-css": "yarn lerna run sass-prod",
+    "sass-css": "yarn lerna run sass-dev",
+    "build": "yarn lerna run build",
+    "commit": "yarn git-cz"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   }
 }

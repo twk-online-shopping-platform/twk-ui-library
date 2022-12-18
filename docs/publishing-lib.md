@@ -1,21 +1,20 @@
 # publishing lib
-* package.json
+
+- package.json
   ```
     files": [
         "/lib"
     ]
   ```
-* yarn build
-* create account https://www.npmjs.com/
-* npm login
-* npm publish
-  
-# update version and publishing lib
-* git add/commit 
-* npm version <new_Version_No>
-* npm publish
+- yarn build
+- create account https://www.npmjs.com/
+- npm login
+- yarn lerna publish
 
+# update version and publishing lib
+
+- git add/commit
+- npm version <new_Version_No>
+- yarn lerna publish
 
 # importing published lib in consumer application
-* npm login as handakina
-* npm i ecommerce-opensouce-storybook --legacy-peer-deps

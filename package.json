@@ -31,7 +31,8 @@
     "build-css": "yarn lerna run sass-prod",
     "sass-css": "yarn lerna run sass-dev",
     "build": "yarn lerna run build",
-    "commit": "yarn git-cz"
+    "commit": "yarn git-cz",
+    "cicd": "echo ${CHROMATIC_PROJECT_TOKEN}"
   },
   "publishConfig": {
     "access": "public"

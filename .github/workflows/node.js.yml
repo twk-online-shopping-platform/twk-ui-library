@@ -19,18 +19,14 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
+      - name: test env
+        run: yarn cicd
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
       - name: Build Packages
         run: yarn
       - name: Automated Tests
         run: yarn test
-      - name: test env
-        run: |
-          if ["$CHROMATIC_PROJECT_TOKEN" == "fbd90305363f"]
-          then
-            echo "worked"
-          fi
-        env:
-          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
       - name: Visual regression tests
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}

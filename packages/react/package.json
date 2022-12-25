@@ -1,6 +1,6 @@
 {
   "name": "@twk-ui-lib/react",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "this is ui library to be used by micro front end",
   "main": "lib/index.js",
   "repository": "https://github.com/twk-online-shopping-platform/twk-ui-library.git",
@@ -18,7 +18,7 @@
     "@storybook/addon-postcss": "^2.0.0",
     "@storybook/builder-webpack4": "^6.5.13",
     "@storybook/manager-webpack4": "^6.5.13",
-    "@storybook/react": "^6.5.13",
+    "@storybook/react": "^6.5.14",
     "@storybook/testing-library": "^0.0.13",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -66,5 +66,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "f1614ce57e919995d44b3f1ad4e19ef58a2bca77"
 }

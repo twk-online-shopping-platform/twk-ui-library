@@ -1,7 +1,7 @@
 name: TWK-UI-Library Build and Test CI
 
 on:
-  pull_request:
+  push:
     branches: ["main"]
 
 jobs:
@@ -22,8 +22,4 @@ jobs:
       - name: Generate CSS
         run: yarn build-css
       - name: Automated Tests
-        run: yarn test
-      - name: Visual regression tests
-        env:
-          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-        run: yarn chromatic
+        run: yarn deploy

@@ -1,12 +1,7 @@
-import Ts from "rollup-plugin-typescript2";
+const Ts = require("rollup-plugin-typescript2");
 
-export default {
-  input: [
-    "src/index.ts",
-    // "src/atoms/Color/index.ts",
-    // "src/atoms/Margin/index.ts",
-    // "src/molecules/Select/index.ts",
-  ],
+module.exports = {
+  input: ["src/index.ts", "src/atoms/index.ts"],
   output: {
     dir: "lib",
     format: "esm",

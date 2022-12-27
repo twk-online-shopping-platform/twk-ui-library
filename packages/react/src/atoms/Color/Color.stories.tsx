@@ -1,6 +1,5 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
-import "@twk-ui-lib/scss/root/global.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 import Color from "./Color";
 import { ColorClassType, ColorWeight } from "./Type";

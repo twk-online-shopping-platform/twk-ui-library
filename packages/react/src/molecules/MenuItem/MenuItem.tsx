@@ -32,6 +32,7 @@ import {
   createDropDownStateListener,
   dropDownClickHandler,
 } from "../../common/Contexts/EventHandler";
+import "@twk-ui-lib/scss/root/global.css";
 
 const MenuItem = ({
   label,

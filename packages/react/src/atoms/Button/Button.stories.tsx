@@ -1,7 +1,6 @@
 import React from "react";
 import Button from "./Button";
 import { ComponentMeta, ComponentStory, Meta, Story } from "@storybook/react";
-import "@twk-ui-lib/scss/root/global.css";
 import { ButtonType, ButtonVariant } from "./Type";
 
 export default {

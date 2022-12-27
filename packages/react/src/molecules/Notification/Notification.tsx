@@ -21,6 +21,7 @@ import {
   onKeyDownDropDown,
   useOutsideAlerter,
 } from "../../common/Contexts/EventHandler";
+import "@twk-ui-lib/scss/root/global.css";
 
 const NotificationComponent = ({
   icon,

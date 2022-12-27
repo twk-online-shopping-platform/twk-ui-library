@@ -6,7 +6,8 @@
   "packages": ["packages/*"],
   "command": {
     "publish": {
-      "conventionalCommits": true
+      "conventionalCommits": true,
+      "verifyAccess": true
     }
   }
 }

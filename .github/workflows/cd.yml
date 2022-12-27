@@ -22,8 +22,6 @@ jobs:
         run: yarn
       - name: Generate CSS
         run: yarn build-css
-      - name: Login
-        run: npm login
       - name: Deploy to NPM Registory
         run: yarn deploy
         env:

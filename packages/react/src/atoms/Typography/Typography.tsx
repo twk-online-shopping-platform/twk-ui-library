@@ -6,6 +6,7 @@ import {
   TypographyWeight,
 } from "./Type";
 import { TypoDefaultText, TypographyTestId } from "./TypographyContants";
+import "@twk-ui-lib/scss/root/global.css";
 
 const Typography = ({
   text,

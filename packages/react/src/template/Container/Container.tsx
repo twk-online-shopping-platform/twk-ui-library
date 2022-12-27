@@ -8,6 +8,7 @@ import {
   GridColumn,
   GridGap,
 } from "./Type";
+import "@twk-ui-lib/scss/root/global.css";
 
 const Container = ({
   children,

@@ -6,6 +6,7 @@ import { useOutsideAlerter } from "../../common/Contexts/EventHandler";
 import MenuItem from "../MenuItem/MenuItem";
 import { menuTestId } from "./MenuConstants";
 import { MenuOrientation, MenuType } from "./Type";
+import "@twk-ui-lib/scss/root/global.css";
 
 const StandAloneMenuComponent = ({ menuItems, orientation }: MenuType) => {
   const setMainContext = useMenuUpdateContext();

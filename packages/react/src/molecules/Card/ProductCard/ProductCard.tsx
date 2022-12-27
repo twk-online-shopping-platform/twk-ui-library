@@ -16,6 +16,7 @@ import Typography from "../../../atoms/Typography/Typography";
 import Button from "../../../atoms/Button/Button";
 import Icon from "../../../atoms/Icon/Icon";
 import Rate from "../../../atoms/Graphics/Rate/Rate";
+import "@twk-ui-lib/scss/root/global.css";
 const ProductCard = ({
   productImage,
   title,

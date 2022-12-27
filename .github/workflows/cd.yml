@@ -1,4 +1,4 @@
-name: TWK-UI-Library Build and Test CI
+name: Publish
 
 on:
   push:
@@ -11,8 +11,9 @@ jobs:
       matrix:
         node-version: [16.x]
     steps:
-      - uses: actions/checkout@v1
-      - name: Use Node.js
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Setup Enviroment
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
@@ -21,5 +22,9 @@ jobs:
         run: yarn
       - name: Generate CSS
         run: yarn build-css
-      - name: Automated Tests
+      - name: Login
+        run: npm login
+      - name: Deploy to NPM Registory
         run: yarn deploy
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

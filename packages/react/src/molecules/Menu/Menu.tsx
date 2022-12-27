@@ -8,6 +8,7 @@ import DropDownContextProvider, {
   useDropDownLevelContext,
   useDropDownLevelUpdateContext,
 } from "../../common/Contexts/DropDownContextProvider";
+import "@twk-ui-lib/scss/root/global.css";
 
 const getMenuItemComponents = (menuItems: MenuItemType[]) => {
   const menuItemComponents = [];

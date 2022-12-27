@@ -23,6 +23,8 @@ import {
 } from "../../common/Contexts/EventHandler";
 import { dropdownTestId } from "./DropdownConstants";
 import { DropdownType } from "./Type";
+import "@twk-ui-lib/scss/root/global.css";
+
 const DropdownComponent = ({
   popupItems,
   icons,

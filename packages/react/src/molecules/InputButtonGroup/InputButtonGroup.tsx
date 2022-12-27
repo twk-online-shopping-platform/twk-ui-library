@@ -5,6 +5,7 @@ import { InputButtonGroupType } from "./Type";
 import { ButtondRadius } from "../../atoms/Button/Type";
 import { TextFieldRadius } from "../../atoms/Field/Type";
 import { IconSize } from "../../atoms/Icon/Type";
+import "@twk-ui-lib/scss/root/global.css";
 
 const InputButtonGroup = ({
   buttonText,

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.7](https://github.com/twk-online-shopping-platform/twk-ui-library/compare/v0.0.1...v0.0.7) (2022-12-30)
+
+### Bug Fixes
+
+- publish error ([40e706f](https://github.com/twk-online-shopping-platform/twk-ui-library/commit/40e706f1f51913620c432f5c1a0bc2351cabb4a9))
+
 ## [0.0.6](https://github.com/twk-online-shopping-platform/twk-ui-library/compare/v0.0.1...v0.0.6) (2022-12-30)
 
 **Note:** Version bump only for package twk-ui-lib

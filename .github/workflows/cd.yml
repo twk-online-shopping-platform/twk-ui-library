@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - name: Build Packages
+      - name: Setup Packages
         run: yarn
       - name: Generate CSS
         run: yarn build-css

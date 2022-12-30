@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0](https://github.com/twk-online-shopping-platform/twk-ui-library/compare/v0.0.9...v0.1.0) (2022-12-30)
+
+### Bug Fixes
+
+- changed npm registrory ([08d1e9b](https://github.com/twk-online-shopping-platform/twk-ui-library/commit/08d1e9bfa591e575a12eb93d22753dd3568a2f00))
+
+### Styles
+
+- direct style import ([0df8afa](https://github.com/twk-online-shopping-platform/twk-ui-library/commit/0df8afa522677d2294c88bf0aaf94dd9556fe5e7))
+
+### BREAKING CHANGES
+
+- style display for ui component could be affected
+
 ## [0.0.9](https://github.com/twk-online-shopping-platform/twk-ui-library/compare/v0.0.8...v0.0.9) (2022-12-30)
 
 ### Bug Fixes

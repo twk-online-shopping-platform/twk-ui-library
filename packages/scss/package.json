@@ -1,6 +1,6 @@
 {
   "name": "@twk-ui-lib/scss",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "css library file for twk project",
   "main": "index.js",
   "author": "kina",

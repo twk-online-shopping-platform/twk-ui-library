@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/twk-online-shopping-platform/twk-ui-library/compare/v0.1.0...v0.2.0) (2022-12-30)
+
+### Styles
+
+- rate style change ([6f5a091](https://github.com/twk-online-shopping-platform/twk-ui-library/commit/6f5a091e4a1a3c45b3e03a77b07c6c3842343046))
+
+### BREAKING CHANGES
+
+- rate ui component ui style could be affected
+
 # [0.1.0](https://github.com/twk-online-shopping-platform/twk-ui-library/compare/v0.0.9...v0.1.0) (2022-12-30)
 
 ### Styles

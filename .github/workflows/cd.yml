@@ -23,7 +23,7 @@ jobs:
       - name: Generate CSS
         run: yarn build-css
       - name: Config Auth
-        run: npm config set -- //registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}
+        run: npm config set -- //www.npmjs.com/:_authToken=${NODE_AUTH_TOKEN}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Deploy to NPM Registory

@@ -3,6 +3,8 @@ import Icon from "../../Icon/Icon";
 import { RateType } from "./Type";
 import PropTypes from "prop-types";
 import { IconSize } from "../../Icon/Type";
+import "@twk-ui-lib/scss/root/global.css";
+import "@fortawesome/fontawesome-free/css/all.css";
 
 const Rate = ({ value, max = 5, style, size }: RateType) => {
   return (

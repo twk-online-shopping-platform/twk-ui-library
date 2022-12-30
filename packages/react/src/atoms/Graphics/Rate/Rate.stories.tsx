@@ -1,7 +1,5 @@
 import React from "react";
 import { ComponentMeta, ComponentStory, Meta, Story } from "@storybook/react";
-import "@twk-ui-lib/scss/root/global.css";
-import "@fortawesome/fontawesome-free/css/all.css";
 import Rate from "./Rate";
 import { RateType } from "./Type";
 

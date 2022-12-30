@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.8](https://github.com/twk-online-shopping-platform/twk-ui-library/compare/v0.0.7...v0.0.8) (2022-12-30)
+
+### Bug Fixes
+
+- remove opt ([57cc5a8](https://github.com/twk-online-shopping-platform/twk-ui-library/commit/57cc5a82de018a91a9408cb07cf4a5d095e8423a))
+
 ## [0.0.7](https://github.com/twk-online-shopping-platform/twk-ui-library/compare/v0.0.1...v0.0.7) (2022-12-30)
 
 ### Bug Fixes

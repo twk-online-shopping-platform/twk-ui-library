@@ -9,6 +9,7 @@ import {
   GridGap,
 } from "./Type";
 import "@twk-ui-lib/scss/root/global.css";
+import "@fortawesome/fontawesome-free/css/all.css";
 
 const Container = ({
   children,

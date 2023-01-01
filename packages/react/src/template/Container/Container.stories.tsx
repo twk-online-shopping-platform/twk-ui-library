@@ -1,6 +1,6 @@
 import React, { useId } from "react";
 import { ComponentMeta, ComponentStory, Meta, Story } from "@storybook/react";
-import "@fortawesome/fontawesome-free/css/all.css";
+
 
 import {
   CurrencyType,

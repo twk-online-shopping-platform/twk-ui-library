@@ -34,7 +34,8 @@
     "commit": "git add . && yarn git-cz"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry":"https://registry.npmjs.org/"
   },
   "config": {
     "commitizen": {

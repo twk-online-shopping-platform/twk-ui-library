@@ -33,6 +33,7 @@ import {
   dropDownClickHandler,
 } from "../../common/Contexts/EventHandler";
 import "@twk-ui-lib/scss/root/global.css";
+import "@fortawesome/fontawesome-free/css/all.css";
 
 const MenuItem = ({
   label,

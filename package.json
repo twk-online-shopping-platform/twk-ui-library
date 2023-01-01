@@ -31,7 +31,7 @@
     "build-css": "yarn lerna run sass-prod",
     "sass-css": "yarn lerna run sass-dev",
     "build": "yarn lerna run build",
-    "commit": "yarn git-cz"
+    "commit": "git add . && yarn git-cz"
   },
   "publishConfig": {
     "access": "public"

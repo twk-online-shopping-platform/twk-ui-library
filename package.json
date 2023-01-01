@@ -31,11 +31,11 @@
     "build-css": "yarn lerna run sass-prod",
     "sass-css": "yarn lerna run sass-dev",
     "build": "yarn lerna run build",
-    "commit": "git add . && yarn git-cz"
+    "commit": "yarn git-cz"
   },
   "publishConfig": {
     "access": "public",
-    "registry":"https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/"
   },
   "config": {
     "commitizen": {

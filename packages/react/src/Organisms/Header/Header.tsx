@@ -23,6 +23,7 @@ import { HeaderType } from "./Type";
 import { MenuOrientation } from "../../molecules/Menu/Type";
 import StandAloneMenu from "../../molecules/Menu/StandAloneMenu";
 import "@twk-ui-lib/scss/root/global.css";
+import "@twk-ui-lib/scss/root/third-party-icons/line-awesome/css/line-awesome.css";
 
 const Header = ({ headerMenu, navNotification }: HeaderType) => {
   const headerClassName = `flx-v flx-gap-lg`;

@@ -1,11 +1,11 @@
-name: Publish
+name: Build and Publish
 
 on:
   push:
     branches: ["main"]
 
 jobs:
-  build:
+  Build-Publish:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -26,3 +26,5 @@ jobs:
         run: yarn deploy
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+          NODE_EMAIL: ${{secrets.NPM_EMAIL}}
+          NODE_USER_NAME: ${{secrets.NPM_USER_NAME}}

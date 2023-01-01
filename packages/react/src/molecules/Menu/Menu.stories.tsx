@@ -1,6 +1,5 @@
 import React, { MouseEventHandler } from "react";
 import { ComponentMeta, ComponentStory, Meta, Story } from "@storybook/react";
-import "@fortawesome/fontawesome-free/css/all.css";
 import Menu from "./Menu";
 import { MenuOrientation, MenuType } from "./Type";
 import { MenuItemType, SubMenuPosition } from "../MenuItem/Type";

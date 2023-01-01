@@ -20,6 +20,10 @@ jobs:
           cache: "npm"
       - name: Setup Packages
         run: yarn
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+          NODE_EMAIL: ${{secrets.NPM_EMAIL}}
+          NODE_USER_NAME: ${{secrets.NPM_USER_NAME}}
       - name: Generate CSS
         run: yarn build-css
       - name: Deploy to NPM Registory

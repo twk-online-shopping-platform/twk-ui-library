@@ -2,6 +2,7 @@ import React from "react";
 import Button from "./Button";
 import { ComponentMeta, ComponentStory, Meta, Story } from "@storybook/react";
 import { ButtonType, ButtonVariant } from "./Type";
+import "@twk-ui-lib/scss/root/global.css";
 
 export default {
   title: "Atoms/Button",

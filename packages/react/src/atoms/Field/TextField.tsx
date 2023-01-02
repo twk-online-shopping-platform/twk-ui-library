@@ -3,8 +3,6 @@ import Icon from "../Icon/Icon";
 import { IconSize } from "../Icon/Type";
 import { TextFieldTestId } from "./FieldConstants";
 import { TextFiedType, TextFieldRadius, TextFieldSize } from "./Type";
-import "@twk-ui-lib/scss/root/global.css";
-import "@fortawesome/fontawesome-free/css/all.css";
 
 const TextField = ({
   type = "text",

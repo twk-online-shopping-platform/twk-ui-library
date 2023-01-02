@@ -27,8 +27,8 @@ jobs:
         run: yarn
       - name: Generate CSS
         run: yarn build-css
-      - name: Test
-        run: yarn test
+      - name: Acceptance Test
+        run: yarn chromatic
       - name: Build
         run: yarn build
       - name: Approval

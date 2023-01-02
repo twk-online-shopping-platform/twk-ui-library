@@ -19,5 +19,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - run: yarn
-      - run: yarn test
+      - name: Setup
+        run: yarn
+      - name: Unit Test
+        run: yarn test
+      - name: Acceptance Test
+        run: yarn chromatic

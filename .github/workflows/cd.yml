@@ -5,7 +5,7 @@ on:
     branches: ["main"]
 
 jobs:
-  Build-Publish:
+  Build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -31,5 +31,17 @@ jobs:
         run: yarn test
       - name: Build
         run: yarn build
+
+  Publish:  
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - name: Approval
+        uses: trstringer/manual-approval@v1
+        with:
+          approvers: handakina
+          minimum-approvals: 1
       - name: Deploy to NPM Registory
         run: yarn deploy

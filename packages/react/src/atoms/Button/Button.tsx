@@ -12,7 +12,6 @@ import { ButtonType, ButtonSize } from "./Type";
 import Icon from "../Icon/Icon";
 import { IconType } from "../Icon/Type";
 import { KeyboardKey } from "../../accessibility/KeyboardEvents";
-import "@twk-ui-lib/scss/root/global.css";
 
 const Button = ({
   label = "button",

@@ -29,6 +29,8 @@ jobs:
         run: yarn build-css
       - name: Acceptance Test
         run: yarn chromatic
+        env:
+          CHROMATIC_PROJECT_TOKEN: CHROMATIC_PROJECT_TOKEN
       - name: Build
         run: yarn build
       - name: Approval

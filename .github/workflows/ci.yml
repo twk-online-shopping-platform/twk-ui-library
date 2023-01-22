@@ -24,6 +24,6 @@ jobs:
       - name: Unit Test
         run: yarn test
       - name: Acceptance Test
-        run: yarn chromatic
+        run: yarn visual-test
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}

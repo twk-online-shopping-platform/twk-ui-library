@@ -1,6 +1,7 @@
 import React, { useId } from "react";
 import { ComponentMeta, ComponentStory, Meta, Story } from "@storybook/react";
-
+import "@fortawesome/fontawesome-free/css/all.css";
+import "@twk-ui-lib/scss/root/global.css";
 
 import {
   CurrencyType,
@@ -29,14 +30,6 @@ import { MenuItemType } from "../../molecules/MenuItem/Type";
 import Menu from "../../molecules/Menu/Menu";
 import { ColorClassType } from "../../atoms/Color/Type";
 import Icon from "../../atoms/Icon/Icon";
-
-// const prd1Id = useId();
-// const prd2Id = useId();
-// const prd3Id = useId();
-// const prd4Id = useId();
-// const prd5Id = useId();
-// const prd6Id = useId();
-// const prdId = useId();
 
 const productCard = (
   <ProductCard

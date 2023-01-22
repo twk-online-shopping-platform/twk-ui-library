@@ -23,7 +23,8 @@
   "scripts": {
     "test": "yarn lerna run test",
     "test:w": "yarn lerna run test:watch",
-    "chromatic": "yarn lerna run test:chromatic",
+    "visual-test": "yarn lerna run chromatic",
+    "visual-test:c": "yarn lerna run chromatic:check",
     "graph": "nx graph",
     "deploy": "yarn lerna publish  from-package --no-verify-access --yes",
     "build-storybook": "yarn build && yarn lerna run build-storybook",

@@ -28,7 +28,7 @@ jobs:
       - name: Generate CSS
         run: yarn build-css
       - name: Acceptance Test
-        run: yarn chromatic
+        run: yarn visual-test
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
       - name: Build

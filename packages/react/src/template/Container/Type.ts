@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { MutableRefObject, ReactNode } from "react";
 
 enum FlexFlow {
   ROW = "h",
@@ -49,6 +49,7 @@ interface ContainerType {
   gridColumn?: GridColumn;
   gridGap?: GridGap;
   style?: string;
+  refObject?: MutableRefObject<any>;
 }
 
 export { ContainerStyleType, FlexFlow, GapSize, FlexContainAlign, GridColumn };

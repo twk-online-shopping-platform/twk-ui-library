@@ -8,8 +8,6 @@ import {
   GridColumn,
   GridGap,
 } from "./Type";
-import "@twk-ui-lib/scss/root/global.css";
-import "@fortawesome/fontawesome-free/css/all.css";
 
 const Container = ({
   children,
@@ -21,6 +19,7 @@ const Container = ({
   flexContentAlign,
   gridGap,
   style,
+  refObject,
 }: ContainerType) => {
   const flexFlowValue = getFlexFlowValue(type, flexFlow);
   const flexGapValue = getFlexGapValue(type, flexGap);
@@ -36,8 +35,15 @@ const Container = ({
   } ${
     type ? (type == ContainerStyleType.GRID ? gridGapValue : "") : ""
   } ${style}`;
-
-  return <div className={containerClassName}>{children}</div>;
+  if (refObject) {
+    return (
+      <div className={containerClassName} ref={refObject}>
+        {children}
+      </div>
+    );
+  } else {
+    return <div className={containerClassName}>{children}</div>;
+  }
 };
 
 export default Container;

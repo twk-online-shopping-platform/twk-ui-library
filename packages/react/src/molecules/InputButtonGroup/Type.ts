@@ -1,5 +1,5 @@
 import { ButtondRadius } from "../../atoms/Button/Type";
-import { TextFieldRadius } from "../../atoms/Field/Type";
+import { TextFieldRadius } from "../../atoms/Field/Text/Type";
 
 interface InputButtonGroupType {
   buttonText?: string;

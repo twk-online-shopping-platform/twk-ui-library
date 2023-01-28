@@ -49,6 +49,7 @@ const Container = ({
   } else {
     return (
       <div
+        ref={refObject}
         className={containerClassName}
         data-testid={ContainerComponentTestId}
       >

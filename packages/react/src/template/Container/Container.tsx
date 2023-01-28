@@ -1,4 +1,5 @@
 import React from "react";
+import { ContainerComponentTestId } from "./ContainerConstants";
 import {
   ContainerStyleType,
   ContainerType,
@@ -35,14 +36,25 @@ const Container = ({
   } ${
     type ? (type == ContainerStyleType.GRID ? gridGapValue : "") : ""
   } ${style}`;
-  if (refObject) {
+  if (refObject && refObject.current) {
     return (
-      <div className={containerClassName} ref={refObject}>
+      <div
+        className={containerClassName}
+        ref={refObject}
+        data-testid={ContainerComponentTestId}
+      >
         {children}
       </div>
     );
   } else {
-    return <div className={containerClassName}>{children}</div>;
+    return (
+      <div
+        className={containerClassName}
+        data-testid={ContainerComponentTestId}
+      >
+        {children}
+      </div>
+    );
   }
 };
 

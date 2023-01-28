@@ -125,6 +125,16 @@ $spacing: (
   xxxxxl: 4.5rem,
 ) !default;
 
+$screen_size: (
+  none: 0rem,
+  full: 100%,
+  tri_quarter: 75%,
+  half: 50%,
+  qaurter: 25%,
+  one_ten: 10%,
+  one_twenty: 5%,
+) !default;
+
 $btn-padding-size-v: (
   none: 0rem,
   sm: 0.625rem,

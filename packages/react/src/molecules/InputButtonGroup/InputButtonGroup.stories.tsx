@@ -4,7 +4,7 @@ import "@fortawesome/fontawesome-free/css/all.css";
 import InputButtonGroup from "./InputButtonGroup";
 import { InputButtonGroupType } from "./Type";
 import { ButtondRadius } from "../../atoms/Button/Type";
-import { TextFieldRadius } from "../../atoms/Field/Type";
+import { TextFieldRadius } from "../../atoms/Field/Text/Type";
 
 export default {
   title: "Molecules/InputButtonGroup",

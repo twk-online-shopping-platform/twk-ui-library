@@ -1,4 +1,4 @@
-import { IconSize } from "../Icon/Type";
+import { IconSize } from "../../Icon/Type";
 
 enum TextFieldSize {
   SMALL = "sm",

@@ -1,7 +1,7 @@
 import React, { useId, useState } from "react";
-import Icon from "../Icon/Icon";
-import { IconSize } from "../Icon/Type";
-import { TextFieldTestId } from "./FieldConstants";
+import Icon from "../../Icon/Icon";
+import { IconSize } from "../../Icon/Type";
+import { TextFieldTestId } from "../FieldConstants";
 import { TextFiedType, TextFieldRadius, TextFieldSize } from "./Type";
 
 const TextField = ({

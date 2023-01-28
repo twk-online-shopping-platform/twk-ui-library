@@ -5,9 +5,10 @@ enum FlexFlow {
   COLMN = "v",
 }
 enum FlexContainAlign {
-  LEFT = "flx-spc-lft",
-  CENTER = "flx-spc-ctr",
-  LEFT_RIGHT = "flx-spc-btn",
+  LEFT = " flx-spc-lft ",
+  RIGHT = " flx-spc-rht ",
+  CENTER = " flx-spc-ctr ",
+  LEFT_RIGHT = " flx-spc-btn ",
 }
 enum GapSize {
   EXTRA_EXTRA_SMALL = "xxs",
@@ -35,6 +36,7 @@ enum GridColumn {
   ELEVEN = "11",
   TWELVE = "12",
 }
+
 interface GridGap {
   column: GapSize;
   row: GapSize;

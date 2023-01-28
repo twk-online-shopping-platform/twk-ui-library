@@ -17,6 +17,7 @@ import Menu from "./molecules/Menu/Menu";
 import Notitication from "./molecules/Notification/Notification";
 import Header from "./Organisms/Header/Header";
 import Container from "./template/Container/Container";
+import Footer from "./Organisms/Footer/Footer";
 export {
   Button,
   TextField,
@@ -37,4 +38,5 @@ export {
   Notitication,
   Header,
   Container,
+  Footer,
 };

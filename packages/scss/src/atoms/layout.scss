@@ -51,6 +51,9 @@ $flex-cols: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
   &-spc-lft {
     justify-content: flex-start;
   }
+  &-spc-rht {
+    justify-content: flex-end;
+  }
   &-gap-xs {
     gap: 0.25rem;
   }
@@ -69,6 +72,11 @@ $flex-cols: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
   @each $col in $flex-cols {
     &-col-#{$col} {
       flex-grow: $col;
+    }
+  }
+  @each $name, $size in $screen_size {
+    &-screen-#{$name} {
+      flex-basis: $size;
     }
   }
   &-wrap {

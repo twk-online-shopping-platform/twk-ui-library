@@ -1,9 +1,9 @@
 import React from "react";
-import TextField from "../../atoms/Field/TextField";
+import TextField from "../../atoms/Field/Text/TextField";
 import Button from "../../atoms/Button/Button";
 import { InputButtonGroupType } from "./Type";
 import { ButtondRadius } from "../../atoms/Button/Type";
-import { TextFieldRadius } from "../../atoms/Field/Type";
+import { TextFieldRadius } from "../../atoms/Field/Text/Type";
 import { IconSize } from "../../atoms/Icon/Type";
 import "@twk-ui-lib/scss/root/global.css";
 

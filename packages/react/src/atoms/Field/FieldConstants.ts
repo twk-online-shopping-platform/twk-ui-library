@@ -1,2 +1,3 @@
 const TextFieldTestId: string = "text-fieldTest-id";
-export { TextFieldTestId };
+const TextAreaTestId: string = "text-area-test-id";
+export { TextFieldTestId, TextAreaTestId };

@@ -18,10 +18,11 @@ const getMenuItemComponents = (menuItems: MenuItemType[]) => {
   }
   return menuItemComponents;
 };
-const Menu = ({ menuItems, orientation }: MenuType) => {
+const Menu = ({ menuItems, orientation, style }: MenuType) => {
   const menuClassName = `mnu-${
     orientation ? orientation : MenuOrientation.HORIZONTAL
-  } flx-wrap`;
+  }${style ? style : " "} 
+  flx-wrap`;
   return (
     <div className={menuClassName} data-testid={menuTestId} role="menu">
       {menuItems.map((menuitem) => (

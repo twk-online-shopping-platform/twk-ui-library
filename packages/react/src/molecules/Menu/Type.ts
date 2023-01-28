@@ -8,6 +8,7 @@ enum MenuOrientation {
 interface MenuType {
   menuItems: MenuItemType[];
   orientation?: MenuOrientation;
+  style?: string;
 }
 
 export { MenuOrientation };
